@@ -1,0 +1,104 @@
+{
+  "root": "libs/dsl",
+  "sourceRoot": "libs/dsl/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/dsl",
+        "tsConfig": "libs/dsl/tsconfig.lib.json",
+        "project": "libs/dsl/package.json",
+        "entryFile": "libs/dsl/src/index.ts",
+        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "*.png",
+            "input": "libs/dsl/src/static/assets",
+            "output": "libs/dsl/src/static/assets"
+          },
+          {
+            "glob": "*",
+            "input": "libs/dsl/src/static",
+            "output": "libs/dsl/src/static/assets"
+          },
+          {
+            "glob": "*",
+            "input": "libs/dsl/src/theme",
+            "output": "src/theme"
+          },
+          {
+            "glob": "*.css",
+            "input": "libs/dsl/src/",
+            "output": "libs/dsl/src/"
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/dsl/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dsl"],
+      "options": {
+        "jestConfig": "libs/dsl/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 4400,
+        "config": {
+          "configFolder": "libs/dsl/.storybook"
+        },
+        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "assets": [
+          {
+            "glob": "*.png",
+            "input": "libs/dsl/src/static/assets",
+            "output": "libs/dsl/src/static/assets"
+          }
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/dsl",
+        "config": {
+          "configFolder": "libs/dsl/.storybook"
+        }
+      },
+      "assets": [
+        {
+          "glob": "*.png",
+          "input": "libs/dsl/src/static/assets",
+          "output": "libs/dsl/src/static/assets"
+        }
+      ],
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  }
+}

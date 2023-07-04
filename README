@@ -1,0 +1,61 @@
+---
+Soulify Component Library Usage Guide:
+
+Bitbucket Link: https://bitbucket.org/inilesh/react-component-library-storyook/src/dev/
+
+Branch Name: soulify
+---
+
+To use component library in soulify application, we have created the components in component-library and exported them on verdaccio server after making build of all necessary components.
+
+Also, we have defined the Input properties, event handling or callback properties inside the interfaces of component. We will pass the properties (optional/compulsory) accordingly to use the respective component.
+
+Steps to install Soulify component library:
+
+1)First we will create empty react workspace using command:
+
+npx create-nx-workspace <workspace-name>
+[image](libs/dsl/src/static/assets/.images/Screenshot%20from%202022-04-05%2014-38-38.png)
+
+2)Then we will create react application inside workspace using @iauro/react plugin which is deployed on http://npm-gessa.iauro.co/.
+
+We will first install @iauro/react library using command:
+
+npm install @iauro/react --registry http://npm-gessa.iauro.co/
+
+Note:
+
+If it gives error as “Unable to authenticate, your authentication token seems to be invalid.”.
+
+then insert command npm login –registry http://npm-gessa.iauro.co/
+[image](libs/dsl/src/static/assets/.images/Screenshot%20from%202022-04-06%2009-41-00.png)
+[image](libs/dsl/src/static/assets/.images/Screenshot%20from%202022-04-06%2009-44-40.png)
+
+And then try installing @iauro/react command again
+[image](libs/dsl/src/static/assets/.images/Screenshot%20from%202022-04-05%2014-46-36.png)
+
+After installing @iauro/react library we will create react application from that library with command:
+
+nx g @iauro/react:application <application-name> and we will choose options for theme, route, layout, default micro frontend architecture, styles etc. as we required. Then it will create react application for us preconfigured with the layout, theme, store.
+[image](libs/dsl/src/static/assets/.images/Screenshot%20from%202022-04-05%2014-48-05.png)
+
+After creating application, we will install soulify component library. It is created and deployed on
+
+http://npm-gessa.iauro.co/ with name @iauro/component-library. We will install it with command:
+
+npm install @iauro/component-library --registry http://npm-gessa.iauro.co/
+
+[image](libs/dsl/src/static/assets/.images/Screenshot%20from%202022-04-05%2014-52-32.png)
+
+This will install the library successfully in the application and now you can use components from @iauro/component-library library as and when required. Just need to import that component from @iauro/component-library library.
+
+Run the application using command:
+
+Copy this line in main.css to import css dependencies of icon fonts
+
+@import '../../../node_modules/@iauro/component-library/static/assets/icons/icomoon/style.css';
+
+nx serve <application-name>
+
+Example :.
+[image](libs/dsl/src/static/assets/.images/Screenshot%20from%202022-04-05%2015-00-11.png)

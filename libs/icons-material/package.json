@@ -1,0 +1,11 @@
+{
+  "name": "@gessa/icons-material",
+  "version": "0.0.8",
+  "main": "./index.umd.js",
+  "module": "./index.esm.js",
+  "typings": "./index.d.ts",
+  "dependencies": {},
+  "peerDependencies": {
+    "@emotion/styled": "^11.8.1"
+  }
+}

@@ -1,0 +1,10 @@
+.MuiChip-deleteIcon{
+    color:inherit !important ;
+    cursor: default !important;
+}
+
+.MuiButton-startIcon, .MuiButton-endIcon{
+    margin:0;
+    padding-top: 6%;
+    
+}

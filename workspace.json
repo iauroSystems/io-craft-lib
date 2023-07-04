@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "projects": {
+    "container": "apps/container",
+    "container-e2e": "apps/container-e2e",
+    "dsl": "libs/dsl",
+    "dsl-e2e": "apps/dsl-e2e",
+    "icons-material": "libs/icons-material"
+  }
+}

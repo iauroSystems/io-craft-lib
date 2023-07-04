@@ -1,0 +1,26 @@
+.header-icon-container {
+  padding: 25px 0px 25px 16px;
+  /* margin-left: 30px; */
+}
+/* .headerIcon {
+  padding: 25px 0px 25px 16px;
+} */
+
+.header-icon-box {
+  box-sizing: border-box;
+  height: 30px;
+  width: 100px;
+}
+.full-icon {
+  background: url('../../../static/assets/Iauro_Full_Logo.svg') no-repeat center;
+  height: 35px;
+  width: 100px;
+}
+
+.compressed-icon {
+  background: url('../../../static/assets/Iauro_Compress_Logo.svg') no-repeat
+    left center/cover;
+  height: 35px;
+  width: 38px;
+  margin-left: 5px;
+}
