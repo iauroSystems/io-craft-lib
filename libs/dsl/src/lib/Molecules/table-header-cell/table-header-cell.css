@@ -1,0 +1,8 @@
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: '150px';
+  font-size: 12px;
+}

@@ -1,0 +1,19 @@
+.container {
+  background: white;
+  width: 180px;
+  height: 80px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+}
+
+.sub-container {
+  display: flex;
+  text-align: center;
+  flex-flow: column;
+}

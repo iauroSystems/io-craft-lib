@@ -1,0 +1,28 @@
+{
+  "root": "apps/dsl-e2e",
+  "sourceRoot": "apps/dsl-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/dsl-e2e/cypress.json",
+        "devServerTarget": "dsl:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "dsl:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/dsl-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["dsl"]
+}
