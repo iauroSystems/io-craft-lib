@@ -1,90 +1,121 @@
-# GessaComponentLibrary
+# IO Craft lib
 
-This project was generated using [Nx](https://nx.dev).
+IO Craft component library is for React, designed to provide a collection of reusable UI components for building web applications.
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+## Features
 
-🔎 **Smart, Fast and Extensible Build System**
+- Comprehensive set of reusable React components.
+- Easy integration into new or existing React projects.
+- Customizable styles and themes.
+- Well-documented components with usage examples.
 
-## Adding capabilities to your workspace
+## Prerequisites
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+Before getting started with io craft, please ensure that your development environment meets the following requirements:
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+- Node version >= 14.x.x
+- Npm version >= 8.x.x
+- Nx version = 14.3.5
+- Chrome with Redux dev tools extension
 
-Below are our core plugins:
+### Setup Node, Npm, and Nx on Ubuntu
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+To install and set up Node.js, Npm, and Nx on Ubuntu, follow these commands:
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+```bash
+sudo apt-get update
+sudo apt-get install nodejs npm
+sudo apt-get install
+sudo apt-get install curl
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install nodejs
+sudo npm install -g nx@14.3.5
+```
+After installation, you can check the versions using the following commands:
+```bash
+node --version
+npm --version
+nx --version
+```
+## Setup Node, Npm, and Nx on Mac and Windows
 
-## Generate an application
+To install and set up Node.js, Npm, and Nx on Mac and Windows, follow these steps:
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+Download the Node.js installer from the official website: https://nodejs.org/en/download/.
+Choose the appropriate installer based on your system (32-bit or 64-bit) and run the installation.
+Follow the installation wizard, accepting the terms of usage and specifying the installation path.
+Once the installation is complete, verify the installation by running the following commands in the command prompt or terminal:
+```bash
+node -v
+npm -v
+nx -v
+```
+## How to use this library (DSL).
+1. Clone the repository in you system using git. 
+2. Move to cloned directory by command
+   cd react-component-library-storybook
+3. Checkout to development branch using cmd: ```git checkout development ```
+4. Install all dependencies using :  ```npm install –force```
+5. After successful installation run the component library using:
+````nx run dsl:storybook````
 
-> You can use any of the plugins above to generate applications as well.
+- This will run storybook on url: http://localhost:4400
+## How to use this library in any project:
+To install io craft, you can use npm. Run the following command:
+```bash
+npm install io-craft-library
+```
+## Usage
+Import the components you need from the io craft library and use them in your React application. Here's an example:
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+```bash
+import React from 'react';
+import { Button, Card, Input } from 'io-craft';
 
-## Generate a library
+const App = () => {
+  return (
+    <div>
+      <Button variant="primary">Click me</Button>
+      <Card>
+        <Input type="text" placeholder="Enter your name" />
+      </Card>
+    </div>
+  );
+};
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+export default App;
+```
+For more detailed information on each component and its props, please refer to the documentation.
 
-> You can also use any of the plugins above to generate libraries as well.
+## Contributing
+Contributions are welcome! If you'd like to contribute to io craft, please follow these steps:
 
-Libraries are shareable across libraries and applications. They can be imported from `@gessa-component-library/mylib`.
+- Fork the repository.
+- Create a new branch for your feature/bug fix.
+- Make your changes and commit them.
+- Push your changes to your forked repository.
+- Submit a pull request to the main repository.
+- Please ensure that your code follows the     project's coding conventions and includes appropriate tests.
 
-## Development server
+## Authors
+- Mayur Yambal
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Contributing to IO Craft
+Follow the contributing guidelines if you want to propose a change in the IO Craft core.
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+### Reporting Issues
+If you experience or witness any unacceptable behavior while interacting with our project, please report it to the project maintainers by contacting [mayur.yambal@iauro.com]. All reports will be kept confidential.
 
-## Build
+### Code of Conduct
+We are committed to providing a friendly, safe, and welcoming environment for all contributors and participants. Please review our Code of Conduct to understand our expectations for behavior.
 
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+## Links for reference:
+1. Storybook version deployed on https://lib-react.gessa.io/ visit and check
+how component library behaves by applying inputs
 
-Run `nx affected:test` to execute the unit tests affected by a change.
 
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+## License
+This project is licensed.
