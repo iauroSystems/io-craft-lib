@@ -23,17 +23,17 @@ export interface SlideProps {
 }
 
 export function Slide({
-  checked,
-  defaultChecked,
-  color,
-  disabled,
-  size,
-  value,
-  label,
-  handleClick,
-}: //   icon,
+                        checked,
+                        defaultChecked,
+                        color,
+                        disabled,
+                        size,
+                        value,
+                        label,
+                        handleClick,
+                      }: //   icon,
 //   checkedIcon
-SlideProps) {
+                        SlideProps) {
   return (
     <>
       {label ? (

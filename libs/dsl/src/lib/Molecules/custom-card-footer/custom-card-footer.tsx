@@ -1,6 +1,6 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import React from 'react';
-import { styled } from '@mui/system';
+import {styled} from '@mui/system';
 import themes from 'libs/dsl/src/theme';
 
 const CardFooterContainer = styled('div')({
@@ -14,7 +14,7 @@ const CardFooterContainer = styled('div')({
   padding: '12px 16px',
 });
 
-const Button = styled('button')(({ theme }) => ({
+const Button = styled('button')(({theme}) => ({
   height: '40px',
   width: '70px',
   marginRight: '10px',
@@ -26,11 +26,11 @@ const Button = styled('button')(({ theme }) => ({
 }));
 
 const CustomCardFooter = ({
-  onAccept,
-  onReject,
-  acceptLabel,
-  rejectLabel,
-}) => {
+                            onAccept,
+                            onReject,
+                            acceptLabel,
+                            rejectLabel,
+                          }) => {
   const dslTheme = themes.default;
   return (
     <CardFooterContainer>

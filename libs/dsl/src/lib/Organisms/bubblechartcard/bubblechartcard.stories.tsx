@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 import themes from 'libs/dsl/src/theme';
-import BubbleChartCard, { IBubbleChartCardProps } from './bubblechartcard';
+import BubbleChartCard, {IBubbleChartCardProps} from './bubblechartcard';
 
 export default {
   component: BubbleChartCard,
@@ -94,7 +94,7 @@ Primary.args = {
       chartjs_default_color: themes.default.palette.background.bacopWhite,
       chartjs_grid_color: themes.default.palette.neutral.neu100,
       axis_border_Color: themes.default.palette.neutral.neu100,
-      display_grid: { x: true, y: false },
+      display_grid: {x: true, y: false},
       axis_ticks_color: 'red' || themes.default.palette.text.tex400,
       background_color: themes.default.palette.background.bacopWhite,
       legend_text_color: themes.default.palette.text.tex600,

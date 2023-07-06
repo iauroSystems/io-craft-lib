@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 import React from 'react';
-import CustomDropdown, { CustomDropdownProps } from './custom-dropdown';
+import CustomDropdown, {CustomDropdownProps} from './custom-dropdown';
 
 export default {
   component: CustomDropdown,
@@ -25,12 +25,12 @@ Dropdown.args = {
       console.log('Overall');
     },
     dropdownList: [
-      { label: 'sample1', value: 'sample1' },
-      { label: 'sample2', value: 'sample2' },
-      { label: 'sample3', value: 'sample3' },
-      { label: 'sample4', value: 'sample4' },
-      { label: 'sample5', value: 'sample5' },
-      { label: 'sample6', value: 'sample6' },
+      {label: 'sample1', value: 'sample1'},
+      {label: 'sample2', value: 'sample2'},
+      {label: 'sample3', value: 'sample3'},
+      {label: 'sample4', value: 'sample4'},
+      {label: 'sample5', value: 'sample5'},
+      {label: 'sample6', value: 'sample6'},
     ],
   },
 };
@@ -48,12 +48,12 @@ DropdownIcon.args = {
       console.log('Overall');
     },
     dropdownList: [
-      { label: 'sample1', value: 'sample1' },
-      { label: 'sample2', value: 'sample2' },
-      { label: 'sample3', value: 'sample3' },
-      { label: 'sample4', value: 'sample4' },
-      { label: 'sample5', value: 'sample5' },
-      { label: 'sample6', value: 'sample6' },
+      {label: 'sample1', value: 'sample1'},
+      {label: 'sample2', value: 'sample2'},
+      {label: 'sample3', value: 'sample3'},
+      {label: 'sample4', value: 'sample4'},
+      {label: 'sample5', value: 'sample5'},
+      {label: 'sample6', value: 'sample6'},
     ],
   },
 };

@@ -5,15 +5,16 @@ import '../src/static/assets/icons/icomoon/style.css';
 import themes from '../src/theme';
 import "./tailwind.css";
 
-import { createTheme } from '@mui/material';
+import {createTheme} from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
-import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
-const { addDecorator, addParameters } = require('@storybook/react');
-const { jsxDecorator } = require('storybook-addon-jsx');
+import {StyledEngineProvider, ThemeProvider} from '@mui/material/styles';
+
+const {addDecorator, addParameters} = require('@storybook/react');
+const {jsxDecorator} = require('storybook-addon-jsx');
 
 addDecorator(jsxDecorator);
 addParameters({
-  categoryOrder: ['Nucleus', 'Atoms','Molecules','Organisms'],
+  categoryOrder: ['Nucleus', 'Atoms', 'Molecules', 'Organisms'],
 });
 export const decorators = [
   (Story) => {
@@ -21,8 +22,8 @@ export const decorators = [
     return (
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={currentTheme}>
-          <CssBaseline />
-          <Story />
+          <CssBaseline/>
+          <Story/>
         </ThemeProvider>
       </StyledEngineProvider>
     );

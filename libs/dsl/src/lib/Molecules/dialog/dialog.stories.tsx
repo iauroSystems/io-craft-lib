@@ -1,12 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable react/jsx-no-undef */
-import { Meta } from '@storybook/react';
-import DialogComponent, { DialogProps } from './dialog';
+import {Meta} from '@storybook/react';
+import DialogComponent from './dialog';
 import Box from '@mui/material/Box';
-import { DialogTitle } from '@mui/material';
-import { DialogContent } from '@mui/material';
-import { DialogContentText } from '@mui/material';
-import { withDesign } from 'storybook-addon-designs';
+import {DialogContent, DialogContentText} from '@mui/material';
+import {withDesign} from 'storybook-addon-designs';
 import CustomCardHeader from '../custom-card-header/custom-card-header';
 import CustomCardFooter from '../custom-card-footer/custom-card-footer';
 
@@ -18,8 +16,8 @@ export default {
 
 const DialogChildren = () => {
   return (
-    <Box component="div" sx={{ p: 2 }}>
-       <CustomCardHeader data={{title:"Hello This is Dialog",dropdown:[]}}/>
+    <Box component="div" sx={{p: 2}}>
+      <CustomCardHeader data={{title: "Hello This is Dialog", dropdown: []}}/>
       {/* <DialogTitle>Hello This is Dialog</DialogTitle> */}
       <DialogContent>
         <DialogContentText>
@@ -28,17 +26,17 @@ const DialogChildren = () => {
         </DialogContentText>
       </DialogContent>
       <CustomCardFooter onAccept={function (): void {
-       
-      } } onReject={function (): void {
-        
-      } } acceptLabel={'Save'} rejectLabel={'Exit'}/>
+
+      }} onReject={function (): void {
+
+      }} acceptLabel={'Save'} rejectLabel={'Exit'}/>
     </Box>
   );
 };
 
 export const BasicDailog = () => (
   <DialogComponent open={true}>
-    <DialogChildren />
+    <DialogChildren/>
   </DialogComponent>
 );
 BasicDailog.parameters = {
@@ -49,7 +47,7 @@ BasicDailog.parameters = {
 };
 export const ExtraLargeMaxWidthDialog = () => (
   <DialogComponent open={true} maxWidth="xl">
-    <DialogChildren />
+    <DialogChildren/>
   </DialogComponent>
 );
 ExtraLargeMaxWidthDialog.parameters = {
@@ -60,7 +58,7 @@ ExtraLargeMaxWidthDialog.parameters = {
 };
 export const FullScreenDailog = () => (
   <DialogComponent open={true} fullScreen={true}>
-    <DialogChildren />
+    <DialogChildren/>
   </DialogComponent>
 );
 FullScreenDailog.parameters = {

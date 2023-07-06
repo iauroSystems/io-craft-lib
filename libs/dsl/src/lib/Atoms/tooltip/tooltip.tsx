@@ -24,14 +24,14 @@ export interface TooltipProps {
 }
 
 export function CustomTooltip({
-  title,
-  children,
-  arrow,
-  open,
-  onOpen,
-  onClose,
-  placement,
-}: TooltipProps) {
+                                title,
+                                children,
+                                arrow,
+                                open,
+                                onOpen,
+                                onClose,
+                                placement,
+                              }: TooltipProps) {
   return (
     <>
       <Tooltip

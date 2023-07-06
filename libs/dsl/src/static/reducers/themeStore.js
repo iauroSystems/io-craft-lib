@@ -1,6 +1,6 @@
-import { gessaDark, skyBlue } from '../theme/colors';
-import { lightBlue, red } from '@mui/material/colors';
-import { createSlice } from '@reduxjs/toolkit';
+import {gessaDark, skyBlue} from '../theme/colors';
+import {red} from '@mui/material/colors';
+import {createSlice} from '@reduxjs/toolkit';
 
 const lightText = {
   primary: 'rgb(17, 24, 39)',
@@ -60,6 +60,6 @@ export const themeSlice = createSlice({
 //     }
 // }
 
-export const { setDefaultTheme } = themeSlice.actions;
+export const {setDefaultTheme} = themeSlice.actions;
 
 export default themeSlice.reducer;

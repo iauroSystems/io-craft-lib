@@ -67,7 +67,7 @@ export interface IThemePaletteAT {
   custom?: any;
 }
 
-export { default as dark } from './dark';
-export { default as light } from './light';
-export { default as solarized } from './solarized';
-export { default as appliedTheme } from './appliedTheme';
+export {default as dark} from './dark';
+export {default as light} from './light';
+export {default as solarized} from './solarized';
+export {default as appliedTheme} from './appliedTheme';

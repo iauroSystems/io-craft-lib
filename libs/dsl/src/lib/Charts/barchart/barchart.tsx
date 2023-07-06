@@ -1,19 +1,10 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import React, { useEffect, useRef, useState } from 'react';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Bar, getElementsAtEvent } from 'react-chartjs-2';
-import { useTheme } from '@mui/system';
+import React, {useEffect, useRef, useState} from 'react';
+import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip,} from 'chart.js';
+import {Bar, getElementsAtEvent} from 'react-chartjs-2';
+import {useTheme} from '@mui/system';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import themes from 'libs/dsl/src/theme';
-import { Paper } from '@mui/material';
 import WebFont from 'webfontloader';
 
 export interface IFontData {
@@ -21,6 +12,7 @@ export interface IFontData {
   url: string[];
   defaultFont: string;
 }
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -29,6 +21,7 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+
 interface IColorProps {
   [key: string]: string | number | any;
 }
@@ -45,15 +38,15 @@ export interface BarChartProps {
 }
 
 export function Barchart({
-  data,
-  stacked = false,
-  horizontal = false,
-  xLabel = '',
-  yLabel = '',
-  fontData,
-  chartProps,
-  onChartClick,
-}: BarChartProps) {
+                           data,
+                           stacked = false,
+                           horizontal = false,
+                           xLabel = '',
+                           yLabel = '',
+                           fontData,
+                           chartProps,
+                           onChartClick,
+                         }: BarChartProps) {
   const theme = useTheme();
   const [optionalChartProps, setOptionalChartProps] = useState<any>(chartProps);
   const themeChart = themes.default;
@@ -152,10 +145,10 @@ export function Barchart({
 
       if (_data) {
         _data &&
-          _data.datasets.map((element: any, index: any) => {
-            element.backgroundColor = _data.datasets[index].backgroundColor;
-            return element;
-          });
+        _data.datasets.map((element: any, index: any) => {
+          element.backgroundColor = _data.datasets[index].backgroundColor;
+          return element;
+        });
         setBarchartData(_data);
       }
     }

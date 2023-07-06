@@ -1,4 +1,4 @@
-import { IThemeColor } from '.';
+import {IThemeColor} from '.';
 
 const purple: IThemeColor = {
   50: 'eae4f5',

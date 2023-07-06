@@ -1,9 +1,7 @@
 import React from 'react';
-import CustomCheckbox, { CheckboxProps } from './checkbox';
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
-import Favorite from '@mui/icons-material/Favorite';
-import { Meta, Story } from '@storybook/react';
-import { withDesign } from 'storybook-addon-designs';
+import CustomCheckbox, {CheckboxProps} from './checkbox';
+import {Meta, Story} from '@storybook/react';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   title: 'Atoms/Checkbox',

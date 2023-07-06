@@ -1,6 +1,6 @@
-import TextInputField, { TextfieldProps } from './inputfield-text';
-import { Story, Meta } from '@storybook/react';
-import { withDesign } from 'storybook-addon-designs';
+import TextInputField, {TextfieldProps} from './inputfield-text';
+import {Meta, Story} from '@storybook/react';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   component: TextInputField,

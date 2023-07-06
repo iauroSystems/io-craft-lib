@@ -1,13 +1,12 @@
-import { Typography } from '@mui/material';
+import {Typography} from '@mui/material';
 import React from 'react';
-import IconComponent, {
-  IconComponentProps,
-} from '../../POC/icon-component/icon-component';
+import IconComponent, {IconComponentProps,} from '../../POC/icon-component/icon-component';
 
 interface IText {
   text: string;
   color: string;
 }
+
 export interface ISquareChipProps {
   chipColor: string;
   icon?: IconComponentProps;

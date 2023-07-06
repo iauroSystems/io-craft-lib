@@ -1,19 +1,19 @@
-import CircularProgress, { ICProgressProps } from './custom-circular-progress';
-import { Story, Meta } from '@storybook/react';
-import { withDesign } from 'storybook-addon-designs';
+import CircularProgress, {ICProgressProps} from './custom-circular-progress';
+import {Meta, Story} from '@storybook/react';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   component: CircularProgress,
   title: 'Molecules/CircularProgress',
   argTypes: {
     value: {
-      control: { type: 'range', min: 0, max: 100 },
+      control: {type: 'range', min: 0, max: 100},
     },
     size: {
-      control: { type: 'range', min: 40, max: 200 },
+      control: {type: 'range', min: 40, max: 200},
     },
     thickness: {
-      control: { type: 'range', min: 3, max: 8 },
+      control: {type: 'range', min: 3, max: 8},
     },
   },
   decorators: [withDesign],

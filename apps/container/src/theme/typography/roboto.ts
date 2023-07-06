@@ -1,6 +1,6 @@
 // Font sizes are in rems assuming base font size of 16px
 
-import { IThemeFont } from '.';
+import {IThemeFont} from '.';
 
 const roboto: IThemeFont = {
   h1: {

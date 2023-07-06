@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { Button } from '@mui/material';
-import React, { ReactNode } from 'react';
+import React, {ReactNode} from 'react';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
 export interface DrawerProps {

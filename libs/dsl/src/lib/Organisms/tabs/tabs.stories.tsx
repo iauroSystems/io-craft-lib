@@ -1,6 +1,6 @@
-import Tabs, { TabsProps } from './tabs';
-import { Story, Meta } from '@storybook/react';
-import { withDesign } from 'storybook-addon-designs';
+import Tabs, {TabsProps} from './tabs';
+import {Meta, Story} from '@storybook/react';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   component: Tabs,
@@ -17,21 +17,21 @@ export default {
 } as Meta;
 
 const Template: Story<TabsProps> = (args) => <Tabs {...args} />;
-const tablist=[
-  { label: 'sample1', value: 'sample1' },
-  { label: 'sample2', value: 'sample2' },
-  { label: 'sample3', value: 'sample3' },
-  { label: 'sample4', value: 'sample4' },
-  { label: 'sample5', value: 'sample5' },
-  { label: 'sample6', value: 'sample6' },
-  { label: 'sample7', value: 'sample7' },
-  { label: 'sample8', value: 'sample8' },
-  { label: 'sample9', value: 'sample9' },
-  { label: 'sample10', value: 'sample10' },
-  { label: 'sample11', value: 'sample11' },
-  { label: 'sample12', value: 'sample12' },
-  { label: 'sample13', value: 'sample13' },
-  { label: 'sample14', value: 'sample14' },
+const tablist = [
+  {label: 'sample1', value: 'sample1'},
+  {label: 'sample2', value: 'sample2'},
+  {label: 'sample3', value: 'sample3'},
+  {label: 'sample4', value: 'sample4'},
+  {label: 'sample5', value: 'sample5'},
+  {label: 'sample6', value: 'sample6'},
+  {label: 'sample7', value: 'sample7'},
+  {label: 'sample8', value: 'sample8'},
+  {label: 'sample9', value: 'sample9'},
+  {label: 'sample10', value: 'sample10'},
+  {label: 'sample11', value: 'sample11'},
+  {label: 'sample12', value: 'sample12'},
+  {label: 'sample13', value: 'sample13'},
+  {label: 'sample14', value: 'sample14'},
 ]
 export const HorizontalTabs = Template.bind({});
 HorizontalTabs.args = {

@@ -1,14 +1,14 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { InputBase, Typography } from '@mui/material';
-import { useTheme } from '@mui/system';
+import {InputBase, Typography} from '@mui/material';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import themes from 'libs/dsl/src/theme';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import IconComponent from '../../POC/icon-component/icon-component';
 
 interface IAnyProps {
   [key: string]: string | number | any;
 }
+
 export interface ISearchInputTypes {
   label: string;
   placeholder: string;
@@ -100,7 +100,7 @@ export const SearchInput = (props: ISearchInputTypes) => {
                 setSearchText(e.target.value);
                 props.onChange(e.target.value);
               }}
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{'aria-label': 'search'}}
             />
           </div>
         </Typography>

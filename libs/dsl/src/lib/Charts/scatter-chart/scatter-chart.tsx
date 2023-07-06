@@ -1,16 +1,10 @@
 import styled from '@emotion/styled';
-import { useTheme } from '@mui/system';
-import {
-  Chart as ChartJS,
-  Legend,
-  LinearScale,
-  PointElement,
-  Tooltip,
-} from 'chart.js';
+import {useTheme} from '@mui/system';
+import {Chart as ChartJS, Legend, LinearScale, PointElement, Tooltip,} from 'chart.js';
 import themes from 'libs/dsl/src/theme';
-import { useEffect, useRef, useState } from 'react';
-import { getElementsAtEvent, Scatter } from 'react-chartjs-2';
-import { IFontData } from '../barchart/barchart';
+import {useEffect, useRef, useState} from 'react';
+import {getElementsAtEvent, Scatter} from 'react-chartjs-2';
+import {IFontData} from '../barchart/barchart';
 import WebFont from 'webfontloader';
 
 /* eslint-disable-next-line */
@@ -29,6 +23,7 @@ export interface IScatterDataSets {
   borderColor?: string;
   backgroundColor?: string;
 }
+
 export interface IScatterChartProps {
   labels: string[];
   datasets: IScatterDataSets[];
@@ -100,6 +95,7 @@ export const ScatterChart = (props: IScatterChartProps) => {
       },
     },
   });
+
   function addAlpha(color: string, opacity: number) {
     // coerce values so ti is between 0 and 1.
     const _opacity = Math.round(Math.min(Math.max(opacity || 1, 0), 1) * 255);

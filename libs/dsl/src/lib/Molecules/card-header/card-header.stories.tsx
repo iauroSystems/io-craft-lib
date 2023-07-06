@@ -1,6 +1,7 @@
-import { Story, Meta } from '@storybook/react';
-import { CardHeader, CardHeaderProps } from './card-header';
+import {Meta, Story} from '@storybook/react';
+import {CardHeader, CardHeaderProps} from './card-header';
 import themes from '../../../theme';
+
 export default {
   component: CardHeader,
   title: 'Molecules/Card header',

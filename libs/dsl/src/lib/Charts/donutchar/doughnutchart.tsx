@@ -1,14 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  ArcElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
-import { useTheme } from '@mui/system';
+import React, {useEffect, useState} from 'react';
+import {ArcElement, CategoryScale, Chart as ChartJS, Legend, Title, Tooltip,} from 'chart.js';
+import {Doughnut} from 'react-chartjs-2';
 import themes from 'libs/dsl/src/theme';
 
 ChartJS.register(CategoryScale, ArcElement, Title, Tooltip, Legend);
@@ -18,12 +10,13 @@ export interface DoughnutChartProps {
   legend?: 'top' | 'bottom' | 'left' | 'right' | 'chartArea';
 }
 
-export function DoughnutChart({ data, legend = 'bottom' }: DoughnutChartProps) {
+export function DoughnutChart({data, legend = 'bottom'}: DoughnutChartProps) {
   const theme = themes.default;
   const [chartData, setChartData] = useState<any>({
     datasets: [],
     labels: [],
   });
+
   function addAlpha(color: string, opacity: number) {
     // coerce values so ti is between 0 and 1.
     const _opacity = Math.round(Math.min(Math.max(opacity || 1, 0), 1) * 255);

@@ -1,8 +1,6 @@
-import { Story, Meta } from '@storybook/react';
-import SegmentedControl, { SegmentedControlProps } from './segmented-control';
-import errorImg from '../../../static/assets/images/error.png';
-import { truncateSync } from 'fs';
-import { withDesign } from 'storybook-addon-designs';
+import {Meta, Story} from '@storybook/react';
+import SegmentedControl, {SegmentedControlProps} from './segmented-control';
+import {withDesign} from 'storybook-addon-designs';
 
 const handleEvent = () => {
   console.log('onClick');
@@ -12,8 +10,8 @@ export default {
   component: SegmentedControl,
   title: 'Atoms/Segmented Control',
   argTypes: {
-    onClick: { action: handleEvent },
-    onChange: { action: handleEvent },
+    onClick: {action: handleEvent},
+    onChange: {action: handleEvent},
     color: {
       control: {
         type: 'select',

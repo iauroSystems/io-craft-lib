@@ -1,24 +1,13 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import {
-  ClickAwayListener,
-  Grow,
-  Menu,
-  MenuItem,
-  MenuList,
-  Paper,
-  Popper,
-  Typography,
-  styled,
-} from '@mui/material';
+import {ClickAwayListener, Grow, Menu, MenuItem, MenuList, Paper, Popper, styled, Typography,} from '@mui/material';
 import generateRandomString from 'libs/dsl/src/static/randomString';
 import themes from 'libs/dsl/src/theme';
-import { useEffect, useRef, useState } from 'react';
+import {useEffect, useRef, useState} from 'react';
 
-import IconComponent, {
-  IconType,
-} from '../../POC/icon-component/icon-component';
-import SearchInput, { ISearchInputTypes } from '../header-component/SearchBox';
+import IconComponent, {IconType,} from '../../POC/icon-component/icon-component';
+import SearchInput, {ISearchInputTypes} from '../header-component/SearchBox';
+
 export interface IIconProps {
   name: string;
   size: number;
@@ -27,6 +16,7 @@ export interface IIconProps {
   showToolTip?: any;
   style?: IconType;
 }
+
 export interface ICardExtraProps {
   [key: string]: any;
 }
@@ -36,6 +26,7 @@ export interface ISubmenu {
   icon: IIconProps;
   submenu: ISubmenu[];
 }
+
 /* eslint-disable-next-line */
 export interface CardHeaderProps {
   title: string;
@@ -46,7 +37,7 @@ export interface CardHeaderProps {
   searchAction?: (data: any) => void;
 }
 
-const StyledIconComponent = styled(Menu)(({ theme }) => {
+const StyledIconComponent = styled(Menu)(({theme}) => {
   return {
     '& .MuiMenu-list': {
       padding: 0,
@@ -54,7 +45,8 @@ const StyledIconComponent = styled(Menu)(({ theme }) => {
   };
 });
 
-const elementClicked = (data: any) => {};
+const elementClicked = (data: any) => {
+};
 
 export function CardHeader(props: CardHeaderProps) {
   const themeChart = themes.default;
@@ -65,7 +57,7 @@ export function CardHeader(props: CardHeaderProps) {
   );
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLButtonElement>(null);
-  const StyledCardHeader = styled('div')(({ theme }) => {
+  const StyledCardHeader = styled('div')(({theme}) => {
     return {
       '&': {
         background:
@@ -104,6 +96,7 @@ export function CardHeader(props: CardHeaderProps) {
       setOpen(false);
     }
   }
+
   const prevOpen = useRef(open);
   useEffect(() => {
     if (prevOpen.current === true && open === false) {
@@ -170,7 +163,7 @@ export function CardHeader(props: CardHeaderProps) {
             }}
           >
             {props && props.searchData && (
-              <div style={{ width: '100%' }}>
+              <div style={{width: '100%'}}>
                 <SearchInput
                   label={props.searchData.label || 'Search'}
                   placeholder={props.searchData.placeholder || 'Search'}
@@ -180,119 +173,119 @@ export function CardHeader(props: CardHeaderProps) {
                 />
               </div>
             )}{' '}
-            <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
+            <div style={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
               {props &&
-                props.actions &&
-                props.actions.map((menu: ISubmenu) => {
-                  return (
-                    <div
+              props.actions &&
+              props.actions.map((menu: ISubmenu) => {
+                return (
+                  <div
+                    style={{
+                      position: 'relative',
+                      height: '36px',
+                      width: '36px',
+                      display: 'flex',
+                      flexDirection: 'row',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      backgroundColor:
+                        cardExtraProps?.background_color ||
+                        themeChart.palette.background.bacopWhite,
+                    }}
+                    key={generateRandomString()}
+                  >
+                    <button
+                      key={generateRandomString()}
                       style={{
-                        position: 'relative',
-                        height: '36px',
-                        width: '36px',
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'center',
-                        alignItems: 'center',
                         backgroundColor:
                           cardExtraProps?.background_color ||
                           themeChart.palette.background.bacopWhite,
+                        border: 'none',
+                        padding: 0,
+                        margin: 0,
                       }}
-                      key={generateRandomString()}
+                      ref={anchorRef}
+                      onClick={(e: any) => {
+                        handleToggle();
+                        setMenuSelected(menu);
+                        menuClick(menu);
+                      }}
                     >
-                      <button
+                      <IconComponent
                         key={generateRandomString()}
-                        style={{
-                          backgroundColor:
-                            cardExtraProps?.background_color ||
-                            themeChart.palette.background.bacopWhite,
-                          border: 'none',
-                          padding: 0,
-                          margin: 0,
-                        }}
-                        ref={anchorRef}
-                        onClick={(e: any) => {
-                          handleToggle();
-                          setMenuSelected(menu);
-                          menuClick(menu);
-                        }}
-                      >
-                        <IconComponent
-                          key={generateRandomString()}
-                          name={menu.icon.name}
-                          color={
-                            menu.icon.color ||
-                            themes.default.palette.neutral.neu400
-                          }
-                          size={25}
-                          label={menu.menu}
-                        ></IconComponent>
-                      </button>
+                        name={menu.icon.name}
+                        color={
+                          menu.icon.color ||
+                          themes.default.palette.neutral.neu400
+                        }
+                        size={25}
+                        label={menu.menu}
+                      ></IconComponent>
+                    </button>
 
-                      <Popper
-                        key={generateRandomString()}
-                        open={open}
-                        anchorEl={anchorRef.current}
-                        placement="bottom-start"
-                      >
-                        {({ TransitionProps, placement }) => (
-                          <Grow
-                            {...TransitionProps}
-                            style={{
-                              transformOrigin:
-                                placement === 'bottom-start'
-                                  ? 'left top'
-                                  : 'left bottom',
-                            }}
-                          >
-                            <Paper>
-                              <ClickAwayListener onClickAway={handleClose}>
-                                <MenuList
-                                  key={generateRandomString()}
-                                  autoFocusItem={open}
-                                  id="composition-menu"
-                                  aria-labelledby="composition-button"
-                                  onKeyDown={handleListKeyDown}
-                                >
-                                  {menuSelected &&
-                                    menuSelected.submenu &&
-                                    menuSelected.submenu.map(
-                                      (submenu: ISubmenu) => {
-                                        return (
-                                          <MenuItem
+                    <Popper
+                      key={generateRandomString()}
+                      open={open}
+                      anchorEl={anchorRef.current}
+                      placement="bottom-start"
+                    >
+                      {({TransitionProps, placement}) => (
+                        <Grow
+                          {...TransitionProps}
+                          style={{
+                            transformOrigin:
+                              placement === 'bottom-start'
+                                ? 'left top'
+                                : 'left bottom',
+                          }}
+                        >
+                          <Paper>
+                            <ClickAwayListener onClickAway={handleClose}>
+                              <MenuList
+                                key={generateRandomString()}
+                                autoFocusItem={open}
+                                id="composition-menu"
+                                aria-labelledby="composition-button"
+                                onKeyDown={handleListKeyDown}
+                              >
+                                {menuSelected &&
+                                menuSelected.submenu &&
+                                menuSelected.submenu.map(
+                                  (submenu: ISubmenu) => {
+                                    return (
+                                      <MenuItem
+                                        key={generateRandomString()}
+                                        onClick={(e: any) => {
+                                          menuClick(submenu);
+                                          handleClose(e);
+                                        }}
+                                      >
+                                        {submenu.icon && (
+                                          <IconComponent
                                             key={generateRandomString()}
-                                            onClick={(e: any) => {
-                                              menuClick(submenu);
-                                              handleClose(e);
-                                            }}
-                                          >
-                                            {submenu.icon && (
-                                              <IconComponent
-                                                key={generateRandomString()}
-                                                name={submenu.icon.name}
-                                                color={
-                                                  cardExtraProps?.title_color ||
-                                                  themes.default.palette.text
-                                                    .tex600
-                                                }
-                                                size={25}
-                                                label={submenu.menu}
-                                              ></IconComponent>
-                                            )}
-                                            {submenu.menu}
-                                          </MenuItem>
-                                        );
-                                      }
-                                    )}
-                                </MenuList>
-                              </ClickAwayListener>
-                            </Paper>
-                          </Grow>
-                        )}
-                      </Popper>
-                    </div>
-                  );
-                })}
+                                            name={submenu.icon.name}
+                                            color={
+                                              cardExtraProps?.title_color ||
+                                              themes.default.palette.text
+                                                .tex600
+                                            }
+                                            size={25}
+                                            label={submenu.menu}
+                                          ></IconComponent>
+                                        )}
+                                        {submenu.menu}
+                                      </MenuItem>
+                                    );
+                                  }
+                                )}
+                              </MenuList>
+                            </ClickAwayListener>
+                          </Paper>
+                        </Grow>
+                      )}
+                    </Popper>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

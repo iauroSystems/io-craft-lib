@@ -1,8 +1,7 @@
-import { Story, Meta } from '@storybook/react';
-import Pagination, { PaginationProps } from './custom-pagination';
-import errorImg from '../../../static/assets/images/error.png';
-import { SelectChangeEvent } from '@mui/material';
-import { withDesign } from 'storybook-addon-designs';
+import {Meta, Story} from '@storybook/react';
+import Pagination, {PaginationProps} from './custom-pagination';
+import {SelectChangeEvent} from '@mui/material';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   component: Pagination,

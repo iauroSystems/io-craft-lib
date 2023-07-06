@@ -1,5 +1,5 @@
-import { Story, Meta } from '@storybook/react';
-import ScatterChartCard, { IScatterChartCardProps } from './scatterchartcard';
+import {Meta, Story} from '@storybook/react';
+import ScatterChartCard, {IScatterChartCardProps} from './scatterchartcard';
 import themes from '../../../theme';
 
 export default {
@@ -187,14 +187,14 @@ Primary.args = {
       },
     ],
     chartProps: {
-    chartjs_default_color: themes.default.palette.background.bacopWhite,
-    chartjs_grid_color: themes.default.palette.neutral.neu100,
-    axis_border_Color: themes.default.palette.neutral.neu100,
-    display_grid: { x: true, y: false },
-    axis_ticks_color: themes.default.palette.text.tex400,
-    background_color: themes.default.palette.background.bacopWhite,
-    legend_text_color: themes.default.palette.text.tex600,
-  },
+      chartjs_default_color: themes.default.palette.background.bacopWhite,
+      chartjs_grid_color: themes.default.palette.neutral.neu100,
+      axis_border_Color: themes.default.palette.neutral.neu100,
+      display_grid: {x: true, y: false},
+      axis_ticks_color: themes.default.palette.text.tex400,
+      background_color: themes.default.palette.background.bacopWhite,
+      legend_text_color: themes.default.palette.text.tex600,
+    },
     fontData: {
       families: ['poppins', 'Indie Flower', 'Raleway'],
       url: [

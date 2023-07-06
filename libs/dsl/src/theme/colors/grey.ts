@@ -1,4 +1,4 @@
-import { IThemeColor } from '.';
+import {IThemeColor} from '.';
 
 const grey: IThemeColor = {
   50: '#fafafa',

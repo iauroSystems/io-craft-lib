@@ -1,8 +1,9 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { Meta, Story } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 import themes from 'libs/dsl/src/theme';
-import { withDesign } from 'storybook-addon-designs';
-import HeaderComponent, { IHeaderComponentProps } from './header-component';
+import {withDesign} from 'storybook-addon-designs';
+import HeaderComponent, {IHeaderComponentProps} from './header-component';
+
 export default {
   component: HeaderComponent,
   title: 'Molecules/Header',

@@ -1,6 +1,5 @@
-import { createSelector, createSlice } from '@reduxjs/toolkit';
-import { IRootState } from '.';
-
+import {createSelector, createSlice} from '@reduxjs/toolkit';
+import {IRootState} from '.';
 
 
 export interface IRBlogPost {
@@ -90,5 +89,5 @@ export const blogSlice = createSlice({
   },
 });
 
-export const { setBlogPosts, setActiveBlogPost } = blogSlice.actions;
+export const {setBlogPosts, setActiveBlogPost} = blogSlice.actions;
 export default blogSlice.reducer;

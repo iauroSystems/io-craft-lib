@@ -1,59 +1,68 @@
-.activeRatingItem{
-    fill: #D4B22D;
-    cursor: pointer;
+.activeRatingItem {
+  fill: #D4B22D;
+  cursor: pointer;
 
 }
-.ratingItem{
-    fill: #EBE4E4;
-    cursor: pointer;
+
+.ratingItem {
+  fill: #EBE4E4;
+  cursor: pointer;
 }
 
-.ratingItem:hover{
-    fill: #FEEA3D;
+.ratingItem:hover {
+  fill: #FEEA3D;
 }
-.activeRatingItem:hover{
-    fill: #FEEA3D;
-}
-.ratingRadio{
-    display: none;
-}
-.disabledRating{
 
-    color:#d3d1d1;
-    cursor: default;
-    opacity: 0.56;
+.activeRatingItem:hover {
+  fill: #FEEA3D;
+}
+
+.ratingRadio {
+  display: none;
+}
+
+.disabledRating {
+
+  color: #d3d1d1;
+  cursor: default;
+  opacity: 0.56;
 
 }
-.ratingContainer label{
-    margin-right: 8px;
+
+.ratingContainer label {
+  margin-right: 8px;
 }
 
 
 /* ,,,,,,,,,,,,,,,,,,,,,,,,,,,,, */
 
-.halfRatingContainer{
-    display: flex;
+.halfRatingContainer {
+  display: flex;
 }
 
 
-.fullHalfStarContainer{
-    display: flex;
-    margin-right: 9px;
+.fullHalfStarContainer {
+  display: flex;
+  margin-right: 9px;
 }
 
 
-.halfleftStarContainer{
-    width: 11px; display: block; overflow: hidden;
+.halfleftStarContainer {
+  width: 11px;
+  display: block;
+  overflow: hidden;
 }
-.halfLeftStar{
-    width: 22px;
-    fill: #EBE4E4;
-    cursor: pointer;
+
+.halfLeftStar {
+  width: 22px;
+  fill: #EBE4E4;
+  cursor: pointer;
 }
-.activeHalfLeftStar{
-    width: 22px;
-    cursor: pointer;
-    fill: #D4B22D;
+
+.activeHalfLeftStar {
+  width: 22px;
+  cursor: pointer;
+  fill: #D4B22D;
 }
 
 /* .halfLeftStar:hover{
@@ -65,19 +74,25 @@
 } */
 
 
-.halfRightStarContainer{
-    transform: rotateY(180deg);   width: 11px; display: block; overflow: hidden;
+.halfRightStarContainer {
+  transform: rotateY(180deg);
+  width: 11px;
+  display: block;
+  overflow: hidden;
 }
-.halfRightStar{
-    width: 22px;
-    cursor: pointer;
-    fill: #EBE4E4;
+
+.halfRightStar {
+  width: 22px;
+  cursor: pointer;
+  fill: #EBE4E4;
 }
-.activeHalfRightStar{
-    width: 22px;
-    cursor: pointer;
-    fill: #D4B22D;
+
+.activeHalfRightStar {
+  width: 22px;
+  cursor: pointer;
+  fill: #D4B22D;
 }
+
 /* .halfRightStar:hover{
     fill: #FEEA3D;
 }
@@ -86,11 +101,10 @@
 } */
 
 
-
-.disabledHalfRating{
-    width: 22px;
-    color:#d3d1d1;
-    cursor: default;
-    opacity: 0.56;
+.disabledHalfRating {
+  width: 22px;
+  color: #d3d1d1;
+  cursor: default;
+  opacity: 0.56;
 
 }

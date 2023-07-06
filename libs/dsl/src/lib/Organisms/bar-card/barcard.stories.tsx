@@ -1,5 +1,5 @@
-import { Story, Meta } from '@storybook/react';
-import { BarChartCard, IBarChartCardProps } from './barcard';
+import {Meta, Story} from '@storybook/react';
+import {BarChartCard, IBarChartCardProps} from './barcard';
 import themes from '../../../theme';
 
 export default {
@@ -110,7 +110,7 @@ Primary.args = {
       chartjs_grid_color: themes.default.palette.neutral.neu100,
       bar_thickness: 25,
       axis_border_Color: themes.default.palette.neutral.neu100,
-      display_grid: { x: true, y: false },
+      display_grid: {x: true, y: false},
       axis_ticks_color: themes.default.palette.text.tex400,
       background_color: themes.default.palette.background.bacopWhite,
       legend_text_color: themes.default.palette.text.tex600,

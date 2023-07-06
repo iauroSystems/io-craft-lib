@@ -1,4 +1,4 @@
-import { IThemeColor } from '../colors';
+import {IThemeColor} from '../colors';
 
 interface IThemePaletteCommon {
   black?: string;
@@ -31,6 +31,6 @@ export interface IThemePalette {
   custom?: any;
 }
 
-export { default as dark } from './dark';
-export { default as light } from './light';
-export { default as solarized } from './solarized';
+export {default as dark} from './dark';
+export {default as light} from './light';
+export {default as solarized} from './solarized';

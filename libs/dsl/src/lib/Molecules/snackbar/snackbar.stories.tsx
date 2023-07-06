@@ -1,7 +1,7 @@
-import { Story, Meta } from '@storybook/react';
-import Snackbar, { SnackbarProps } from './snackbar';
-import { action } from '@storybook/addon-actions';
-import { withDesign } from 'storybook-addon-designs';
+import {Meta, Story} from '@storybook/react';
+import Snackbar, {SnackbarProps} from './snackbar';
+import {action} from '@storybook/addon-actions';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   title: 'Molecules/Snackbar',
@@ -9,7 +9,7 @@ export default {
   argTypes: {
     type: {
       options: ['error', 'info', 'success', 'warning'].sort(),
-      control: { type: 'select' },
+      control: {type: 'select'},
     },
     onCloseFunc: {
       action: 'click away',
@@ -99,7 +99,7 @@ ErrorSnackbar.parameters = {
 export const TopLeftSnackbar = Template.bind({});
 TopLeftSnackbar.args = {
   open: true,
-  anchorOrigin: { vertical: 'top', horizontal: 'left' },
+  anchorOrigin: {vertical: 'top', horizontal: 'left'},
   message: 'This is Top Left SnackBar',
   actions: [
     {
@@ -122,7 +122,7 @@ TopLeftSnackbar.parameters = {
 export const TopRightSnackbar = Template.bind({});
 TopRightSnackbar.args = {
   open: true,
-  anchorOrigin: { vertical: 'top', horizontal: 'right' },
+  anchorOrigin: {vertical: 'top', horizontal: 'right'},
   message: 'This is Top Right SnackBar',
   actions: [
     {
@@ -144,7 +144,7 @@ TopRightSnackbar.parameters = {
 export const BottomRightSnackbar = Template.bind({});
 BottomRightSnackbar.args = {
   open: true,
-  anchorOrigin: { vertical: 'bottom', horizontal: 'right' },
+  anchorOrigin: {vertical: 'bottom', horizontal: 'right'},
   message: 'This is Bottom Right SnackBar',
   actions: [
     {

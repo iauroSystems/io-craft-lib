@@ -70,9 +70,9 @@ export * from './lib/Organisms/heatmapchartcard/heatmapchartcard';
 export * from './lib/Organisms/piechartcard/piechartcard';
 export * from './lib/Organisms/polarchartcard/polarchartcard';
 export * from './lib/Organisms/radarchartcard/radarchartcard';
-export * from './lib/Organisms/scatterchartcard/scatterchartcard';  
+export * from './lib/Organisms/scatterchartcard/scatterchartcard';
 export * from './lib/Organisms/stat-card/statChartCard';
-export *from './lib/Organisms/tabs/tabs'
+export * from './lib/Organisms/tabs/tabs'
 export * from './lib/Organisms/tree-view/tree-view';
 export * from './lib/POC/icon-component/icon-component';
 export * from './lib/dsl';

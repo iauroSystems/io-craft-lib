@@ -2,7 +2,6 @@ import MFReactChild from './reactChild';
 import MFReactFederatedApp from './reactFederatedApp';
 
 
-
 export interface IMicroFrontend {
   url: string;
   scope: string;

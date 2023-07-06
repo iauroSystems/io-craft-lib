@@ -1,11 +1,6 @@
-import { useTheme } from '@mui/material';
-import { styled } from '@mui/system';
+import {useTheme} from '@mui/material';
 import React from 'react';
-import {
-  CircularProgressbar,
-  CircularProgressbarWithChildren,
-  buildStyles,
-} from 'react-circular-progressbar';
+import {buildStyles, CircularProgressbarWithChildren,} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 /* eslint-disable-next-line */
@@ -50,8 +45,8 @@ export function Progress(props: ProgressProps) {
   const theme = useTheme();
 
   return (
-    <div style={{ marginBottom: '10vh' }}>
-      <div style={{ marginTop: '3vh', display: 'flex' }}>
+    <div style={{marginBottom: '10vh'}}>
+      <div style={{marginTop: '3vh', display: 'flex'}}>
         {/* <div style={{ width: '30%', marginRight: 30 }}></div> */}
         <div
           style={{
@@ -61,8 +56,8 @@ export function Progress(props: ProgressProps) {
             textAlign: 'center',
           }}
         ></div>
-        <div style={{ width: '40%' }}>
-          {/* <CircularProgressbar value={percentage} text={`${percentage}%`}   strokeWidth={15}  
+        <div style={{width: '40%'}}>
+          {/* <CircularProgressbar value={percentage} text={`${percentage}%`}   strokeWidth={15}
       /> */}
           <CircularProgressbarWithChildren
             value={66}
@@ -77,7 +72,7 @@ export function Progress(props: ProgressProps) {
             {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
 
             <div
-              style={{ fontSize: '12px', marginTop: '5vh', color: '#FFFFFF' }}
+              style={{fontSize: '12px', marginTop: '5vh', color: '#FFFFFF'}}
             >
               Done
             </div>

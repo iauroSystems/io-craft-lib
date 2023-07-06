@@ -1,5 +1,5 @@
-import { gessaDark, skyBlue } from './colors';
-import { lightBlue, red } from '@mui/material/colors';
+import {gessaDark, skyBlue} from './colors';
+import {red} from '@mui/material/colors';
 
 const lightText = {
   primary: 'rgb(17, 24, 39)',

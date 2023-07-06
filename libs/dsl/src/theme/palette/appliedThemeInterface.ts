@@ -6,6 +6,7 @@ export interface IThemePaletteATPrimary {
   pri500: string;
   pri600: string;
 }
+
 export interface IThemePaletteATSecondary {
   sec100: string;
   sec200: string;
@@ -14,6 +15,7 @@ export interface IThemePaletteATSecondary {
   sec500: string;
   sec600: string;
 }
+
 export interface IThemePaletteATText {
   tex100: string;
   tex200: string;

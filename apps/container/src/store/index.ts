@@ -1,5 +1,4 @@
-import blog, { IRBlog } from './blogSlice';
-
+import blog, {IRBlog} from './blogSlice';
 
 
 export interface IRootState {

@@ -1,18 +1,18 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { Story, Meta } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 import themes from 'libs/dsl/src/theme';
 import TableCellComponentV2 from '../../Molecules/table-cell-component-v2/table-cell-component-v2';
-import DatatableCardV1, { IDatatableCardV1Props } from './datatable-card-v1';
+import DatatableCardV1, {IDatatableCardV1Props} from './datatable-card-v1';
 
 export default {
   component: DatatableCardV1,
   title: 'Organisms/Table',
   argTypes: {
     height: {
-      control: { type: 'range', min: 4, max: 1000, step: 4 },
+      control: {type: 'range', min: 4, max: 1000, step: 4},
     },
     width: {
-      control: { type: 'range', min: 4, max: 1000, step: 4 },
+      control: {type: 'range', min: 4, max: 1000, step: 4},
     },
     rowClicked: {},
   },
@@ -121,10 +121,10 @@ CustomerTable.args = {
           ],
         },
         projectType: {
-          text: { value: 'Residential(Subsidy)', variant: 'body2' },
+          text: {value: 'Residential(Subsidy)', variant: 'body2'},
         },
 
-        phoneNumber: { text: { value: '(480)555-0103', variant: 'body2' } },
+        phoneNumber: {text: {value: '(480)555-0103', variant: 'body2'}},
         assignTo: {
           leftAvatar: {
             value: 'Laxman Agarwal',
@@ -193,10 +193,10 @@ CustomerTable.args = {
           ],
         },
         projectType: {
-          text: { value: 'Residential(Subsidy)', variant: 'body2' },
+          text: {value: 'Residential(Subsidy)', variant: 'body2'},
         },
 
-        phoneNumber: { text: { value: '(480)555-0103', variant: 'body2' } },
+        phoneNumber: {text: {value: '(480)555-0103', variant: 'body2'}},
         assignTo: {
           leftAvatar: {
             value: 'Laxman Agarwal',
@@ -265,10 +265,10 @@ CustomerTable.args = {
           ],
         },
         projectType: {
-          text: { value: 'Residential(Subsidy)', variant: 'body2' },
+          text: {value: 'Residential(Subsidy)', variant: 'body2'},
         },
 
-        phoneNumber: { text: { value: '(480)555-0103', variant: 'body2' } },
+        phoneNumber: {text: {value: '(480)555-0103', variant: 'body2'}},
         assignTo: {
           leftAvatar: {
             value: 'Laxman Agarwal',
@@ -337,10 +337,10 @@ CustomerTable.args = {
           ],
         },
         projectType: {
-          text: { value: 'Residential(Subsidy)', variant: 'body2' },
+          text: {value: 'Residential(Subsidy)', variant: 'body2'},
         },
 
-        phoneNumber: { text: { value: '(480)555-0103', variant: 'body2' } },
+        phoneNumber: {text: {value: '(480)555-0103', variant: 'body2'}},
         assignTo: {
           leftAvatar: {
             value: 'Laxman Agarwal',
@@ -409,10 +409,10 @@ CustomerTable.args = {
           ],
         },
         projectType: {
-          text: { value: 'Residential(Subsidy)', variant: 'body2' },
+          text: {value: 'Residential(Subsidy)', variant: 'body2'},
         },
 
-        phoneNumber: { text: { value: '(480)555-0103', variant: 'body2' } },
+        phoneNumber: {text: {value: '(480)555-0103', variant: 'body2'}},
         assignTo: {
           leftAvatar: {
             value: 'Laxman Agarwal',
@@ -481,10 +481,10 @@ CustomerTable.args = {
           ],
         },
         projectType: {
-          text: { value: 'Residential(Subsidy)', variant: 'body2' },
+          text: {value: 'Residential(Subsidy)', variant: 'body2'},
         },
 
-        phoneNumber: { text: { value: '(480)555-0103', variant: 'body2' } },
+        phoneNumber: {text: {value: '(480)555-0103', variant: 'body2'}},
         assignTo: {
           leftAvatar: {
             value: 'Laxman Agarwal',

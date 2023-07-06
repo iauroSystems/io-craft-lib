@@ -1,5 +1,5 @@
-import { styled } from '@mui/system';
-import { useEffect, useState } from 'react';
+import {styled} from '@mui/system';
+import {useEffect, useState} from 'react';
 import './icon-component.css';
 
 // import '../../../static/assets/icons/icomoon/style.css';
@@ -21,7 +21,7 @@ export interface IconComponentProps {
 
 export type IconType = 'regular' | 'boxed';
 
-const StyledIconComponent = styled('div')(({ theme }) => {
+const StyledIconComponent = styled('div')(({theme}) => {
   return {
     icon_class: {
       span: {

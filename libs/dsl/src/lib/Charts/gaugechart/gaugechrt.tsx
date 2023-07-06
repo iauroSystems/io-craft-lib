@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect} from 'react';
 import './gaugechart.css';
 
 export interface GaugeChartProps {
@@ -14,16 +14,16 @@ export interface GaugeChartProps {
 }
 
 function GaugeChart({
-  needleValue,
-  needleColor,
-  needleLength,
-  needleArc = 5,
-  barColor = 'gray',
-  colors = ['green', 'orange', 'red'],
-  barThickness = 1,
-  gaugeWidth = '400',
-  gaugeheight = '400',
-}: GaugeChartProps) {
+                      needleValue,
+                      needleColor,
+                      needleLength,
+                      needleArc = 5,
+                      barColor = 'gray',
+                      colors = ['green', 'orange', 'red'],
+                      barThickness = 1,
+                      gaugeWidth = '400',
+                      gaugeheight = '400',
+                    }: GaugeChartProps) {
   const drawNiddle = async () => {
     const gauge = document.querySelector('#gauge-niddle');
     const gb = gauge.getBoundingClientRect();
@@ -168,7 +168,7 @@ function GaugeChart({
   const canvasProps: any = {
     width: gaugeWidth,
     height: gaugeheight,
-    style: { position: 'absolute', left: 0, top: 0 },
+    style: {position: 'absolute', left: 0, top: 0},
   };
 
   const screenSize = document.documentElement.clientWidth;

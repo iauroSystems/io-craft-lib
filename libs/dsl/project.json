@@ -6,13 +6,18 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/libs/dsl",
         "tsConfig": "libs/dsl/tsconfig.lib.json",
         "project": "libs/dsl/package.json",
         "entryFile": "libs/dsl/src/index.ts",
-        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "external": [
+          "react/jsx-runtime",
+          "@emotion/styled/base"
+        ],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
@@ -41,14 +46,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/dsl/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "libs/dsl/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/dsl"],
+      "outputs": [
+        "coverage/libs/dsl"
+      ],
       "options": {
         "jestConfig": "libs/dsl/jest.config.js",
         "passWithNoTests": true
@@ -62,7 +73,10 @@
         "config": {
           "configFolder": "libs/dsl/.storybook"
         },
-        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "external": [
+          "react/jsx-runtime",
+          "@emotion/styled/base"
+        ],
         "assets": [
           {
             "glob": "*.png",
@@ -79,7 +93,9 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "uiFramework": "@storybook/react",
         "outputPath": "dist/storybook/dsl",

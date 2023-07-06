@@ -1,5 +1,3 @@
-
-
 interface IMicrofrontends {
   showHeader: boolean;
 }

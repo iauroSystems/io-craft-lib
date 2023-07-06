@@ -1,23 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  ArcElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Doughnut, getElementsAtEvent } from 'react-chartjs-2';
-import { useTheme } from '@mui/system';
+import React, {useEffect, useRef, useState} from 'react';
+import {ArcElement, CategoryScale, Chart as ChartJS, Legend, Title, Tooltip,} from 'chart.js';
+import {Doughnut, getElementsAtEvent} from 'react-chartjs-2';
+import {useTheme} from '@mui/system';
 import themes from 'libs/dsl/src/theme';
 import WebFont from 'webfontloader';
-import { IFontData } from '../barchart/barchart';
+import {IFontData} from '../barchart/barchart';
 
 ChartJS.register(CategoryScale, ArcElement, Title, Tooltip, Legend);
 
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface DoughnutChartProps {
   data: any;
   legend?: 'top' | 'bottom' | 'left' | 'right' | 'chartArea';
@@ -27,12 +21,12 @@ export interface DoughnutChartProps {
 }
 
 export const DoughnutChart = ({
-  data,
-  legend = 'right',
-  fontData,
-  chartProps,
-  onChartClick,
-}: DoughnutChartProps) => {
+                                data,
+                                legend = 'right',
+                                fontData,
+                                chartProps,
+                                onChartClick,
+                              }: DoughnutChartProps) => {
   const theme = useTheme();
   const [optionalChartProps, setOptionalChartProps] = useState<any>(chartProps);
   const themeChart = themes.default;
@@ -41,6 +35,7 @@ export const DoughnutChart = ({
     datasets: [],
     labels: [],
   });
+
   function addAlpha(color: string, opacity: number) {
     // coerce values so ti is between 0 and 1.
     const _opacity = Math.round(Math.min(Math.max(opacity || 1, 0), 1) * 255);

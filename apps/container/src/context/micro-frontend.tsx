@@ -1,17 +1,7 @@
-import React, {
-  createContext,
-  useState,
-  FC,
-  ReactNode,
-  useEffect,
-} from 'react';
-import Remotes, {
-  IMicroFrontend,
-  IMicroFrontends,
-} from '../micro-frontend/remotes';
+import React, {createContext, FC, ReactNode, useEffect, useState,} from 'react';
+import Remotes, {IMicroFrontend, IMicroFrontends,} from '../micro-frontend/remotes';
 import getSuspender from '../utils/getSuspender';
 import loadDynamicScript from '../utils/loadDynamicScript';
-
 
 
 // type IRemoteScope = string;
@@ -82,7 +72,7 @@ const loadMicroFrontends = () => {
 
         // Add script
         loadDynamicScript(remote.url)
-          .then(({ element }) => {
+          .then(({element}) => {
             // Add slices to object
             Object.keys(remote.slices).forEach(async (key: any, index2) => {
               const slice = remote.slices[key];
@@ -115,7 +105,7 @@ const loadMicroFrontends = () => {
               checkRemoteDone(element);
             });
           })
-          .catch(({ message }) => {
+          .catch(({message}) => {
             console.warn(
               `Microfrontend at ${remote.url} is unreachable, make sure the service is running`
             );
@@ -147,7 +137,7 @@ export const MicroFrontendContext =
   //   createContext<MicrofrontendContextType | null>(null);
   createContext<any>(null);
 
-export const MicroFrontendProvider: FC<ReactNode> = ({ children }) => {
+export const MicroFrontendProvider: FC<ReactNode> = ({children}) => {
   const [microFrontends, setMicroFrontends] = useState<any>({
     slices: {},
     routes: [],
@@ -159,7 +149,7 @@ export const MicroFrontendProvider: FC<ReactNode> = ({ children }) => {
         setMicroFrontends={setMicroFrontends}
       >
         <MicroFrontendContext.Provider
-          value={{ microFrontends, setMicroFrontends }}
+          value={{microFrontends, setMicroFrontends}}
         >
           {children}
         </MicroFrontendContext.Provider>

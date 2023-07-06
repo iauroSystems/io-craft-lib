@@ -1,5 +1,5 @@
-import { dark } from './palette';
-import { roboto } from './typography';
+import {dark} from './palette';
+import {roboto} from './typography';
 
 const darkTheme = {
   palette: dark,

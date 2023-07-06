@@ -1,4 +1,4 @@
-import { IThemeColor } from '.';
+import {IThemeColor} from '.';
 
 const ebonyClay: IThemeColor = {
   50: '#e5e6e8',

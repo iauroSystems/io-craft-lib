@@ -1,6 +1,3 @@
-import { useContext } from 'react';
-import { useRoutes } from 'react-router';
-import { RouteContext } from '../../context';
 // import { RouteContextType } from '../../types/routes';
 
 const Layout = (props: any) => {

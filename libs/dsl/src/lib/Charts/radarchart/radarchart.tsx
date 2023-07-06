@@ -1,19 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   Chart as ChartJS,
-  RadialLinearScale,
-  PointElement,
-  LineElement,
   Filler,
-  Tooltip,
   Legend,
+  LineElement,
+  PointElement,
+  RadialLinearScale,
   ScriptableContext,
+  Tooltip,
 } from 'chart.js';
-import { getElementsAtEvent, Radar } from 'react-chartjs-2';
-import { useTheme } from '@mui/system';
+import {getElementsAtEvent, Radar} from 'react-chartjs-2';
+import {useTheme} from '@mui/system';
 import themes from 'libs/dsl/src/theme';
 import WebFont from 'webfontloader';
-import { IFontData } from '../barchart/barchart';
+import {IFontData} from '../barchart/barchart';
 
 ChartJS.register(
   RadialLinearScale,
@@ -37,12 +37,12 @@ export interface RadarChartProps {
 }
 
 export function RadarChart({
-  data,
-  legend = 'right',
-  fontData,
-  chartProps,
-  onChartClick,
-}: RadarChartProps) {
+                             data,
+                             legend = 'right',
+                             fontData,
+                             chartProps,
+                             onChartClick,
+                           }: RadarChartProps) {
   const [chartData, setChartData] = useState<any>({
     datasets: [],
     labels: [],
@@ -53,6 +53,7 @@ export function RadarChart({
     const _opacity = Math.round(Math.min(Math.max(opacity || 1, 0), 1) * 255);
     return color + _opacity.toString(16).toUpperCase();
   }
+
   const theme = useTheme();
   const [optionalChartProps, setOptionalChartProps] = useState<any>(chartProps);
   const themeChart = themes.default;

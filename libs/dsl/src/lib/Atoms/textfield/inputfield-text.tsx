@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { useState, useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl, { useFormControl } from '@mui/material/FormControl';
+import FormControl, {useFormControl} from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
@@ -29,7 +28,7 @@ export default function TextInputField(props: TextfieldProps) {
     <Box
       component="form"
       sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
+        '& > :not(style)': {m: 1, width: '25ch'},
       }}
       noValidate
       autoComplete="on"
@@ -49,7 +48,7 @@ export default function TextInputField(props: TextfieldProps) {
 
 
 function MyFormHelperText() {
-  const { focused } = useFormControl() || {};
+  const {focused} = useFormControl() || {};
 
   const helperText = React.useMemo(() => {
     if (focused) {
@@ -65,7 +64,7 @@ function MyFormHelperText() {
 export function UseFormControl(props: TextfieldProps) {
   return (
     <Box component="form" noValidate autoComplete="off">
-      <FormControl sx={{ width: '25ch' }}>
+      <FormControl sx={{width: '25ch'}}>
         <InputLabel>{props.label}</InputLabel>
         <OutlinedInput
           placeholder={props.placeholder}
@@ -74,7 +73,7 @@ export function UseFormControl(props: TextfieldProps) {
           fullWidth
           color={props.color}
         />
-        <MyFormHelperText />
+        <MyFormHelperText/>
       </FormControl>
     </Box>
   );

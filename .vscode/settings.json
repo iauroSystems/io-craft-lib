@@ -10,7 +10,6 @@
     "source.removeUnusedImports": true,
     "source.organizeImports": true
   },
-
   // "git.mergeEditor": false,
   // "editor.codeLens": true,
   "[typescriptreact]": {

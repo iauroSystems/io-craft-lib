@@ -20,7 +20,7 @@ export default {
 
 // const Template: Story<ColorProps> = (args) => <Color {...args} />;
 
-export { default as Divider } from './divider';
+export {default as Divider} from './divider';
 // Default.args = {
 //   // title: 'Hello',
 // };

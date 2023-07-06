@@ -1,4 +1,4 @@
-import { IThemePaletteAT } from '.';
+import {IThemePaletteAT} from '.';
 
 const chartColor = {
   chart: [

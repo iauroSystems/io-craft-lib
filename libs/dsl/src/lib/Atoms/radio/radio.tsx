@@ -1,7 +1,7 @@
 import React from 'react';
 import Radio from '@mui/material/Radio';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { Box } from '@mui/material';
+import {Box} from '@mui/material';
 
 export interface RadioProps {
   checked: boolean;
@@ -25,17 +25,17 @@ export interface RadioProps {
 }
 
 export function CustomRadio({
-  checked,
-  checkedIcon,
-  color,
-  disabled,
-  icon,
-  size,
-  value,
-  defaultChecked,
-  label,
-  handleClick,
-}: RadioProps) {
+                              checked,
+                              checkedIcon,
+                              color,
+                              disabled,
+                              icon,
+                              size,
+                              value,
+                              defaultChecked,
+                              label,
+                              handleClick,
+                            }: RadioProps) {
   return (
     <Box>
       {label ? (

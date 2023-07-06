@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Avatar, Typography } from '@mui/material';
+import {Avatar, Typography} from '@mui/material';
 import Badge from '@mui/material/Badge';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import themes from 'libs/dsl/src/theme';
@@ -34,7 +34,7 @@ export function UserAvatar(props: IUserAvatarProps) {
     }
   };
 
-  const StyledBadge = styled(Badge)(({ theme }) => ({
+  const StyledBadge = styled(Badge)(({theme}) => ({
     '& .MuiBadge-badge': {
       backgroundColor: getStatusColor(props.status),
       color: getStatusColor(props.status),
@@ -71,10 +71,10 @@ export function UserAvatar(props: IUserAvatarProps) {
   return (
     <StyledBadge
       overlap="circular"
-      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
       variant="dot"
     >
-      {props.image && <img src={props.image} width={'36px'} height={'36px'} />}
+      {props.image && <img src={props.image} width={'36px'} height={'36px'}/>}
       {props?.text && (
         <Avatar
           sx={{

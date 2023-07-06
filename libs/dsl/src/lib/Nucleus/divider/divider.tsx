@@ -1,5 +1,4 @@
-import { Typography } from '@mui/material';
-import { Divider as MuiDivider } from '@mui/material';
+import {Divider as MuiDivider, Typography} from '@mui/material';
 import Chip from '@mui/material/Chip';
 import './divider.css';
 
@@ -9,7 +8,7 @@ export function Divider(props: any) {
       <Typography variant="h6" className="divider-heading">
         Default Divider
       </Typography>
-      <MuiDivider />
+      <MuiDivider/>
       <Typography variant="h6" className="divider-heading">
         Divider with title
       </Typography>
@@ -45,7 +44,7 @@ export function Divider(props: any) {
           marginTop: '10px',
         }}
       >
-        <Chip label="CHIP" />
+        <Chip label="CHIP"/>
       </MuiDivider>
 
       <Typography variant="h6" className="divider-heading">

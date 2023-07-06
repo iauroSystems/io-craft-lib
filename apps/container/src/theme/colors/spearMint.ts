@@ -1,4 +1,4 @@
-import { IThemeColor } from '.';
+import {IThemeColor} from '.';
 
 const spearMint: IThemeColor = {
   '50': '#edf9f5',

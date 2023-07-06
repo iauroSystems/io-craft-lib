@@ -1,40 +1,39 @@
-import { Box, Typography } from '@mui/material';
-import { LinearProgress as MuiLinearProgress } from '@mui/material';
-import { styled } from '@mui/system';
+import {Box, LinearProgress as MuiLinearProgress, Typography} from '@mui/material';
+import {styled} from '@mui/system';
 
 
-const StyledProgressComponent = styled(Box)(({ theme }) => {
+const StyledProgressComponent = styled(Box)(({theme}) => {
   return {
-   ".progress-wrapper":{
-    display: 'flex', alignItems: 'flex-end', flexDirection: 'column'
-   },
-   ".other-wrap":{
-    width: '100%'
-   },'.typography-wrapper':{
-    minWidth: 35
-   }
+    ".progress-wrapper": {
+      display: 'flex', alignItems: 'flex-end', flexDirection: 'column'
+    },
+    ".other-wrap": {
+      width: '100%'
+    }, '.typography-wrapper': {
+      minWidth: 35
+    }
   };
 });
 
 function LinearProgressWithLabel(props: any) {
-  
+
   return (
     <StyledProgressComponent>
-    <Box className='progress-wrapper'>
-      <Box className='other-wrap'>
-        <MuiLinearProgress
-          variant={props.variant}
-          color={props.color}
-          value={props.value}
-          {...props}
-        />
+      <Box className='progress-wrapper'>
+        <Box className='other-wrap'>
+          <MuiLinearProgress
+            variant={props.variant}
+            color={props.color}
+            value={props.value}
+            {...props}
+          />
+        </Box>
+        <Box className='typography-wrapper'>
+          <Typography variant="body2" color="text.secondary">{`${Math.round(
+            props.value
+          )}%`}</Typography>
+        </Box>
       </Box>
-      <Box className='typography-wrapper'>
-        <Typography variant="body2" color="text.secondary">{`${Math.round(
-          props.value
-        )}%`}</Typography>
-      </Box>
-    </Box>
     </StyledProgressComponent>
   );
 }

@@ -1,14 +1,14 @@
-import Breadcrumb, { BreadcrumbProps } from './breadcrumb';
-import { Story, Meta } from '@storybook/react';
-import { withDesign } from 'storybook-addon-designs';
+import Breadcrumb, {BreadcrumbProps} from './breadcrumb';
+import {Meta, Story} from '@storybook/react';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   component: Breadcrumb,
-  
+
   title: 'Molecules/Breadcrumb',
   argTypes: {
-    color:{ control: 'color' },
-    iconColor: { control: 'color' },
+    color: {control: 'color'},
+    iconColor: {control: 'color'},
     iconName: {
       options: [
         '3d_rotation',
@@ -636,14 +636,14 @@ export default {
         'zoom_in_black_24dp',
         'zoom_out_black_24dp',
       ].sort(),
-      control: { type: 'select' },
+      control: {type: 'select'},
     },
     iconSize: {
-      control: { type: 'range', min: 4, max: 256, step: 4 },
+      control: {type: 'range', min: 4, max: 256, step: 4},
     },
     iconStyle: {
       options: ['regular', 'boxed'].sort(),
-      control: { type: 'select' },
+      control: {type: 'select'},
     },
   },
   decorators: [withDesign],

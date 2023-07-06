@@ -1,4 +1,4 @@
-import { IThemeColor } from '.';
+import {IThemeColor} from '.';
 
 const aquaBlue: IThemeColor = {
   50: '#e4fafd',

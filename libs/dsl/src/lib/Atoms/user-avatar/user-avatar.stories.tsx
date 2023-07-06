@@ -1,8 +1,8 @@
-import { Story, Meta } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import themes from 'libs/dsl/src/theme';
-import { withDesign } from 'storybook-addon-designs';
-import UserAvatar, { IUserAvatarProps } from './user-avatar';
+import {withDesign} from 'storybook-addon-designs';
+import UserAvatar, {IUserAvatarProps} from './user-avatar';
 
 export default {
   component: UserAvatar,

@@ -20,31 +20,31 @@ pipelines:
       - step:
           name: Build and Test
           script:
-          
+
             - pwd
             - ls
-            
+
             - export DOCKER_BUILDKIT=0
             - docker login -u $DOCKER_USER -p $DOCKER_PASS
             - apk add git
             - apk get update
             - apk add --update nodejs npm
-            - npm i nx -g  
-            - npm set ca null 
-            - npm config set https-proxy null 
-            - npm config set proxy null 
-            - npm config set strict-ssl false  
+            - npm i nx -g
+            - npm set ca null
+            - npm config set https-proxy null
+            - npm config set proxy null
+            - npm config set strict-ssl false
             - npm config set @gessa:registry http://npm-gessa.gessa.io/
-            - npm install npm-check 
-            - NODE_ENV=development nx run dsl:build-storybook --outputPath=server/apps/storybook 
+            - npm install npm-check
+            - NODE_ENV=development nx run dsl:build-storybook --outputPath=server/apps/storybook
             - ls
             - cd server
             - ls
             - export tag=$(/latest.sh storybook-react)
-            
-            - docker build -t iaurosystems/storybook-react:$tag . 
-                  
-            
+
+            - docker build -t iaurosystems/storybook-react:$tag .
+
+
 
             - rm -rf *
             - git clone https://$BIT_B_USERNAME:$BIT_B@bitbucket.org/inilesh/microservices-deployment.git
@@ -52,44 +52,44 @@ pipelines:
             - ls
             - export tag=$(/latest.sh storybook-react)
             - export IMAGE_TAG=docker.io/iaurosystems/storybook-react:$tag
-                   
+
             - docker push iaurosystems/storybook-react:$tag
             - sed -i "s|docker.io.*|$IMAGE_TAG|" gessa-component-lib-react/deployment.yaml
-           
+
             - aws configure set aws_access_key_id $AWS_ACCESS_ID && aws configure set aws_secret_access_key $AWS_ACCESS_SECRET && aws eks update-kubeconfig --name gessa-eks-Gxc5mFpR --region us-east-2
-            
+
             - kubectl get ns
             - git remote -v
             - git status
 
             - git config --global user.name "BIT_B_USERNAME"
             - git config --global user.email "BIT_B_EMAIL"
-            
-            
-          
+
+
+
             - kubectl apply -f gessa-component-lib-react/deployment.yaml -n gessa
             - cat gessa-component-lib-react/deployment.yaml
             - git add gessa-component-lib-react/deployment.yaml
-                  
-              
-          
-            
+
+
+
+
             - git commit -m "deployed gessa-component-lib-react svc with bitbucket pipeline"
             - git push https://$BIT_B_USERNAME:$BIT_B@bitbucket.org/inilesh/microservices-deployment.git
-            
+
           caches:
             - node
             - docker
-         
-        
 
 
 
-             
+
+
+
           services:
             - docker
 
-# definitions: 
-#   services: 
-#     docker: 
+# definitions:
+#   services:
+#     docker:
 #       memory: 4096

@@ -7,10 +7,8 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import React, { useState } from 'react';
-import IconComponent, {
-  IconComponentProps,
-} from '../../POC/icon-component/icon-component';
+import React, {useState} from 'react';
+import IconComponent, {IconComponentProps,} from '../../POC/icon-component/icon-component';
 
 export interface CustomDropdownProps {
   data: DropdownDataProps;
@@ -25,10 +23,10 @@ export interface DropdownDataProps {
     label: string;
     value: string;
   }>;
-  
+
 }
 
-const CustomDropdown = ({ data }: CustomDropdownProps) => {
+const CustomDropdown = ({data}: CustomDropdownProps) => {
   const [selectedValue, setSelectedValue] = useState(data?.selectedValue || '');
   const [open, setOpen] = useState(true);
 
@@ -38,7 +36,7 @@ const CustomDropdown = ({ data }: CustomDropdownProps) => {
   };
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 120, width: '100%' }} size="small">
+    <FormControl sx={{m: 1, minWidth: 120, width: '100%'}} size="small">
       {!selectedValue && open && (
         <InputLabel
           id="demo-select-small"
@@ -74,7 +72,7 @@ const CustomDropdown = ({ data }: CustomDropdownProps) => {
         onFocus={() => setOpen(false)}
         onBlur={() => setOpen(true)}
         input={
-          <OutlinedInput sx={{ height: '35px', pt: 1, pb: 1, pl: 0, pr: 0 }} />
+          <OutlinedInput sx={{height: '35px', pt: 1, pb: 1, pl: 0, pr: 0}}/>
         }
         sx={{
           height: '35px',
@@ -90,7 +88,7 @@ const CustomDropdown = ({ data }: CustomDropdownProps) => {
       >
         {data?.dropdownList.map((name, index) => (
           <MenuItem key={index} value={name.label}>
-            <ListItemText primary={name.label} />
+            <ListItemText primary={name.label}/>
           </MenuItem>
         ))}
       </Select>

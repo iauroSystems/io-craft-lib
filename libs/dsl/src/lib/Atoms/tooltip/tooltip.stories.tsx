@@ -1,8 +1,7 @@
-import { TooltipProps } from './tooltip';
-import { Meta, Story } from '@storybook/react';
+import CustomTooltip, {TooltipProps} from './tooltip';
+import {Meta, Story} from '@storybook/react';
 import React from 'react';
-import CustomTooltip from './tooltip';
-import { withDesign } from 'storybook-addon-designs';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   title: 'Atoms/Tooltip',
@@ -11,7 +10,7 @@ export default {
 } as Meta;
 
 const Template: Story<TooltipProps> = (args) => (
-  <div style={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
+  <div style={{display: 'grid', placeItems: 'center', height: '100vh'}}>
     {' '}
     <CustomTooltip {...args} />{' '}
   </div>

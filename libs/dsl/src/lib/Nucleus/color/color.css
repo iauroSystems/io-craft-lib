@@ -1,7 +1,7 @@
 /* .main_container { */
-  /* width: 90vh; */
-  /* height: 70px; */
-  /* border: 1px solid #b32c2c; */
+/* width: 90vh; */
+/* height: 70px; */
+/* border: 1px solid #b32c2c; */
 /* } */
 .sub_container {
   background: white;
@@ -13,9 +13,11 @@
   margin: 8px;
   border-radius: 10px;
 }
+
 .box {
   text-align: center;
 }
+
 .heading {
   /* margin: 8px; */
   font-weight: 600;
@@ -33,7 +35,7 @@
 .color_name {
   color: #a0a0a0;
   padding: 6px;
-} 
+}
 
 .color-box {
   width: 380px !important;

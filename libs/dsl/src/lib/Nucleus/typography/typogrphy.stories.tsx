@@ -1,6 +1,5 @@
-import { Story, Meta } from '@storybook/react';
-import errorImg from './error.png';
 import Typography from './typography'
+
 export default {
   title: 'Nucleus/Typography',
   parameters: {
@@ -17,4 +16,4 @@ export default {
     },
   },
 };
-export { default as Typography } from './typography';
+export {default as Typography} from './typography';

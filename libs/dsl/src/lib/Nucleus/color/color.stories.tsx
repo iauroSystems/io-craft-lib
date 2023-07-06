@@ -1,5 +1,5 @@
-import { Story, Meta } from '@storybook/react';
 import Color from './color';
+
 export default {
   title: 'Nucleus/Colors',
   component: Color,
@@ -17,4 +17,4 @@ export default {
     },
   },
 };
-export { default as Color } from './color';
+export {default as Color} from './color';

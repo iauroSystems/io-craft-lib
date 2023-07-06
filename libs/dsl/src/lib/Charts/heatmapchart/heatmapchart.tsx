@@ -1,5 +1,5 @@
-import { Box, Typography } from '@mui/material';
-import { styled, useTheme } from '@mui/system';
+import {Box, Typography} from '@mui/material';
+import {styled, useTheme} from '@mui/system';
 import Chart from 'react-apexcharts';
 import './heatmap.css';
 
@@ -46,13 +46,13 @@ const colorPlates = (colors: Array<rangeColor>) => {
 };
 
 export function Heatmap({
-  size,
-  data,
-  xLabels,
-  showToolbar,
-  rangeColors,
-}: HeatmapProps) {
-  const themes:any = useTheme();
+                          size,
+                          data,
+                          xLabels,
+                          showToolbar,
+                          rangeColors,
+                        }: HeatmapProps) {
+  const themes: any = useTheme();
   let screenWidth = screen.width;
   let minwidth = 800;
   let defaultHeight = 300;

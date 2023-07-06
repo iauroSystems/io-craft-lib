@@ -1,18 +1,15 @@
-import { styled } from '@mui/system';
-import { useTheme } from '@mui/system';
+import {styled, useTheme} from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
-import ScatterChart, {
-  IScatterChartProps,
-} from '../../Charts/scatter-chart/scatter-chart';
-import CardHeader, {
-  CardHeaderProps,
-} from '../../Molecules/card-header/card-header';
+import ScatterChart, {IScatterChartProps,} from '../../Charts/scatter-chart/scatter-chart';
+import CardHeader, {CardHeaderProps,} from '../../Molecules/card-header/card-header';
 import './scatterchartcard.css';
 import themes from 'libs/dsl/src/theme';
+
 /* eslint-disable-next-line */
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface IScatterChartCardProps {
   headerData: CardHeaderProps;
   chartData: IScatterChartProps;
@@ -25,7 +22,7 @@ export function ScatterChartCard(props: IScatterChartCardProps) {
   const theme = useTheme();
   const themeChart = themes;
 
-  const StyledScatterChartCard = styled('div')(({ theme }) => {
+  const StyledScatterChartCard = styled('div')(({theme}) => {
     return {
       '&': {
         background:
@@ -44,7 +41,7 @@ export function ScatterChartCard(props: IScatterChartCardProps) {
   };
   return (
     <StyledScatterChartCard
-      style={{ height: '100%', width: '100%' }}
+      style={{height: '100%', width: '100%'}}
       key={generateRandomString()}
     >
       {props && props.headerData && (
@@ -68,7 +65,7 @@ export function ScatterChartCard(props: IScatterChartCardProps) {
         }}
         key={generateRandomString()}
       >
-        <ScatterChart {...props.chartData} onChartClick={onChartClick} />
+        <ScatterChart {...props.chartData} onChartClick={onChartClick}/>
       </div>
     </StyledScatterChartCard>
   );

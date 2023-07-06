@@ -1,14 +1,14 @@
-import { styled, useTheme } from '@mui/system';
-import { Box, Stack, Typography } from '@mui/material';
+import {styled} from '@mui/system';
+import {Box, Typography} from '@mui/material';
 import themes from '../../../theme';
 import './color.css';
-import { useMemo } from 'react';
+import {useMemo} from 'react';
 
 export const ColorBox = (props: any) => {
   return (
     <Box className="box">
       <Box
-        style={{ background: props.color }}
+        style={{background: props.color}}
         className="color_container"
       ></Box>
       <Typography className="color_name"> {props.name}</Typography>
@@ -32,16 +32,16 @@ const getSortedColor = (value: any) => {
       subKey === 'c50' ||
       subKey === 'default'
     ) {
-      head.push({ key: subKey, value: subValue });
+      head.push({key: subKey, value: subValue});
     } else {
-      body.push({ key: subKey, value: subValue });
+      body.push({key: subKey, value: subValue});
     }
   });
 
   return [...head, ...body];
 };
 
-const StyledColor = styled(Box)(({ theme }) => {
+const StyledColor = styled(Box)(({theme}) => {
   return {
     '&': {},
     '.MuiTypography-root .color-box-text': {
@@ -52,17 +52,17 @@ const StyledColor = styled(Box)(({ theme }) => {
   };
 });
 
-const ColorContainerSmall = ({ color, colorkey }: any) => (
+const ColorContainerSmall = ({color, colorkey}: any) => (
   <StyledColor>
     <Box className="color-small-container">
       <Typography className="color-box-text">{colorkey}</Typography>
-      <Box className="color-box-small" style={{ backgroundColor: color }}></Box>
+      <Box className="color-box-small" style={{backgroundColor: color}}></Box>
       <Typography className="color-box-text">{color}</Typography>
     </Box>
   </StyledColor>
 );
 
-const ColorBoxContainers = ({ colorData, header }: any) => {
+const ColorBoxContainers = ({colorData, header}: any) => {
   return (
     <>
       <Box className="color-flex">
@@ -73,16 +73,16 @@ const ColorBoxContainers = ({ colorData, header }: any) => {
               <Typography className="heading">
                 {colors.key.replace(/([a-z])([A-Z])/g, '$1 $2')}
               </Typography>
-              <Box className="color-flex" style={{ marginTop: '10px' }}>
+              <Box className="color-flex" style={{marginTop: '10px'}}>
                 <Box className="color-col-left">
                   <Box
                     className="color-col-main"
-                    style={{ backgroundColor: main.value }}
+                    style={{backgroundColor: main.value}}
                   ></Box>
                 </Box>
               </Box>
 
-              <Box className="color-flex" style={{ marginTop: '10px' }}>
+              <Box className="color-flex" style={{marginTop: '10px'}}>
                 {main.map((data: any) => {
                   return (
                     <ColorContainerSmall
@@ -121,16 +121,16 @@ export function Colors(props: any) {
           key.toLowerCase() === 'systemcolor5' ||
           key.toLowerCase() === 'systemcolor6'
         ) {
-          mainColor.push({ data, key });
+          mainColor.push({data, key});
         }
       }
     });
-    return { mainColor };
+    return {mainColor};
   }, []);
 
   return (
     <Box className="main_container">
-      <ColorBoxContainers colorData={colorsCollection.mainColor} />
+      <ColorBoxContainers colorData={colorsCollection.mainColor}/>
     </Box>
   );
 }

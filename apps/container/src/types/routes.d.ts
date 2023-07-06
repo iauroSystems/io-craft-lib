@@ -1,5 +1,3 @@
-
-
 interface IRoute {
   path?: string | string[];
   component:

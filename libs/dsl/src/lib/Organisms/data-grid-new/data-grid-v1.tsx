@@ -1,20 +1,22 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-empty */
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { Box } from '@mui/material';
-import { useTheme } from '@mui/system';
+import {Box} from '@mui/material';
+import {useTheme} from '@mui/system';
 import styled from '@mui/system/styled';
-import { DataGrid, GridColDef, GridFilterModel } from '@mui/x-data-grid';
-import { escapeRegExp } from '@mui/x-data-grid/utils/utils';
+import {DataGrid, GridColDef, GridFilterModel} from '@mui/x-data-grid';
+import {escapeRegExp} from '@mui/x-data-grid/utils/utils';
 import generateRandomString from 'libs/dsl/src/static/randomString';
 import themes from 'libs/dsl/src/theme';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import TableCellComponentV2 from '../../Molecules/table-cell-component-v2/table-cell-component-v2';
 import TableHeaderCell from '../../Molecules/table-header-cell/table-header-cell';
 import './data-grid-v1.css';
+
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface IDataGridV1Props {
   rowData: any;
   columnData: any;
@@ -41,7 +43,7 @@ export interface IDataGridV1Props {
 //   },
 // });
 
-const StyledGridOverlay = styled('div')(({ theme }) => ({
+const StyledGridOverlay = styled('div')(({theme}) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -64,6 +66,7 @@ const StyledGridOverlay = styled('div')(({ theme }) => ({
     fill: theme.palette.mode === 'light' ? '#f5f5f5' : '#fff',
   },
 }));
+
 function CustomNoRowsOverlay() {
   return (
     <StyledGridOverlay>
@@ -101,16 +104,17 @@ function CustomNoRowsOverlay() {
             d="M149.121 33.292l-6.83 2.65a1 1 0 0 1-1.317-1.23l1.937-6.207c-2.589-2.944-4.109-6.534-4.109-10.408C138.802 8.102 148.92 0 161.402 0 173.881 0 184 8.102 184 18.097c0 9.995-10.118 18.097-22.599 18.097-4.528 0-8.744-1.066-12.28-2.902z"
           />
           <g className="ant-empty-img-4" transform="translate(149.65 15.383)">
-            <ellipse cx="20.654" cy="3.167" rx="2.849" ry="2.815" />
-            <path d="M5.698 5.63H0L2.898.704zM9.259.704h4.985V5.63H9.259z" />
+            <ellipse cx="20.654" cy="3.167" rx="2.849" ry="2.815"/>
+            <path d="M5.698 5.63H0L2.898.704zM9.259.704h4.985V5.63H9.259z"/>
           </g>
         </g>
       </svg>
-      <Box sx={{ mt: 1 }}>No Rows</Box>
+      <Box sx={{mt: 1}}>No Rows</Box>
     </StyledGridOverlay>
   );
 }
-const StyledDataGridV1 = styled('div')(({ theme }) => {
+
+const StyledDataGridV1 = styled('div')(({theme}) => {
   return {
     '&': {
       // backgroundColor: theme.palette?.light?.c50,
@@ -147,7 +151,7 @@ export function DataGridV1(props: IDataGridV1Props) {
 
   const [filterModel, setFilterModel] = React.useState<GridFilterModel>({
     items: [
-      { columnField: 'Status', value: 'Active', operatorValue: 'contains' },
+      {columnField: 'Status', value: 'Active', operatorValue: 'contains'},
     ],
   });
 
@@ -164,7 +168,8 @@ export function DataGridV1(props: IDataGridV1Props) {
     }
   }, [searchText]);
 
-  useEffect(() => {}, [columns]);
+  useEffect(() => {
+  }, [columns]);
 
   const getRowsRender = () => {
     if (props.rowData && props.rowData.length > 0) {
@@ -189,9 +194,10 @@ export function DataGridV1(props: IDataGridV1Props) {
 
           flex: 1,
           renderHeader: (values: any) => {
-            const onSearchInput = (data: any) => {};
+            const onSearchInput = (data: any) => {
+            };
             return (
-              <div style={{ display: 'flex', flex: 100, width: '100%' }}>
+              <div style={{display: 'flex', flex: 100, width: '100%'}}>
                 <TableHeaderCell
                   title={values.colDef.headerName}
                   actions={[
@@ -217,7 +223,7 @@ export function DataGridV1(props: IDataGridV1Props) {
                     props.onSearchInput && props.onSearchInput(data);
                   }}
                   menuClicked={function (data: any) {
-                    props.menuClicked && props.menuClicked({ menu: data });
+                    props.menuClicked && props.menuClicked({menu: data});
                   }}
                 ></TableHeaderCell>
               </div>
@@ -225,7 +231,7 @@ export function DataGridV1(props: IDataGridV1Props) {
           },
           renderCell: (values: any) => {
             return (
-              <div style={{ display: 'flex', flex: 100, width: '100%' }}>
+              <div style={{display: 'flex', flex: 100, width: '100%'}}>
                 <TableCellComponentV2
                   userInfo={values?.value?.userInfo || {}}
                   sqchip={values?.value?.sqchip || {}}

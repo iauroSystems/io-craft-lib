@@ -1,6 +1,6 @@
-import Button, { IButtonProps } from './custombutton';
-import { Story, Meta } from '@storybook/react';
-import { withDesign } from 'storybook-addon-designs';
+import Button, {IButtonProps} from './custombutton';
+import {Meta, Story} from '@storybook/react';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   component: Button,
@@ -12,7 +12,7 @@ export default {
         disable: true,
       },
     },
-   
+
   },
   decorators: [withDesign],
 } as Meta;
@@ -80,8 +80,8 @@ IconTextIconButton.args = {
     label: 'Add',
   },
   text: 'Text',
-  fontSize:16
- 
+  fontSize: 16
+
 };
 IconTextIconButton.parameters = {
   design: {

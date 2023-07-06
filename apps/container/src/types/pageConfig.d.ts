@@ -1,3 +1,1 @@
-
-
 export type IPageConfig = IRoute[];

@@ -1,23 +1,22 @@
-import { styled, useTheme } from '@mui/system';
-import { Typography } from '@mui/material';
-import Button from '@mui/material/Button';
+import {styled, useTheme} from '@mui/system';
+import {Typography} from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import './grid-spacing.css';
 
 const Item = styled(Paper)((theme: any) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  }));
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 export function GridSpacing(props: any) {
   const theme = useTheme();
 
-  const Item = styled(Paper)(({ theme }) => ({
+  const Item = styled(Paper)(({theme}) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     padding: theme.spacing(1),
     textAlign: 'center',
@@ -25,7 +24,7 @@ export function GridSpacing(props: any) {
   }));
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{flexGrow: 1}}>
       <Typography className="grid-heading">2 columns layout</Typography>
       <Grid container spacing={2}>
         <Grid item xs={6}>

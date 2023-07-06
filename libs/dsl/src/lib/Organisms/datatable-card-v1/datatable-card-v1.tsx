@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-empty */
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { styled, useTheme } from '@mui/system';
+import {styled, useTheme} from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
 import themes from 'libs/dsl/src/theme';
-import CardHeader, {
-  CardHeaderProps,
-} from '../../Molecules/card-header/card-header';
-import DataGridV1, { IDataGridV1Props } from '../data-grid-new/data-grid-v1';
+import CardHeader, {CardHeaderProps,} from '../../Molecules/card-header/card-header';
+import DataGridV1, {IDataGridV1Props} from '../data-grid-new/data-grid-v1';
 import './datatable-card-v1.css';
+
 /* eslint-disable-next-line */
 
 interface IColorProps {
@@ -30,7 +29,7 @@ export interface IDatatableCardV1Props {
 }
 
 export function DatatableCardV1(props: IDatatableCardV1Props) {
-  const StyledDatatableCardV1 = styled('div')(({ theme }) => {
+  const StyledDatatableCardV1 = styled('div')(({theme}) => {
     return {
       '&': {
         background:
@@ -52,9 +51,9 @@ export function DatatableCardV1(props: IDatatableCardV1Props) {
         border:
           props && props.showBorder
             ? `1px solid ${
-                props?.chartProps?.border_color ||
-                themes?.default?.palette?.neutral?.neu400
-              }`
+              props?.chartProps?.border_color ||
+              themes?.default?.palette?.neutral?.neu400
+            }`
             : 'none',
         // minHeight: props.height + 'px',
         // minWidth: props.width + 'px',

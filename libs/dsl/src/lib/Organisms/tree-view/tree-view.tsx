@@ -1,12 +1,10 @@
 import React from 'react';
-import { alpha, styled } from '@mui/material/styles';
-import IconComponent, {
-  IconComponentProps,
-} from '../../POC/icon-component/icon-component';
-import { TreeView as MuiTreeView } from '@mui/lab';
-import TreeItem, { treeItemClasses } from '@mui/lab/TreeItem';
+import {alpha, styled} from '@mui/material/styles';
+import IconComponent, {IconComponentProps,} from '../../POC/icon-component/icon-component';
+import {TreeView as MuiTreeView} from '@mui/lab';
+import TreeItem, {treeItemClasses} from '@mui/lab/TreeItem';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
-import { unstable_batchedUpdates } from 'react-dom';
+import {unstable_batchedUpdates} from 'react-dom';
 import Box from '@mui/material/Box';
 
 export type RenderTree = {
@@ -32,7 +30,7 @@ const isNodeExpanded = (node: any) => {
 
 const StyledTreeItem = styled((props: any) => (
   <TreeItem className="p-2" nodeId={props.nodeId} {...props} />
-))(({ theme }) => ({
+))(({theme}) => ({
   [`& .${treeItemClasses.iconContainer}`]: {
     '& .close': {
       opacity: 0.9,

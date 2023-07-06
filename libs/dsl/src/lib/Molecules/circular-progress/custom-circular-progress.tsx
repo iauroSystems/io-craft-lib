@@ -1,12 +1,7 @@
-import { Box, Typography } from '@mui/material';
-import {
-  circularProgressClasses,
-  CircularProgress as MuiCircularProgress,
-} from '@mui/material';
+import {Box, CircularProgress as MuiCircularProgress, circularProgressClasses, Typography} from '@mui/material';
 import defaultTheme from '../../../theme/index';
-import { useTheme } from '@mui/material';
-import { styled } from '@mui/system';
 import themes from '../../../theme/index';
+import {styled} from '@mui/system';
 
 export type ICProgressProps = {
   color: 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning';
@@ -19,7 +14,7 @@ export type ICProgressProps = {
 
 function CircularProgressWithLabel(props: any) {
   const dslTheme = themes.default;
-  const StyledCustomCircular = styled(Box)(({ theme }) => {
+  const StyledCustomCircular = styled(Box)(({theme}) => {
     return {
       '.circle-container': {
         position: 'relative',
@@ -67,7 +62,7 @@ function CircularProgressWithLabel(props: any) {
         />
         <Box className="typography-wrapper">
           <Typography
-            sx={{ fontSize: 0.75 * props.size * 0.025 + 'rem' }}
+            sx={{fontSize: 0.75 * props.size * 0.025 + 'rem'}}
             variant="caption"
             component="div"
             color={dslTheme.palette.text.tex300Main}
@@ -81,13 +76,13 @@ function CircularProgressWithLabel(props: any) {
 }
 
 export function CircularProgress({
-  color,
-  variant,
-  value,
-  showPercentage,
-  size = 40,
-  thickness,
-}: ICProgressProps) {
+                                   color,
+                                   variant,
+                                   value,
+                                   showPercentage,
+                                   size = 40,
+                                   thickness,
+                                 }: ICProgressProps) {
   const dslTheme = defaultTheme.default;
   return showPercentage && variant === 'determinate' ? (
     <CircularProgressWithLabel
@@ -98,7 +93,7 @@ export function CircularProgress({
       size={size}
     />
   ) : (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{position: 'relative'}}>
       <MuiCircularProgress
         variant="determinate"
         sx={{

@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 
 /* eslint-disable-next-line */
-export interface IconsMaterialProps {}
+export interface IconsMaterialProps {
+}
 
 const StyledIconsMaterial = styled.div`
   color: pink;

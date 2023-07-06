@@ -1,7 +1,6 @@
-import { Typography } from '@mui/material';
-import { useTheme } from '@mui/system';
+import {useTheme} from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import LegendText from '../../Atoms/legend-text/legend-text';
 
 export interface IHeatMapProps {
@@ -57,8 +56,8 @@ export const HeatMap = (props: IHeatMapProps) => {
     // Defne maxheight to restrict when columns are more than rows
     const maxHeight = wrapper
       ? ((wrapper.clientHeight - padding * 2) / rows) * columns +
-        padding * 2 +
-        800 * props.rowAxisLabel.length
+      padding * 2 +
+      800 * props.rowAxisLabel.length
       : padding * 2 + 800 * props.rowAxisLabel.length;
 
     if (canvas) {
@@ -160,9 +159,9 @@ export const HeatMap = (props: IHeatMapProps) => {
                     : (j + 1).toString()
                   : (j + 1).toString(),
                 padding +
-                  (cellSize + fontSize) / 2 +
-                  j * (cellSize + spacing) +
-                  50,
+                (cellSize + fontSize) / 2 +
+                j * (cellSize + spacing) +
+                50,
                 lineheight + k * 15
               );
             }
@@ -213,11 +212,11 @@ export const HeatMap = (props: IHeatMapProps) => {
   return (
     <div
       className="heat-map2-component"
-      style={{ backgroundColor: theme.palette?.light?.c50 }}
+      style={{backgroundColor: theme.palette?.light?.c50}}
     >
       <div
         id={`heat-map-wrapper-${instanceId}`}
-        style={{ backgroundColor: theme.palette?.light?.c50 }}
+        style={{backgroundColor: theme.palette?.light?.c50}}
       >
         <canvas ref={canvasRef} id={`heat-map-${instanceId}`}></canvas>
         <div
@@ -231,18 +230,18 @@ export const HeatMap = (props: IHeatMapProps) => {
           }}
         >
           {props.threshold &&
-            props.threshold.length > 0 &&
-            props.threshold.map((field: any) => {
-              return (
-                <div key={generateRandomString()}>
-                  <LegendText
-                    value={`${field.name} (${field.value_min} < value < ${field.value_max})`}
-                    color={field.color}
-                    size={10}
-                  />
-                </div>
-              );
-            })}
+          props.threshold.length > 0 &&
+          props.threshold.map((field: any) => {
+            return (
+              <div key={generateRandomString()}>
+                <LegendText
+                  value={`${field.name} (${field.value_min} < value < ${field.value_max})`}
+                  color={field.color}
+                  size={10}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

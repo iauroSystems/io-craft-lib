@@ -1,7 +1,5 @@
 import IconComponent from '../../POC/icon-component/icon-component';
-import CustomDropdown, {
-  DropdownDataProps,
-} from '../custom-dropdown/custom-dropdown';
+import CustomDropdown, {DropdownDataProps,} from '../custom-dropdown/custom-dropdown';
 
 export interface CustomCardHeaderProps {
   data: HeaderDataProps;
@@ -12,7 +10,7 @@ export interface HeaderDataProps {
   dropdown: DropdownDataProps[];
 }
 
-const CustomCardHeader = ({ data }: CustomCardHeaderProps) => {
+const CustomCardHeader = ({data}: CustomCardHeaderProps) => {
   return (
     <div
       style={{
@@ -32,42 +30,42 @@ const CustomCardHeader = ({ data }: CustomCardHeaderProps) => {
           fontSize: '14px',
           fontWeight: '700',
           lineHeight: '20px',
-          margin:'revert',
+          margin: 'revert',
         }}
       >
         {data?.title}
       </p>
-      <div style={{ display: 'flex', gap: '10px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <div style={{display: 'flex', gap: '10px'}}>
+        <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
           {data &&
-            data.dropdown &&
-            data.dropdown.length > 0 &&
-            data?.dropdown?.map((icon: any) => {
-              return (
-                <CustomDropdown
-                  data={{
-                    icon: icon.icon,
-                    label: icon.label,
-                    onClick: icon.onClick,
-                    dropdownList: icon.dropdownList,
-                  }}
-                />
-              );
-            })}
+          data.dropdown &&
+          data.dropdown.length > 0 &&
+          data?.dropdown?.map((icon: any) => {
+            return (
+              <CustomDropdown
+                data={{
+                  icon: icon.icon,
+                  label: icon.label,
+                  onClick: icon.onClick,
+                  dropdownList: icon.dropdownList,
+                }}
+              />
+            );
+          })}
         </div>
         <div
           style={{
             display: 'flex',
             justifyContent: 'flex-end',
             alignItems: 'center',
-            cursor:'pointer'
+            cursor: 'pointer'
           }}
         >
           <IconComponent
             name={'close_black_24dp'}
             size={32}
             label={'Arrow-Down'}
-            
+
             handleClick={() => console.log('more icon cliked')}
           />
         </div>

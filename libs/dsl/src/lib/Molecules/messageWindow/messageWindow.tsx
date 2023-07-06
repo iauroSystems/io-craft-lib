@@ -1,11 +1,11 @@
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-import { DialogTitle } from '@mui/material';
+import {DialogTitle} from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
 import Dialog from '@mui/material/Dialog';
 import './messageWindow.module.css';
 import Button from '@mui/material/Button';
-import { IconComponent } from '../../POC/icon-component/icon-component';
+import {IconComponent} from '../../POC/icon-component/icon-component';
 
 export interface MessageWindowProps {
   onClose: (event: object, reason: string) => void;
@@ -23,14 +23,14 @@ export interface MessageWindowProps {
 }
 
 export function MessageWindow({
-  open,
-  onClose,
-  actions,
-  title,
-  description,
-  icon,
-  elevation,
-}: MessageWindowProps) {
+                                open,
+                                onClose,
+                                actions,
+                                title,
+                                description,
+                                icon,
+                                elevation,
+                              }: MessageWindowProps) {
   return (
     <Dialog open={open} onClose={onClose}>
       <Box className={'messageWindow'}>
@@ -40,12 +40,12 @@ export function MessageWindow({
           }}
           className={'closeBtn'}
         >
-          <IconComponent name="close_black_24dp" label="close" size={28} />
+          <IconComponent name="close_black_24dp" label="close" size={28}/>
         </Box>
         <Box className={'message'}>
           <Box className={'icon'}> {icon ? icon : null} </Box>
           <Box className={'messageBody'}>
-            <DialogTitle sx={{ padding: '8px 14px' }}>
+            <DialogTitle sx={{padding: '8px 14px'}}>
               {title ? title : null}
             </DialogTitle>
             <Box component="p" className={'description'}>
@@ -53,20 +53,20 @@ export function MessageWindow({
             </Box>
           </Box>
         </Box>
-        <Divider sx={{ marginBottom: '10px' }} />
+        <Divider sx={{marginBottom: '10px'}}/>
         <DialogActions className={'actions'}>
           {actions
             ? actions.map((action, index) => (
-                <Button
-                  onClick={action.handleClick}
-                  variant={action.primary ? 'contained' : 'outlined'}
-                  style={
-                    actions.length - 1 !== index ? { marginRight: '10px' } : {}
-                  }
-                >
-                  {action.name}
-                </Button>
-              ))
+              <Button
+                onClick={action.handleClick}
+                variant={action.primary ? 'contained' : 'outlined'}
+                style={
+                  actions.length - 1 !== index ? {marginRight: '10px'} : {}
+                }
+              >
+                {action.name}
+              </Button>
+            ))
             : null}
         </DialogActions>
       </Box>

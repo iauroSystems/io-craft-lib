@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 import themes from 'libs/dsl/src/theme';
-import { UserInfo, UserInfoProps } from './user-info';
+import {UserInfo, UserInfoProps} from './user-info';
 
 export default {
   component: UserInfo,

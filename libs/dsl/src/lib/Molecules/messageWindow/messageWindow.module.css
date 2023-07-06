@@ -6,6 +6,7 @@
     box-sizing: border-box; */
   /* background-color: black; */
 }
+
 .closeBtn {
   position: absolute;
   top: 16px;
@@ -15,12 +16,14 @@
   cursor: pointer;
   right: 16px;
 }
+
 .message {
   display: flex;
   padding: 16px;
   padding-bottom: 0px;
   flex-direction: row;
 }
+
 .title {
   font-size: 20px;
   font-weight: bold;
@@ -28,6 +31,7 @@
   color: #332c2c;
   margin-bottom: 10px;
 }
+
 .icon {
   /* margin-right: 12px; */
   width: 38px;
@@ -39,6 +43,7 @@
   box-sizing: border-box;
   background: #f5f2f2;
 }
+
 .description {
   max-width: 330px;
   color: #877878;
@@ -48,12 +53,14 @@
   box-sizing: border-box;
   padding-left: 14px;
 }
+
 .actions {
   display: flex;
   justify-content: flex-end;
   padding: 16px;
   padding-top: 0px;
 }
+
 .divider {
   border: 1px solid #ebebeb;
   width: 100%;

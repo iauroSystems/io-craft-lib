@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import { Stack } from '@mui/system';
-import React, { useEffect, useState } from 'react';
+import {Stack} from '@mui/system';
+import React, {useEffect, useState} from 'react';
 import UserAvatar from '../../Atoms/user-avatar/user-avatar';
-import IconComponent, {
-  IconComponentProps,
-} from '../../POC/icon-component/icon-component';
-import SearchInput, { ISearchInputTypes } from './SearchBox';
+import IconComponent, {IconComponentProps,} from '../../POC/icon-component/icon-component';
+import SearchInput, {ISearchInputTypes} from './SearchBox';
 
-import { Popover, Typography } from '@mui/material';
+import {Popover, Typography} from '@mui/material';
 import themes from 'libs/dsl/src/theme';
 import './header-component.css';
+
 interface IAnyProps {
   [key: string]: string | number | any;
 }
+
 export interface IHeaderComponentProps {
   logoImagePath?: string;
   searchData: ISearchInputTypes;
@@ -46,13 +46,15 @@ export const HeaderComponent = (props: IHeaderComponentProps) => {
 
   const id = open ? 'simple-popover' : undefined;
 
-  const inputHandler = (e: any) => {};
+  const inputHandler = (e: any) => {
+  };
 
   const notificationClicked = () => {
     props.notificationClickEvent();
   };
 
-  useEffect(() => {}, [props]);
+  useEffect(() => {
+  }, [props]);
 
   const theme = themes.default;
 
@@ -97,7 +99,7 @@ export const HeaderComponent = (props: IHeaderComponentProps) => {
             props.headerLogoClickEvent();
           }}
         >
-          {props.logoImagePath && <img src={props.logoImagePath} />}
+          {props.logoImagePath && <img src={props.logoImagePath}/>}
         </div>
       </div>
       <div
@@ -216,7 +218,7 @@ export const HeaderComponent = (props: IHeaderComponentProps) => {
                   }}
                 >
                   <CameraAltIcon
-                    sx={{ color: themes.default?.palette?.text?.tex300Main }}
+                    sx={{color: themes.default?.palette?.text?.tex300Main}}
                   />
                 </div>
                 <Stack direction={'column'} spacing={-0.5} flex={80}>
@@ -291,7 +293,8 @@ export const HeaderComponent = (props: IHeaderComponentProps) => {
                   Log Out
                 </Typography>
               </div>
-            </div>{' '}
+            </div>
+            {' '}
           </Popover>
         </div>
       </div>

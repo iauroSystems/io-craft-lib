@@ -1,8 +1,7 @@
-import { IconButton, InputBase } from '@mui/material';
+import {IconButton, InputBase} from '@mui/material';
 import React from 'react';
-import { IconComponentProps } from '../../POC/icon-component/icon-component';
+import {IconComponentProps} from '../../POC/icon-component/icon-component';
 import SearchIcon from '@mui/icons-material/Search';
-import ClearIcon from '@mui/icons-material/Clear';
 import styled from '@mui/system/styled';
 
 export interface ISearchProps {
@@ -12,7 +11,7 @@ export interface ISearchProps {
   onSearchInput: (data: any) => any;
 }
 
-const StyledSearchInput = styled('div')(({ theme }) => {
+const StyledSearchInput = styled('div')(({theme}) => {
   return {};
 });
 
@@ -29,23 +28,23 @@ const SearchInput = (props: ISearchProps) => {
     >
       <InputBase
         fullWidth
-        sx={{ ml: 1, fontSize: '12px' }}
+        sx={{ml: 1, fontSize: '12px'}}
         placeholder={props.placeholder}
         defaultValue={props.searchText}
-        inputProps={{ 'aria-label': 'search google maps' }}
+        inputProps={{'aria-label': 'search google maps'}}
         onKeyUp={(e: any) => {
           setValue(e.target.value);
           props.onSearchInput(e.target.value);
         }}
         endAdornment={
           <IconButton
-            sx={{ mr: 1 }}
+            sx={{mr: 1}}
             size="small"
             onClick={() => {
               setValue('');
             }}
           >
-            <SearchIcon />
+            <SearchIcon/>
           </IconButton>
         }
       />

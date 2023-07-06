@@ -2,7 +2,7 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react';
-import { styled } from '@mui/system';
+import {styled} from '@mui/system';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
@@ -38,7 +38,7 @@ export interface SegmentedControlProps {
 }
 
 const StyledSegmentedControl: any = styled('div')(
-  ({ theme, color, togglebtnstyle, containerstyle = {} }: any) => {
+  ({theme, color, togglebtnstyle, containerstyle = {}}: any) => {
     return {
       '.toggleContainer': {
         background: themes.default.palette.background.bacopWhite,
@@ -71,7 +71,7 @@ const StyledSegmentedControl: any = styled('div')(
   }
 );
 const StyledButtonGroup: any = styled(ToggleButtonGroup)(
-  ({ theme, color, togglebtnstyle, containerstyle = {} }: any) => {
+  ({theme, color, togglebtnstyle, containerstyle = {}}: any) => {
     return {
       '.toggleItem': {
         borderRadius: '4px !important',

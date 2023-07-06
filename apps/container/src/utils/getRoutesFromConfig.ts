@@ -1,5 +1,4 @@
-import { IPageConfig } from '../types/pageConfig';
-
+import {IPageConfig} from '../types/pageConfig';
 
 
 export default function getRoutesFromConfig(

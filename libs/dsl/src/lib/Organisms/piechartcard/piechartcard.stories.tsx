@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 import themes from 'libs/dsl/src/theme';
-import PieChartCard, { IPieChartCardProps } from './piechartcard';
+import PieChartCard, {IPieChartCardProps} from './piechartcard';
 
 export default {
   component: PieChartCard,

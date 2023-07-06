@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable react/jsx-no-undef */
-import Drawer, { DrawerProps } from './custom-drawer';
-import { Story, Meta } from '@storybook/react';
+import Drawer, {DrawerProps} from './custom-drawer';
+import {Meta, Story} from '@storybook/react';
 import Box from '@mui/material/Box';
-import { withDesign } from 'storybook-addon-designs';
+import {withDesign} from 'storybook-addon-designs';
 import CustomCardHeader from '../custom-card-header/custom-card-header';
 import CustomCardFooter from '../custom-card-footer/custom-card-footer';
 
@@ -24,13 +24,13 @@ export default {
 const Template: Story<DrawerProps> = (args) => (
   <Drawer {...args}>
 
-  <CustomCardHeader data={{title:"Hello This is Dialog",dropdown:[]}}/>
-      <Box>Demo Drawer</Box>
-      <CustomCardFooter onAccept={function (): void {
-       
-      } } onReject={function (): void {
-        
-      } } acceptLabel={'Yes'} rejectLabel={'No'}/>
+    <CustomCardHeader data={{title: "Hello This is Dialog", dropdown: []}}/>
+    <Box>Demo Drawer</Box>
+    <CustomCardFooter onAccept={function (): void {
+
+    }} onReject={function (): void {
+
+    }} acceptLabel={'Yes'} rejectLabel={'No'}/>
   </Drawer>
 );
 

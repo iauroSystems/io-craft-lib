@@ -1,20 +1,11 @@
-
-    import React, {
-  createContext,
-  useState,
-  FC,
-  ReactNode,
-  useContext,
-  useEffect,
-} from 'react';
-import { MicroFrontendContext } from '.';
+import React, {createContext, FC, ReactNode, useContext, useEffect, useState,} from 'react';
+import {MicroFrontendContext} from '.';
 import routesArray from '../routing';
 
 
-
 export const RouteContext = createContext<RouteContextType | null>(null);
-export const RouteProvider: FC<ReactNode> = ({ children }) => {
-  const { microFrontends } = useContext(MicroFrontendContext);
+export const RouteProvider: FC<ReactNode> = ({children}) => {
+  const {microFrontends} = useContext(MicroFrontendContext);
   const [routes, setRoutes] = useState<Array<IRoute>>(routesArray);
 
   useEffect(() => {
@@ -34,7 +25,7 @@ export const RouteProvider: FC<ReactNode> = ({ children }) => {
   };
 
   return (
-    <RouteContext.Provider value={{ routes, addRoute, removeRoute }}>
+    <RouteContext.Provider value={{routes, addRoute, removeRoute}}>
       {children}
     </RouteContext.Provider>
   );

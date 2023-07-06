@@ -1,17 +1,11 @@
 import styled from '@emotion/styled';
-import { useTheme } from '@mui/system';
-import {
-  Chart as ChartJS,
-  Legend,
-  LinearScale,
-  PointElement,
-  Tooltip,
-} from 'chart.js';
+import {useTheme} from '@mui/system';
+import {Chart as ChartJS, Legend, LinearScale, PointElement, Tooltip,} from 'chart.js';
 import themes from 'libs/dsl/src/theme';
-import { useEffect, useRef, useState } from 'react';
-import { getElementsAtEvent, PolarArea } from 'react-chartjs-2';
+import {useEffect, useRef, useState} from 'react';
+import {getElementsAtEvent, PolarArea} from 'react-chartjs-2';
 import WebFont from 'webfontloader';
-import { IFontData } from '../barchart/barchart';
+import {IFontData} from '../barchart/barchart';
 
 /* eslint-disable-next-line */
 
@@ -22,12 +16,14 @@ const StyledPolarChart = styled.div`
 export interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface IPolarDataSets {
   label: string;
   data: Array<number>;
   borderColor?: string;
   backgroundColor?: string[];
 }
+
 export interface IPolarChartProps {
   labels: string[];
   datasets: IPolarDataSets[];

@@ -1,18 +1,15 @@
-import { styled } from '@mui/system';
-import { useTheme } from '@mui/system';
+import {styled, useTheme} from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
 import themes from 'libs/dsl/src/theme';
-import BubbleChart, {
-  IBubbleChartProps,
-} from '../../Charts/bubble-chart/bubble-chart';
-import CardHeader, {
-  CardHeaderProps,
-} from '../../Molecules/card-header/card-header';
+import BubbleChart, {IBubbleChartProps,} from '../../Charts/bubble-chart/bubble-chart';
+import CardHeader, {CardHeaderProps,} from '../../Molecules/card-header/card-header';
 import './bubblechartcard.css';
+
 /* eslint-disable-next-line */
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface IBubbleChartCardProps {
   headerData: CardHeaderProps;
   chartData: IBubbleChartProps;
@@ -24,7 +21,7 @@ export interface IBubbleChartCardProps {
 export function BubbleChartCard(props: IBubbleChartCardProps) {
   const theme = useTheme();
   const themeChart = themes;
-  const StyledBubbleChartCard = styled('div')(({ theme }) => {
+  const StyledBubbleChartCard = styled('div')(({theme}) => {
     return {
       '&': {
         background:
@@ -43,7 +40,7 @@ export function BubbleChartCard(props: IBubbleChartCardProps) {
   };
   return (
     <StyledBubbleChartCard
-      style={{ height: '100%', width: '100%' }}
+      style={{height: '100%', width: '100%'}}
       key={generateRandomString()}
     >
       {props && props.headerData && (
@@ -67,7 +64,7 @@ export function BubbleChartCard(props: IBubbleChartCardProps) {
           height: '100%',
         }}
       >
-        <BubbleChart {...props.chartData} onChartClick={onChartClick} />
+        <BubbleChart {...props.chartData} onChartClick={onChartClick}/>
       </div>
     </StyledBubbleChartCard>
   );

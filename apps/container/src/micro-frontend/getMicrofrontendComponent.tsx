@@ -1,5 +1,4 @@
-import React, { useMemo } from 'react';
-
+import React from 'react';
 
 
 function loadComponent(scope: any, module: any) {
@@ -63,7 +62,7 @@ const Microfrontend = (props: {
   module: string;
   props?: any;
 }) => {
-  const { ready, failed } = useDynamicScript({
+  const {ready, failed} = useDynamicScript({
     url: props && props.url,
   });
 

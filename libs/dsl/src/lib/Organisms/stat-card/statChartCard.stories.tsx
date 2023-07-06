@@ -1,17 +1,17 @@
-import { Story, Meta } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import themes from 'libs/dsl/src/theme';
-import StatChartCard, { IStatChartCardProps } from './statChartCard';
+import StatChartCard, {IStatChartCardProps} from './statChartCard';
 
 export default {
   component: StatChartCard,
   title: 'Organisms/Stat Chart Card',
   argTypes: {
     height: {
-      control: { type: 'range', min: 4, max: 1000, step: 4 },
+      control: {type: 'range', min: 4, max: 1000, step: 4},
     },
     width: {
-      control: { type: 'range', min: 4, max: 1000, step: 4 },
+      control: {type: 'range', min: 4, max: 1000, step: 4},
     },
   },
 } as Meta;

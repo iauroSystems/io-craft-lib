@@ -1,10 +1,8 @@
-import { styled } from '@mui/system';
-import { useTheme } from '@mui/system';
+import {styled, useTheme} from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
-import CardHeader, {
-  CardHeaderProps,
-} from '../../Molecules/card-header/card-header';
-import StatCard, { StatCardProps } from '../../Molecules/StatCard/StatCard';
+import CardHeader, {CardHeaderProps,} from '../../Molecules/card-header/card-header';
+import StatCard, {StatCardProps} from '../../Molecules/StatCard/StatCard';
+
 /* eslint-disable-next-line */
 export interface IStatChartCardProps {
   height?: number;
@@ -15,13 +13,14 @@ export interface IStatChartCardProps {
   onChartClick?: (data: any) => void;
 }
 
-const StyledStatChartCard = styled('div')(({ theme }) => {
+const StyledStatChartCard = styled('div')(({theme}) => {
   return {
     '&': {
       background: theme.palette?.light?.c50,
     },
   };
 });
+
 export function StatChartCard(props: IStatChartCardProps) {
   const theme = useTheme();
   const menuClicked = (data: any) => {

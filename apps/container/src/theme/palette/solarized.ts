@@ -1,5 +1,5 @@
-import { IThemePalette } from '.';
-import { paleRed, rhino } from '../colors';
+import {IThemePalette} from '.';
+import {rhino} from '../colors';
 import white from '../colors/white';
 
 const solarized: IThemePalette = {

@@ -1,4 +1,4 @@
-import { IThemeColor } from '.';
+import {IThemeColor} from '.';
 
 const white: IThemeColor = {
   '50': '#ffffff',

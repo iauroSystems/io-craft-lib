@@ -1,22 +1,22 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import {
-  Chart as ChartJS,
-  PointElement,
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  Filler,
   BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Filler,
+  Legend,
+  LinearScale,
+  LineElement,
+  PointElement,
+  ScriptableContext,
   Title,
   Tooltip,
-  Legend,
-  ScriptableContext,
 } from 'chart.js';
-import { getDatasetAtEvent, getElementsAtEvent, Line } from 'react-chartjs-2';
-import { useTheme } from '@mui/system';
+import {getDatasetAtEvent, Line} from 'react-chartjs-2';
+import {useTheme} from '@mui/system';
 import themes from 'libs/dsl/src/theme';
-import { IFontData } from '../barchart/barchart';
+import {IFontData} from '../barchart/barchart';
 import WebFont from 'webfontloader';
 
 ChartJS.register(
@@ -30,9 +30,11 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface LineChartProps {
   data: any;
   legendPosition?: any;
@@ -44,14 +46,14 @@ export interface LineChartProps {
 }
 
 export function LineChart({
-  data,
-  xLabel,
-  yLabel,
-  legendPosition = 'right',
-  fontData,
-  chartProps,
-  onChartClick,
-}: LineChartProps) {
+                            data,
+                            xLabel,
+                            yLabel,
+                            legendPosition = 'right',
+                            fontData,
+                            chartProps,
+                            onChartClick,
+                          }: LineChartProps) {
   const theme: any = useTheme();
   const themeChart: any = themes.default;
   const [optionalChartProps, setOptionalChartProps] = useState<any>(chartProps);
@@ -110,6 +112,7 @@ export function LineChart({
       },
     },
   });
+
   function addAlpha(color: string, opacity: number) {
     // coerce values so ti is between 0 and 1.
     const _opacity = Math.round(Math.min(Math.max(opacity || 1, 0), 1) * 255);
@@ -154,22 +157,22 @@ export function LineChart({
       const _data = JSON.parse(JSON.stringify(data));
       if (_data) {
         _data &&
-          _data.datasets.map((element: any, index: number) => {
-            return (element.backgroundColor = (
-              context: ScriptableContext<'line'>
-            ) => {
-              const ctx = context.chart.ctx;
-              const gradient = ctx.createLinearGradient(0, 0, 0, 200);
-              if (element && element.bgColor) {
-                gradient.addColorStop(0, `${hex2rgba(element.bgColor, 0.5)}`);
-                gradient.addColorStop(1, `${hex2rgba(element.bgColor, 0.3)}`);
-              }
-              return gradient;
-            });
-
-            // element.backgroundColor = _data.datasets[index].backgroundColor;
-            // return element;
+        _data.datasets.map((element: any, index: number) => {
+          return (element.backgroundColor = (
+            context: ScriptableContext<'line'>
+          ) => {
+            const ctx = context.chart.ctx;
+            const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+            if (element && element.bgColor) {
+              gradient.addColorStop(0, `${hex2rgba(element.bgColor, 0.5)}`);
+              gradient.addColorStop(1, `${hex2rgba(element.bgColor, 0.3)}`);
+            }
+            return gradient;
           });
+
+          // element.backgroundColor = _data.datasets[index].backgroundColor;
+          // return element;
+        });
         setLinechartData(_data);
       }
     }

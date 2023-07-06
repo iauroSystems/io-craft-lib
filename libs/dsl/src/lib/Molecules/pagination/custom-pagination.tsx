@@ -1,12 +1,12 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import * as React from 'react';
-import { styled } from '@mui/system';
-import { Pagination as MuiPagination, Typography } from '@mui/material';
-import { Menu, MenuItem } from '@mui/material';
+import {styled} from '@mui/system';
+import {MenuItem, Pagination as MuiPagination, Typography} from '@mui/material';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select, {SelectChangeEvent} from '@mui/material/Select';
 import './custom-pagination.css';
 import themes from 'libs/dsl/src/theme';
+
 export interface PaginationProps {
   color?: 'primary' | 'secondary' | 'standard';
   defaultPage?: string;
@@ -24,8 +24,8 @@ export interface PaginationProps {
   totalRows?: number;
 }
 
-const StyledPagination = styled('div')(({ theme }: any) => {
-  const defaultTheme=themes.default
+const StyledPagination = styled('div')(({theme}: any) => {
+  const defaultTheme = themes.default
   return {
     '&': {
       width: '568px',
@@ -68,7 +68,7 @@ export function Pagination(props: PaginationProps) {
   const [page, setPage] = React.useState(1);
 
   const handleChange = (event: SelectChangeEvent) => {
-    const { value } = event.target;
+    const {value} = event.target;
     setRowPerPage(parseInt(value));
     props.onChange?.(event, value);
   };
@@ -127,13 +127,13 @@ export function Pagination(props: PaginationProps) {
         size="small"
       />
       <Typography className="text-color">Show</Typography>
-      <FormControl sx={{ m: 1, minWidth: 59, minHeight: 32 }}>
+      <FormControl sx={{m: 1, minWidth: 59, minHeight: 32}}>
         <Select
           value={rowPerPage.toString()}
           onChange={handleChange}
           displayEmpty
           size="small"
-          inputProps={{ 'aria-label': 'Without label' }}
+          inputProps={{'aria-label': 'Without label'}}
           // MenuProps={MenuProps}
         >
           <MenuItem value={5}>5</MenuItem>

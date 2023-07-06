@@ -1,6 +1,8 @@
 import './../static/assets/icons/icomoon/style.css';
+
 /* eslint-disable-next-line */
-export interface DslProps {}
+export interface DslProps {
+}
 
 export function Dsl(props: DslProps) {
   return (

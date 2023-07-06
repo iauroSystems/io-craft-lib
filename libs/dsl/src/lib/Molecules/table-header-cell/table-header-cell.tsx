@@ -1,18 +1,17 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Box, Menu, MenuItem, Typography } from '@mui/material';
-import IconComponent from '../../POC/icon-component/icon-component';
-import SearchInput, { ISearchProps } from './searchInput';
+import {Box, Menu, MenuItem, Typography} from '@mui/material';
+import SearchInput, {ISearchProps} from './searchInput';
 import './table-header-cell.css';
 import * as React from 'react';
 import styled from '@mui/system/styled';
-import { useTheme } from '@mui/system';
 import themes from 'libs/dsl/src/theme';
 
 export interface IOptions {
   label: string;
   value: string;
 }
+
 /* eslint-disable-next-line */
 export interface ITableHeaderCellProps {
   title: string;
@@ -22,7 +21,7 @@ export interface ITableHeaderCellProps {
   menuClicked: (data: any) => any;
 }
 
-const StyledTablecell = styled(Box)(({ theme }) => {
+const StyledTablecell = styled(Box)(({theme}) => {
   return {
     '&': {
       backgroundColor: theme.palette?.light?.c50,
@@ -84,11 +83,11 @@ export function TableHeaderCell(props: ITableHeaderCellProps) {
       >
         <div
           className="typography-wrapper"
-          style={{ width: 'calc(100% - 20%)' }}
+          style={{width: 'calc(100% - 20%)'}}
         >
           <Typography
             color={theme.palette?.text?.tex300Main}
-            sx={{ fontSize: '12px', fontWeight: 600 }}
+            sx={{fontSize: '12px', fontWeight: 600}}
           >
             {props.title}
           </Typography>
@@ -113,19 +112,19 @@ export function TableHeaderCell(props: ITableHeaderCellProps) {
           }}
         >
           {props.actions &&
-            props.actions.length &&
-            props.actions.map((action, index) => {
-              return (
-                <MenuItem
-                  key={index}
-                  onClick={(e) => {
-                    handleClose(e, action.value);
-                  }}
-                >
-                  {action.label}
-                </MenuItem>
-              );
-            })}
+          props.actions.length &&
+          props.actions.map((action, index) => {
+            return (
+              <MenuItem
+                key={index}
+                onClick={(e) => {
+                  handleClose(e, action.value);
+                }}
+              >
+                {action.label}
+              </MenuItem>
+            );
+          })}
         </Menu>
       </div>
       {props && props.searchData && (

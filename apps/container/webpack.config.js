@@ -1,6 +1,6 @@
-const { ModuleFederationPlugin } = require('webpack').container;
+const {ModuleFederationPlugin} = require('webpack').container;
 const nrwlConfig = require('@nrwl/react/plugins/webpack.js');
-const { dependencies } = require('../../package.json');
+const {dependencies} = require('../../package.json');
 
 const _shared = {};
 Object.keys(dependencies).forEach((d, i) => {

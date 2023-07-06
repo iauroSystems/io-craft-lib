@@ -14,4 +14,4 @@ export default {
     },
   },
 };
-export { default as GridSpacing } from './grid-spacing';
+export {default as GridSpacing} from './grid-spacing';

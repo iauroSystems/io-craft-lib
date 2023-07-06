@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 
 /* eslint-disable-next-line */
-export interface HeatmapchartcardProps {}
+export interface HeatmapchartcardProps {
+}
 
 const StyledHeatmapchartcard = styled.div`
   color: pink;

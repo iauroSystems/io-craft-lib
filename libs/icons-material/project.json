@@ -6,34 +6,45 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/libs/icons-material",
         "tsConfig": "libs/icons-material/tsconfig.lib.json",
         "project": "libs/icons-material/package.json",
         "entryFile": "libs/icons-material/src/index.ts",
-        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "external": [
+          "react/jsx-runtime",
+          "@emotion/styled/base"
+        ],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
           {
-            "glob":"*",
-            "input":"libs/icons-material/src/lib/assets/icomoon",
-            "output":"lib/assets/icomoon"
+            "glob": "*",
+            "input": "libs/icons-material/src/lib/assets/icomoon",
+            "output": "lib/assets/icomoon"
           }
         ]
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/icons-material/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "libs/icons-material/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/icons-material"],
+      "outputs": [
+        "coverage/libs/icons-material"
+      ],
       "options": {
         "jestConfig": "libs/icons-material/jest.config.js",
         "passWithNoTests": true

@@ -1,8 +1,8 @@
-import { Box } from '@mui/material';
-import { display, styled } from '@mui/system';
+import {Box} from '@mui/material';
+import {styled} from '@mui/system';
 import './icon.css';
 
-const StyledIconComponent = styled('div')(({ theme }) => {
+const StyledIconComponent = styled('div')(({theme}) => {
   return {
     'gessa-icon': {
       span: {
@@ -18,7 +18,7 @@ const StyledIconComponent = styled('div')(({ theme }) => {
         justifyContent: 'center',
         alignItems: 'center',
       },
-     
+
     },
   };
 });
@@ -557,7 +557,7 @@ export function Icon(props: any) {
           width: '100%',
           flexFlow: 'row wrap',
         }}
-        
+
       >
         {iconList.map((icon: any, index: any) => {
           return (

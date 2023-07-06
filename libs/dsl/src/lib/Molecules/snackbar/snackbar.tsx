@@ -1,15 +1,12 @@
-import { Snackbar as Snack } from '@mui/material';
+import {Snackbar as Snack} from '@mui/material';
 import Box from '@mui/material/Box';
-import {
-  IconComponent,
-  IconComponentProps,
-} from '../../POC/icon-component/icon-component';
+import {IconComponent, IconComponentProps,} from '../../POC/icon-component/icon-component';
 import './action.css';
 
 export interface SnackbarProps {
   open: boolean;
   autoHideDuraton: number;
-  onCloseFunc: (e: Event | React.SyntheticEvent<any, Event>)=> void;
+  onCloseFunc: (e: Event | React.SyntheticEvent<any, Event>) => void;
   children: any;
   actions: IconComponentProps[];
   message: string;
@@ -21,14 +18,14 @@ export interface SnackbarProps {
 }
 
 export function Snackbar({
-  message,
-  open,
-  autoHideDuraton,
-  onCloseFunc,
-  type = 'success',
-  anchorOrigin = { vertical: 'bottom', horizontal: 'left' },
-  actions = [],
-}: SnackbarProps) {
+                           message,
+                           open,
+                           autoHideDuraton,
+                           onCloseFunc,
+                           type = 'success',
+                           anchorOrigin = {vertical: 'bottom', horizontal: 'left'},
+                           actions = [],
+                         }: SnackbarProps) {
   let typeIcon = 'check_circle_black_24dp';
   if (type === 'success') {
     typeIcon = 'check_circle_black_24dp';
@@ -50,23 +47,23 @@ export function Snackbar({
       <Box className={`actionContainer ${type}Action`}>
         <Box component="span" className="messageContainer">
           <Box component="span" className="iconContainer">
-            <IconComponent name={typeIcon} size={25} />
+            <IconComponent name={typeIcon} size={25}/>
           </Box>
           {message}
         </Box>
         <Box component="span" className="actionIconsContainer">
           {actions.length &&
-            actions.map((action: IconComponentProps, index: number) => {
-              return (
-                <IconComponent
-                  name={action.name}
-                  color={action.color}
-                  label={action.label}
-                  size={action.size}
-                  handleClick={action.handleClick}
-                />
-              );
-            })}
+          actions.map((action: IconComponentProps, index: number) => {
+            return (
+              <IconComponent
+                name={action.name}
+                color={action.color}
+                label={action.label}
+                size={action.size}
+                handleClick={action.handleClick}
+              />
+            );
+          })}
         </Box>
       </Box>
     </Snack>

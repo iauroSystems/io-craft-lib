@@ -1,5 +1,3 @@
-
-
 const getSuspender = (promise: any) => {
   let status = 'pending';
   let result: any;

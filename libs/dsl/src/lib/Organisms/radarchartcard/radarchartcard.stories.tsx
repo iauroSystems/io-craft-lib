@@ -1,7 +1,8 @@
-import { Story, Meta } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 // import themes from 'libs/dsl/src/theme';
-import { IRadarChartCardProps, RadarChartCard } from './radarchartcard';
+import {IRadarChartCardProps, RadarChartCard} from './radarchartcard';
 import themes from '../../../theme';
+
 export default {
   component: RadarChartCard,
   title: 'Organisms/Radar Chart Card',

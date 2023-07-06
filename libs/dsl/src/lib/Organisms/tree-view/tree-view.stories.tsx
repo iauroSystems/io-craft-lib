@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
-import TreeView, { TreeViewProps } from './tree-view';
-import { withDesign } from 'storybook-addon-designs';
+import {Meta, Story} from '@storybook/react';
+import TreeView, {TreeViewProps} from './tree-view';
+import {withDesign} from 'storybook-addon-designs';
 
 const handleEvent = () => {
   console.log('onClick');
@@ -10,7 +10,7 @@ export default {
   component: TreeView,
   title: 'Organisms/TreeView',
   argTypes: {
-    onClick: { action: handleEvent },
+    onClick: {action: handleEvent},
   },
   decorators: [withDesign],
 } as Meta;

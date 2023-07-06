@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
-import React, { useState } from 'react';
-import { withDesign } from 'storybook-addon-designs';
+import {Meta, Story} from '@storybook/react';
+import React, {useState} from 'react';
+import {withDesign} from 'storybook-addon-designs';
 
-import Rating, { RatingProps } from './rating';
+import Rating, {RatingProps} from './rating';
 
 export default {
   component: Rating,
@@ -10,7 +10,7 @@ export default {
   argTypes: {
     size: {
       options: ['small', 'medium', 'large'].sort(),
-      control: { type: 'select' },
+      control: {type: 'select'},
     },
     onChange: {
       action: 'clicked',
@@ -23,7 +23,7 @@ export default {
 } as Meta;
 
 const Templete: Story<RatingProps> = (args) => (
-  <div style={{ height: '90vh', display: 'grid', placeItems: 'center' }}>
+  <div style={{height: '90vh', display: 'grid', placeItems: 'center'}}>
     <Rating {...args} />
   </div>
 );
@@ -31,7 +31,7 @@ const Templete: Story<RatingProps> = (args) => (
 export function BasicRating() {
   const [rating, setRating] = useState(3);
   return (
-    <div style={{ height: '90vh', display: 'grid', placeItems: 'center' }}>
+    <div style={{height: '90vh', display: 'grid', placeItems: 'center'}}>
       <Rating
         value={rating}
         size="medium"
@@ -40,6 +40,7 @@ export function BasicRating() {
     </div>
   );
 }
+
 BasicRating.parameters = {
   design: {
     type: 'figma',
@@ -50,7 +51,7 @@ BasicRating.parameters = {
 export function HoverOnStatusRating() {
   const [rating, setRating] = useState(3);
   return (
-    <div style={{ height: '90vh', display: 'grid', placeItems: 'center' }}>
+    <div style={{height: '90vh', display: 'grid', placeItems: 'center'}}>
       <Rating
         value={rating}
         hoverStatus={true}
@@ -60,6 +61,7 @@ export function HoverOnStatusRating() {
     </div>
   );
 }
+
 HoverOnStatusRating.parameters = {
   design: {
     type: 'figma',
@@ -70,7 +72,7 @@ HoverOnStatusRating.parameters = {
 export function HalfStarRating() {
   const [rating, setRating] = useState(3);
   return (
-    <div style={{ height: '90vh', display: 'grid', placeItems: 'center' }}>
+    <div style={{height: '90vh', display: 'grid', placeItems: 'center'}}>
       <Rating
         value={rating}
         precision={true}
@@ -79,6 +81,7 @@ export function HalfStarRating() {
     </div>
   );
 }
+
 HalfStarRating.parameters = {
   design: {
     type: 'figma',

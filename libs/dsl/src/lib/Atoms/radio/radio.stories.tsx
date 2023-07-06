@@ -1,9 +1,7 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
-import CustomRadio, { RadioProps } from './radio';
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
-import Favorite from '@mui/icons-material/Favorite';
-import { withDesign } from 'storybook-addon-designs';
+import {Meta, Story} from '@storybook/react';
+import CustomRadio, {RadioProps} from './radio';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   title: 'Atoms/Radio',

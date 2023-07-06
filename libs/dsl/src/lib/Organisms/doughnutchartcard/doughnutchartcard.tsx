@@ -1,17 +1,15 @@
-import { styled } from '@mui/system';
-import { useTheme } from '@mui/system';
+import {styled, useTheme} from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
 import themes from 'libs/dsl/src/theme';
-import DoughnutChart from '../../Charts/donutchart_new/doughnutchart';
-import { DoughnutChartProps } from '../../Charts/donutchart_new/doughnutchart';
-import CardHeader, {
-  CardHeaderProps,
-} from '../../Molecules/card-header/card-header';
+import DoughnutChart, {DoughnutChartProps} from '../../Charts/donutchart_new/doughnutchart';
+import CardHeader, {CardHeaderProps,} from '../../Molecules/card-header/card-header';
 import './doughnutchartcard.css';
+
 /* eslint-disable-next-line */
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface IDoughnutChartCardProps {
   headerData: CardHeaderProps;
   chartData: DoughnutChartProps;
@@ -24,7 +22,7 @@ export function DoughnutChartCard(props: IDoughnutChartCardProps) {
   const theme = useTheme();
   const themeChart = themes;
 
-  const StyledDoughnutChartCard = styled('div')(({ theme }) => {
+  const StyledDoughnutChartCard = styled('div')(({theme}) => {
     return {
       '&': {
         background:
@@ -42,7 +40,7 @@ export function DoughnutChartCard(props: IDoughnutChartCardProps) {
   };
   return (
     <StyledDoughnutChartCard
-      style={{ height: '100%', width: '100%' }}
+      style={{height: '100%', width: '100%'}}
       key={generateRandomString()}
     >
       {props && props.headerData && (
@@ -66,7 +64,7 @@ export function DoughnutChartCard(props: IDoughnutChartCardProps) {
           height: '90%',
         }}
       >
-        <DoughnutChart {...props.chartData} onChartClick={onChartClick} />
+        <DoughnutChart {...props.chartData} onChartClick={onChartClick}/>
       </div>
     </StyledDoughnutChartCard>
   );

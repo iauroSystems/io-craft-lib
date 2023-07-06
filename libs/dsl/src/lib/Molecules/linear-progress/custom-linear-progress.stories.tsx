@@ -1,16 +1,16 @@
-import LinearProgress, { ILProgressProps } from './custom-linear-progress';
-import { Story, Meta } from '@storybook/react';
-import { withDesign } from 'storybook-addon-designs';
+import LinearProgress, {ILProgressProps} from './custom-linear-progress';
+import {Meta, Story} from '@storybook/react';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   component: LinearProgress,
   title: 'Molecules/Linear Progress',
   argTypes: {
     value: {
-      control: { type: 'range', min: 0, max:100},
+      control: {type: 'range', min: 0, max: 100},
     },
-    valueBuffer:{
-      control: { type: 'range', min: 0, max:100},
+    valueBuffer: {
+      control: {type: 'range', min: 0, max: 100},
     }
   },
   decorators: [withDesign],
@@ -20,8 +20,8 @@ const Template: Story<ILProgressProps> = (args) => <LinearProgress {...args} />;
 
 export const IndeterminateLinearProgress = Template.bind({});
 IndeterminateLinearProgress.args = {
-  color:"secondary",
-  variant:"indeterminate",
+  color: "secondary",
+  variant: "indeterminate",
 };
 IndeterminateLinearProgress.parameters = {
   design: {
@@ -32,9 +32,9 @@ IndeterminateLinearProgress.parameters = {
 
 export const DeterminateLinearProgress = Template.bind({});
 DeterminateLinearProgress.args = {
-  color:"primary",
-  variant:"determinate",
-  value:50
+  color: "primary",
+  variant: "determinate",
+  value: 50
 };
 DeterminateLinearProgress.parameters = {
   design: {
@@ -45,10 +45,10 @@ DeterminateLinearProgress.parameters = {
 
 export const BufferLinearProgress = Template.bind({});
 BufferLinearProgress.args = {
-  color:"primary",
-  variant:"buffer",
-  value:40,
-  valueBuffer:60
+  color: "primary",
+  variant: "buffer",
+  value: 40,
+  valueBuffer: 60
 };
 BufferLinearProgress.parameters = {
   design: {
@@ -59,10 +59,10 @@ BufferLinearProgress.parameters = {
 
 export const LinearProgressWithPercentage = Template.bind({});
 LinearProgressWithPercentage.args = {
-  color:"primary",
-  variant:"determinate",
-  value:50,
-  showPercentage:true
+  color: "primary",
+  variant: "determinate",
+  value: 50,
+  showPercentage: true
 };
 LinearProgressWithPercentage.parameters = {
   design: {

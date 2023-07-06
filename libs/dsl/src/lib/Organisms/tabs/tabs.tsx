@@ -1,9 +1,8 @@
 import React from 'react';
-import { Tabs as MuiTabs, useTheme } from '@mui/material';
+import {Tabs as MuiTabs, useTheme} from '@mui/material';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import themes from '../../../theme';
-import { styled } from '@mui/system';
+import {styled} from '@mui/system';
 
 export interface TabsProps {
   tabsList: Array<{
@@ -19,7 +18,7 @@ export interface TabsProps {
 }
 
 function Tabs(props: TabsProps) {
-  const StyledRangePicker = styled(Box)(({ theme }) => {
+  const StyledRangePicker = styled(Box)(({theme}) => {
     return {
       '& .MuiTabs-scrollButtons': {
         color: dslTheme.palette.text.primary,
@@ -57,7 +56,7 @@ function Tabs(props: TabsProps) {
           variant="scrollable"
           value={value}
           onChange={handleChange}
-          sx={{ backgroundColor: dslTheme.palette.background.paper }}
+          sx={{backgroundColor: dslTheme.palette.background.paper}}
           scrollButtons="auto"
           indicatorColor={props.selectedTabColor}
           textColor={props.selectedTabColor}
@@ -65,7 +64,7 @@ function Tabs(props: TabsProps) {
           {props.tabsList.map((listItem, index) => {
             return (
               <Tab
-                sx={{ color: dslTheme.palette.text.primary }}
+                sx={{color: dslTheme.palette.text.primary}}
                 label={listItem.label}
                 key={index}
                 disabled={props.tabDisabled}

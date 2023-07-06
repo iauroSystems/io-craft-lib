@@ -1,4 +1,4 @@
-import { IThemeColor } from '.';
+import {IThemeColor} from '.';
 
 const rhino: IThemeColor = {
   50: '#e7e9ed',

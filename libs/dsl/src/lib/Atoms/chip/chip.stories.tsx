@@ -1,7 +1,7 @@
-import { Story, Meta } from '@storybook/react';
-import { ChipProps, CustomChip } from './chip';
-import { IconComponent } from '../../POC/icon-component/icon-component';
-import { withDesign } from 'storybook-addon-designs';
+import {Meta, Story} from '@storybook/react';
+import {ChipProps, CustomChip} from './chip';
+import {IconComponent} from '../../POC/icon-component/icon-component';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   component: CustomChip,
@@ -17,13 +17,13 @@ export default {
         'success',
         'warning',
       ].sort(),
-      control: { type: 'select' },
+      control: {type: 'select'},
     },
     shape: {
       options: ['rounded', 'square'].sort(),
-      control: { type: 'select' },
+      control: {type: 'select'},
     },
-    
+
   },
   decorators: [withDesign],
 } as Meta;
@@ -42,7 +42,7 @@ PrimaryChip.args = {
     label: 'left_icon', // Replace with actual left icon label
     style: {} // Replace with actual left icon style
   },
-  rightIconProps: { 
+  rightIconProps: {
     name: 'add', // Replace with actual right icon name
     size: 20, // Replace with actual right icon size
     color: 'black', // Replace with actual right icon color
@@ -62,16 +62,16 @@ IconTextChip.args = {
   color: 'primary',
   label: 'Icon Text Chip',
   shape: 'rounded',
-  
+
   leftIconProps: {
-    name: 'help_outline_black_24dp', 
-    size: 20, 
-    color: 'black', 
-    label: 'left_icon', 
+    name: 'help_outline_black_24dp',
+    size: 20,
+    color: 'black',
+    label: 'left_icon',
     style: {},
   },
   rightIconProps: {
-    name: 'close_black_24dp', 
+    name: 'close_black_24dp',
     size: 20,
     color: 'black',
     label: 'right_icon',
@@ -89,7 +89,7 @@ export const ChipAndIcon = Template.bind({});
 ChipAndIcon.args = {
   color: 'primary',
   label: 'Right Icon',
-  rightIcon: <IconComponent size={17} name="close_black_24dp" label="close" />,
+  rightIcon: <IconComponent size={17} name="close_black_24dp" label="close"/>,
   shape: 'rounded',
 };
 ChipAndIcon.parameters = {

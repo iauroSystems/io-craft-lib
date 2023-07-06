@@ -12,4 +12,4 @@ export interface IThemeFont {
   [id: string]: IThemeFontType;
 }
 
-export { default as roboto } from './roboto';
+export {default as roboto} from './roboto';

@@ -1,18 +1,8 @@
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
-import {
-  Collapse,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  useTheme,
-} from '@mui/material';
-import { Box } from '@mui/system';
+import {ExpandLess, ExpandMore} from '@mui/icons-material';
+import {Collapse, ListItemButton, ListItemText, useTheme,} from '@mui/material';
+import {Box} from '@mui/system';
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { IMenuData } from './Menu2';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import {IMenuData} from './Menu2';
 import styled from '@mui/system/styled';
 import IconComponent from '../../POC/icon-component/icon-component';
 
@@ -20,8 +10,9 @@ export interface IMenulist2Props {
   compressedIcon: boolean;
   data: IMenuData[];
 }
+
 // eslint-disable-next-line react-hooks/rules-of-hooks
-const StyledMenuList = styled('div')(({ theme }) => {
+const StyledMenuList = styled('div')(({theme}) => {
   return {
     '.css-1fzmbpm-MuiListItemText-root': {
       WebkitFlex: '1 1 auto',
@@ -45,11 +36,12 @@ const Menulist2 = (props: IMenulist2Props) => {
   const [selectedIndex, setSelectedIndex] = React.useState('');
 
   function handleClick(item: any) {
-    setState((prevState) => ({ ...state, [item]: !prevState[item] }));
+    setState((prevState) => ({...state, [item]: !prevState[item]}));
     setSelectedIndex(item);
   }
+
   const handler = (children: any, props: any) => {
-    const { classes } = props;
+    const {classes} = props;
     // const { state } = state
     return children.map((subOption, index) => {
       if (!subOption.children) {
@@ -69,7 +61,7 @@ const Menulist2 = (props: IMenulist2Props) => {
                   : 'space-between',
                 alignItems: 'center',
               }}
-              classes={{ root: 'MuiListItemButton-root' }}
+              classes={{root: 'MuiListItemButton-root'}}
               onClick={() => handleClick(subOption.id)}
             >
               {/* <Link to={subOption.url} className={classes.links}> */}
@@ -92,8 +84,8 @@ const Menulist2 = (props: IMenulist2Props) => {
                           selectedIndex === subOption.id
                             ? '#0458AE'
                             : theme.palette.mode === 'light'
-                            ? '#877878'
-                            : theme.palette.text.primary
+                              ? '#877878'
+                              : theme.palette.text.primary
                         }
                         label={subOption.icon.label}
                         size={subOption.icon.size}
@@ -111,8 +103,8 @@ const Menulist2 = (props: IMenulist2Props) => {
                         selectedIndex === subOption.id
                           ? '#0458AE'
                           : theme.palette.mode === 'light'
-                          ? '#877878'
-                          : theme.palette.text.primary,
+                            ? '#877878'
+                            : theme.palette.text.primary,
                     }}
                   />
                 )}
@@ -123,7 +115,7 @@ const Menulist2 = (props: IMenulist2Props) => {
         );
       }
       return (
-        <div key={subOption.id} style={{ gap: '10px' }}>
+        <div key={subOption.id} style={{gap: '10px'}}>
           <ListItemButton
             style={{
               backgroundColor:
@@ -154,8 +146,8 @@ const Menulist2 = (props: IMenulist2Props) => {
                     selectedIndex === subOption.id
                       ? '#0458AE'
                       : theme.palette.mode === 'light'
-                      ? '#877878'
-                      : theme.palette.text.primary
+                        ? '#877878'
+                        : theme.palette.text.primary
                   }
                   label={subOption.icon.label}
                   size={subOption.icon.size}
@@ -171,8 +163,8 @@ const Menulist2 = (props: IMenulist2Props) => {
                       selectedIndex === subOption.id
                         ? '#0458AE'
                         : theme.palette.mode === 'light'
-                        ? '#877878'
-                        : theme.palette.text.primary,
+                          ? '#877878'
+                          : theme.palette.text.primary,
                   }}
                 />
               )}
@@ -186,7 +178,7 @@ const Menulist2 = (props: IMenulist2Props) => {
               }}
             >
               {!props.compressedIcon && (
-                <> {state[subOption.id] ? <ExpandLess /> : <ExpandMore />}</>
+                <> {state[subOption.id] ? <ExpandLess/> : <ExpandMore/>}</>
               )}
             </div>
           </ListItemButton>
@@ -200,12 +192,12 @@ const Menulist2 = (props: IMenulist2Props) => {
   return (
     <StyledMenuList>
       <Box
-        sx={{ width: props.compressedIcon ? 80 : 220 }}
+        sx={{width: props.compressedIcon ? 80 : 220}}
         role="presentation"
         //   onClick={toggleDrawer(anchor, false)}
         //   onKeyDown={toggleDrawer(anchor, false)}
       >
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
           {handler(props.data, props)}
         </div>
       </Box>

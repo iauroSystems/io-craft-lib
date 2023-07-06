@@ -1,7 +1,6 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { Story, Meta } from '@storybook/react';
-import themes from 'libs/dsl/src/theme';
-import MultilineText1, { MultilineText1Props } from './multiline-text1';
+import {Meta, Story} from '@storybook/react';
+import MultilineText1, {MultilineText1Props} from './multiline-text1';
 
 export default {
   component: MultilineText1,

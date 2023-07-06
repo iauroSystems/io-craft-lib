@@ -1,4 +1,4 @@
-import { IThemePalette } from '.';
+import {IThemePalette} from '.';
 import black from '../colors/black';
 import spearMint from '../colors/spearMint';
 

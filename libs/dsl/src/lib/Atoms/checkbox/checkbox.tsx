@@ -16,17 +16,17 @@ export type CheckboxProps = {
 };
 
 export function CustomCheckbox({
-  checked,
-  color,
-  defaultChecked,
-  size,
-  checkedIcon,
-  value,
-  icon,
-  disabled,
-  label,
-  actionClick,
-}: CheckboxProps) {
+                                 checked,
+                                 color,
+                                 defaultChecked,
+                                 size,
+                                 checkedIcon,
+                                 value,
+                                 icon,
+                                 disabled,
+                                 label,
+                                 actionClick,
+                               }: CheckboxProps) {
   return (
     <>
       {label ? (

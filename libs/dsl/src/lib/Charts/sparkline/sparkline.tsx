@@ -1,9 +1,6 @@
-import { useTheme } from '@mui/material';
-import { styled } from '@mui/system';
+import {Box} from '@mui/system';
 import React from 'react';
-import { SparklinesCurve, Sparklines } from 'react-sparklines';
-import { Box } from '@mui/system';
-import { useState } from 'react';
+import {Sparklines, SparklinesCurve} from 'react-sparklines';
 
 /* eslint-disable-next-line */
 export interface SparklineProps {
@@ -14,7 +11,7 @@ export const Sparkline = (Props: SparklineProps) => {
   return (
     <Box sx={{}}>
       <Sparklines height={40} data={Props.data}>
-        <SparklinesCurve color="#3EF888" />
+        <SparklinesCurve color="#3EF888"/>
       </Sparklines>
     </Box>
   );

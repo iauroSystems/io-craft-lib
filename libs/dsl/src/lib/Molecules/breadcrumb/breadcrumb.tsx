@@ -1,12 +1,11 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { Breadcrumbs as MuiBreadCrumb } from '@mui/material';
+import {Breadcrumbs as MuiBreadCrumb} from '@mui/material';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/system';
-import IconComponent, {
-  IconType,
-} from '../../POC/icon-component/icon-component';
+import {styled} from '@mui/system';
+import IconComponent, {IconType,} from '../../POC/icon-component/icon-component';
 import themes from 'libs/dsl/src/theme';
+
 export interface BreadcrumbProps {
   linkDetails: Array<{
     label: string;
@@ -15,7 +14,7 @@ export interface BreadcrumbProps {
   itemBeforeCollapse?: number;
   itemAfterCollapse?: number;
   maxItems?: number;
-  color?: 'primary' | 'secondary' | 'error'|string;
+  color?: 'primary' | 'secondary' | 'error' | string;
   underline?: 'always' | 'hover' | 'none';
   variant?:
     | 'body1'
@@ -41,8 +40,8 @@ export interface BreadcrumbProps {
 
 export function Breadcrumb(props: BreadcrumbProps) {
   const dslTheme = themes.default;
-   
-  const StyledBreadcrumb = styled('div')(({ theme }) => {
+
+  const StyledBreadcrumb = styled('div')(({theme}) => {
     return {
       '& .MuiSvgIcon-root': {
         backgroundColor: dslTheme.palette.background.bacopWhite,

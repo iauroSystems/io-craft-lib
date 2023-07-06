@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
-import { Dialog as DialogBox } from '@mui/material';
+import {Dialog as DialogBox} from '@mui/material';
 
 export interface DialogProps {
   open: boolean;
@@ -11,13 +11,13 @@ export interface DialogProps {
 }
 
 export function DialogComponent({
-  open,
-  children,
-  fullScreen,
-  maxWidth,
-  onClose,
-}: DialogProps) {
-  
+                                  open,
+                                  children,
+                                  fullScreen,
+                                  maxWidth,
+                                  onClose,
+                                }: DialogProps) {
+
   return (
 
     <DialogBox
@@ -26,11 +26,11 @@ export function DialogComponent({
       fullScreen={fullScreen}
       maxWidth={maxWidth}
     >
-     
+
       {children}
-      
+
     </DialogBox>
-   
+
 
   );
 }

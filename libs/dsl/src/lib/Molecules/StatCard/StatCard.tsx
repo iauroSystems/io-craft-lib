@@ -1,19 +1,16 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import React from 'react';
-import { Box, Button, Typography } from '@mui/material';
-import IconComponent, {
-  IconComponentProps,
-} from '../../POC/icon-component/icon-component';
-import { useTheme } from '@mui/system';
-import SquareChip, {
-  ISquareChipProps,
-} from '../../Atoms/square-chip/SquareChip';
+import {Box, Typography} from '@mui/material';
+import IconComponent, {IconComponentProps,} from '../../POC/icon-component/icon-component';
+import {useTheme} from '@mui/system';
+import {ISquareChipProps,} from '../../Atoms/square-chip/SquareChip';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import themes from 'libs/dsl/src/theme';
 
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface StatCardProps {
   data: StatCardData;
   chartProps?: IColorProps;
@@ -28,7 +25,7 @@ export interface StatCardData {
   link?: string;
 }
 
-export const StatCard = ({ data, chartProps, onChartClick }: StatCardProps) => {
+export const StatCard = ({data, chartProps, onChartClick}: StatCardProps) => {
   const theme = useTheme();
   const themesChart = themes.default;
   return (
@@ -96,7 +93,7 @@ export const StatCard = ({ data, chartProps, onChartClick }: StatCardProps) => {
             gap: '15px',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'row', flex: 50 }}>
+          <div style={{display: 'flex', flexDirection: 'row', flex: 50}}>
             <Typography
               sx={{
                 display: 'flex',

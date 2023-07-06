@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import './footer.css';
-import { Box, Link } from '@mui/material';
+import {Box, Link} from '@mui/material';
 import themes from 'libs/dsl/src/theme';
 
 export interface FooterProps {
@@ -32,6 +32,7 @@ interface RectProps {
   x: number;
   y: number;
 }
+
 function Footer(props: FooterProps) {
   const dslTheme = themes.default;
   let actionsWidth = '';
@@ -66,7 +67,7 @@ function Footer(props: FooterProps) {
       >
         <Box
           component="div"
-          sx={{ minWidth: '200px', overflowX: 'auto' }}
+          sx={{minWidth: '200px', overflowX: 'auto'}}
           className="pos-left pos-abs flex-footer align-items flex-row footer-actions-wrapper"
           id="left"
         >
@@ -77,7 +78,7 @@ function Footer(props: FooterProps) {
                 variant={props.actionsVariant}
                 color={props.actionsColor || dslTheme.palette?.text?.tex300Main}
                 href={actionArray.link}
-                sx={{ marginRight: 5, minWidth: 'fit-content' }}
+                sx={{marginRight: 5, minWidth: 'fit-content'}}
                 underline="hover"
               >
                 {actionArray.label}
@@ -117,7 +118,7 @@ function Footer(props: FooterProps) {
           </Box>
         </Box>
         <div className="pos-right pos-abs mt-5">
-          <img src={props.icon} alt="company-logo" />
+          <img src={props.icon} alt="company-logo"/>
         </div>
       </Box>
     </>

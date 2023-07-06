@@ -1,22 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  ArcElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { getDatasetAtEvent, Pie } from 'react-chartjs-2';
-import { useTheme } from '@mui/system';
+import React, {useEffect, useRef, useState} from 'react';
+import {ArcElement, CategoryScale, Chart as ChartJS, Legend, Title, Tooltip,} from 'chart.js';
+import {getDatasetAtEvent, Pie} from 'react-chartjs-2';
+import {useTheme} from '@mui/system';
 import themes from 'libs/dsl/src/theme';
 import WebFont from 'webfontloader';
-import { IFontData } from '../barchart/barchart';
+import {IFontData} from '../barchart/barchart';
 
 ChartJS.register(CategoryScale, ArcElement, Title, Tooltip, Legend);
+
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface PieChartProps {
   data: any;
   legend?: 'top' | 'bottom' | 'left' | 'right' | 'chartArea';
@@ -26,12 +21,12 @@ export interface PieChartProps {
 }
 
 export function PieChart({
-  data,
-  legend = 'right',
-  fontData,
-  chartProps,
-  onChartClick,
-}: PieChartProps) {
+                           data,
+                           legend = 'right',
+                           fontData,
+                           chartProps,
+                           onChartClick,
+                         }: PieChartProps) {
   const theme = useTheme();
   const [optionalChartProps, setOptionalChartProps] = useState<any>(chartProps);
   const themeChart = themes.default;

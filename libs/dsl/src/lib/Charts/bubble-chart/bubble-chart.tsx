@@ -1,17 +1,9 @@
-import styled from '@emotion/styled';
-import { useTheme } from '@mui/system';
-import {
-  Chart as ChartJS,
-  Legend,
-  LinearScale,
-  PointElement,
-  ScriptableContext,
-  Tooltip,
-} from 'chart.js';
-import { useEffect, useRef, useState } from 'react';
-import { Bubble, getElementsAtEvent } from 'react-chartjs-2';
+import {useTheme} from '@mui/system';
+import {Chart as ChartJS, Legend, LinearScale, PointElement, ScriptableContext, Tooltip,} from 'chart.js';
+import {useEffect, useRef, useState} from 'react';
+import {Bubble, getElementsAtEvent} from 'react-chartjs-2';
 import themes from '../../../theme';
-import { IFontData } from '../barchart/barchart';
+import {IFontData} from '../barchart/barchart';
 // import theme from '../../../../theme/';
 import WebFont from 'webfontloader';
 
@@ -26,6 +18,7 @@ export interface IBubbleDataSets {
   borderColor?: string;
   backgroundColor?: string;
 }
+
 export interface IBubbleChartProps {
   labels: string[];
   datasets: IBubbleDataSets[];
@@ -57,7 +50,7 @@ export const BubbleChart = (props: IBubbleChartProps) => {
     themes.default.palette.neutral.neu100;
 
   // const theme = theme.default;
-  const [chartData, setChartData] = useState<any>({ datasets: [], labels: [] });
+  const [chartData, setChartData] = useState<any>({datasets: [], labels: []});
   const [_scales, setScales] = useState({
     x: {
       grid: {
@@ -103,6 +96,7 @@ export const BubbleChart = (props: IBubbleChartProps) => {
     const _opacity = Math.round(Math.min(Math.max(opacity || 1, 0), 1) * 255);
     return color + _opacity.toString(16).toUpperCase();
   }
+
   const hex2rgba = (hex, alpha = 1) => {
     const [r, g, b] = hex.match(/\w\w/g).map((x) => parseInt(x, 16));
     return `rgba(${r},${g},${b},${alpha})`;

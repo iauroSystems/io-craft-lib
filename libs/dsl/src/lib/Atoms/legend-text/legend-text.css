@@ -2,13 +2,16 @@
   display: 'flex';
   flex-direction: 'column';
 }
+
 .legend-box {
   border-radius: 2px;
 }
+
 .legend-wrapper {
   position: relative;
   width: 100%;
 }
+
 .legend-data {
   width: inherit;
   font-size: 14px;

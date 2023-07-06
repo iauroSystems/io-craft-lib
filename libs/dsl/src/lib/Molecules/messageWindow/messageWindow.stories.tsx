@@ -1,8 +1,8 @@
-import { action } from '@storybook/addon-actions';
-import { Story, Meta } from '@storybook/react';
-import MessageWindow, { MessageWindowProps } from './messageWindow';
-import { IconComponent } from '../../POC/icon-component/icon-component';
-import { withDesign } from 'storybook-addon-designs';
+import {action} from '@storybook/addon-actions';
+import {Meta, Story} from '@storybook/react';
+import MessageWindow, {MessageWindowProps} from './messageWindow';
+import {IconComponent} from '../../POC/icon-component/icon-component';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   title: 'Molecules/MessageWindow',

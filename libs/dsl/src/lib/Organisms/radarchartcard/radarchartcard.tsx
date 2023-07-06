@@ -1,18 +1,15 @@
-import { styled } from '@mui/system';
-import { useTheme } from '@mui/system';
+import {styled, useTheme} from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
-import RadarChart, {
-  RadarChartProps,
-} from '../../Charts/radarchart/radarchart';
-import CardHeader, {
-  CardHeaderProps,
-} from '../../Molecules/card-header/card-header';
+import RadarChart, {RadarChartProps,} from '../../Charts/radarchart/radarchart';
+import CardHeader, {CardHeaderProps,} from '../../Molecules/card-header/card-header';
 import './radarchartcard.css';
 import themes from 'libs/dsl/src/theme';
+
 /* eslint-disable-next-line */
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface IRadarChartCardProps {
   headerData: CardHeaderProps;
   chartData: RadarChartProps;
@@ -25,7 +22,7 @@ export function RadarChartCard(props: IRadarChartCardProps) {
   const theme = useTheme();
   const themeChart = themes;
 
-  const StyledRadarChartCard = styled('div')(({ theme }) => {
+  const StyledRadarChartCard = styled('div')(({theme}) => {
     return {
       '&': {
         background:
@@ -42,7 +39,7 @@ export function RadarChartCard(props: IRadarChartCardProps) {
   };
   return (
     <StyledRadarChartCard
-      style={{ height: '100%', width: '100%' }}
+      style={{height: '100%', width: '100%'}}
       key={generateRandomString()}
     >
       {props && props.headerData && (
@@ -66,7 +63,7 @@ export function RadarChartCard(props: IRadarChartCardProps) {
           height: '90%',
         }}
       >
-        <RadarChart {...props.chartData} onChartClick={onChartClick} />
+        <RadarChart {...props.chartData} onChartClick={onChartClick}/>
       </div>
     </StyledRadarChartCard>
   );

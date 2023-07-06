@@ -1,5 +1,5 @@
-import { ThemeOptions } from '@mui/material';
-import { roboto } from './typography';
+import {ThemeOptions} from '@mui/material';
+import {roboto} from './typography';
 
 const soulifyTheme: ThemeOptions = {
   palette: {

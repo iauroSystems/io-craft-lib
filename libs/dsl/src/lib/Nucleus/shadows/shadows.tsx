@@ -1,5 +1,4 @@
-import { styled, useTheme } from '@mui/system';
-import { Box, Typography } from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import './shadows.css';
 
 export function Shadow(props: any) {
@@ -46,7 +45,7 @@ export function Shadow(props: any) {
 
   return (
     <Box className="main-container">
-      {shadowData.map(({ key, value }) => {
+      {shadowData.map(({key, value}) => {
         return (
           <Box key={key} className="sub-container">
             <Box

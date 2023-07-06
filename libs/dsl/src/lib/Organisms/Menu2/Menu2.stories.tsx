@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
-import Menu2, { IMenu2Props } from './Menu2';
-import { withDesign } from 'storybook-addon-designs';
+import {Meta, Story} from '@storybook/react';
+import Menu2, {IMenu2Props} from './Menu2';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   component: Menu2,

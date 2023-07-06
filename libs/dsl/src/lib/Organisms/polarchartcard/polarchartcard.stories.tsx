@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 // import themes from 'libs/dsl/src/theme';
-import PolarChartCard, { IPolarChartCardProps } from './polarchartcard';
+import PolarChartCard, {IPolarChartCardProps} from './polarchartcard';
 import themes from '../../../theme';
 
 export default {
@@ -16,7 +16,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   headerData: {
     title: 'card header',
-     cardExtraProps: {
+    cardExtraProps: {
       title_color: themes.default.palette.text.tex600,
       bottom_border_color: themes.default.palette.neutral.neu100,
       background_color: themes.default.palette.background.bacopWhite,
@@ -27,7 +27,7 @@ Primary.args = {
         icon: {
           name: 'fullscreen_black_24dp',
           size: 25,
-          color:  themes.default.palette.neutral.neu400,
+          color: themes.default.palette.neutral.neu400,
           label: 'Full Screen',
         },
         submenu: [
@@ -36,7 +36,7 @@ Primary.args = {
             icon: {
               name: 'share',
               size: 25,
-              color:  themes.default.palette.neutral.neu400,
+              color: themes.default.palette.neutral.neu400,
               label: 'share',
             },
             submenu: [],
@@ -47,7 +47,7 @@ Primary.args = {
             icon: {
               name: 'close_black_24dp',
               size: 25,
-              color:  themes.default.palette.neutral.neu400,
+              color: themes.default.palette.neutral.neu400,
               label: 'close_black_24dp',
             },
           },
@@ -58,7 +58,7 @@ Primary.args = {
         icon: {
           name: 'share',
           size: 25,
-          color:  themes.default.palette.neutral.neu400,
+          color: themes.default.palette.neutral.neu400,
           label: 'share',
         },
         submenu: [],
@@ -68,7 +68,7 @@ Primary.args = {
         icon: {
           name: 'close_black_24dp',
           size: 25,
-          color:  themes.default.palette.neutral.neu400,
+          color: themes.default.palette.neutral.neu400,
           label: 'close_black_24dp',
         },
         submenu: [
@@ -78,7 +78,7 @@ Primary.args = {
             icon: {
               name: 'share',
               size: 25,
-              color:  themes.default.palette.neutral.neu400,
+              color: themes.default.palette.neutral.neu400,
               label: 'share',
             },
           },
@@ -98,9 +98,9 @@ Primary.args = {
     },
 
     chartProps: {
-    background_color: themes.default.palette.background.bacopWhite,
-    legend_text_color: themes.default.palette.text.tex400,
-  },
+      background_color: themes.default.palette.background.bacopWhite,
+      legend_text_color: themes.default.palette.text.tex400,
+    },
 
     labels: [
       'name-a',

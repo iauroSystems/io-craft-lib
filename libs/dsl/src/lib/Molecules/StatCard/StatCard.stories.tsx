@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Story, Meta } from '@storybook/react';
+import {Meta, Story} from '@storybook/react';
 import themes from 'libs/dsl/src/theme';
 // import theme from 'libs/dsl/src/theme';
-import { withDesign } from 'storybook-addon-designs';
-import StatCard, { StatCardProps } from './StatCard';
+import {withDesign} from 'storybook-addon-designs';
+import StatCard, {StatCardProps} from './StatCard';
 
 export default {
   component: StatCard,

@@ -1,7 +1,5 @@
-import { Redirect } from 'react-router-dom';
-import { IPageConfig } from '../types/pageConfig';
+import {IPageConfig} from '../types/pageConfig';
 import getRoutesFromConfig from '../utils/getRoutesFromConfig';
-
 
 
 const routeConfigs: Array<IPageConfig> = [];

@@ -1,9 +1,8 @@
-import { styled, useTheme } from '@mui/system';
-import { Typography as MuiTypography, Box } from '@mui/material';
+import {Box, Typography as MuiTypography} from '@mui/material';
 
 export function Typography(props: any) {
   return (
-    <Box sx={{ width: '100%', maxWidth: 500 }}>
+    <Box sx={{width: '100%', maxWidth: 500}}>
       <MuiTypography variant="h1" component="div" gutterBottom>
         h1. Heading
       </MuiTypography>
@@ -22,7 +21,7 @@ export function Typography(props: any) {
       <MuiTypography variant="h6" gutterBottom component="div">
         h6. Heading
       </MuiTypography>
-   
+
       <MuiTypography variant="subtitle1" gutterBottom component="div">
         subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         Quos blanditiis tenetur

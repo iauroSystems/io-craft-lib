@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
-import { withDesign } from 'storybook-addon-designs';
-import LegendText, { ILegendProps } from './legend-text';
+import {Meta, Story} from '@storybook/react';
+import {withDesign} from 'storybook-addon-designs';
+import LegendText, {ILegendProps} from './legend-text';
 
 export default {
   component: LegendText,

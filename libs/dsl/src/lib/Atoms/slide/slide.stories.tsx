@@ -1,9 +1,9 @@
 import React from 'react';
-import Slide, { SlideProps } from './slide';
-import { Story, Meta } from '@storybook/react';
+import Slide, {SlideProps} from './slide';
+import {Meta, Story} from '@storybook/react';
 // import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 // import Favorite from '@mui/icons-material/Favorite';
-import { withDesign } from 'storybook-addon-designs';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   title: 'Atoms/Toggle',

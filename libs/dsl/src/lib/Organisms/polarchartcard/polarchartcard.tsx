@@ -1,18 +1,15 @@
-import { styled } from '@mui/system';
-import { useTheme } from '@mui/system';
+import {styled, useTheme} from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
-import PolarChart, {
-  IPolarChartProps,
-} from '../../Charts/polar-chart/polar-chart';
-import CardHeader, {
-  CardHeaderProps,
-} from '../../Molecules/card-header/card-header';
+import PolarChart, {IPolarChartProps,} from '../../Charts/polar-chart/polar-chart';
+import CardHeader, {CardHeaderProps,} from '../../Molecules/card-header/card-header';
 import './polarchartcard.css';
 import themes from 'libs/dsl/src/theme';
+
 /* eslint-disable-next-line */
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface IPolarChartCardProps {
   headerData: CardHeaderProps;
   chartData: IPolarChartProps;
@@ -25,7 +22,7 @@ export function PolarChartCard(props: IPolarChartCardProps) {
   const theme = useTheme();
   const themeChart = themes;
 
-  const StyledPolarChartCard = styled('div')(({ theme }) => {
+  const StyledPolarChartCard = styled('div')(({theme}) => {
     return {
       '&': {
         background: theme.palette?.light?.c50,
@@ -41,7 +38,7 @@ export function PolarChartCard(props: IPolarChartCardProps) {
   };
   return (
     <StyledPolarChartCard
-      style={{ height: '100%', width: '100%' }}
+      style={{height: '100%', width: '100%'}}
       key={generateRandomString()}
     >
       {props && props.headerData && (
@@ -65,7 +62,7 @@ export function PolarChartCard(props: IPolarChartCardProps) {
           height: '90%',
         }}
       >
-        <PolarChart {...props.chartData} onChartClick={onChartClick} />
+        <PolarChart {...props.chartData} onChartClick={onChartClick}/>
       </div>
     </StyledPolarChartCard>
   );

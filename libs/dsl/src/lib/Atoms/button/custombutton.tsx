@@ -1,10 +1,9 @@
-import { Box, Button as MuiButton /* useTheme */ } from '@mui/material';
-import { styled, useTheme } from '@mui/system';
+import {Box, Button as MuiButton} from '@mui/material';
+import {styled, useTheme} from '@mui/system';
 import React from 'react';
-import IconComponent, {
-  IconComponentProps,
-} from '../../POC/icon-component/icon-component';
+import IconComponent, {IconComponentProps,} from '../../POC/icon-component/icon-component';
 import './button-styling.css';
+
 export interface IButtonProps {
   text?: string;
   size: number;
@@ -17,7 +16,7 @@ export interface IButtonProps {
   isDisabled?: boolean;
 }
 
-const StyledButtonComponent = styled(Box)(({ theme }) => {
+const StyledButtonComponent = styled(Box)(({theme}) => {
   return {
     '.icon-wrapper': {
       marginLeft: 1,
@@ -37,15 +36,15 @@ export function Button(props: IButtonProps) {
             props.text && props.leftIcon && props.rightIcon
               ? '10px 24px'
               : props.text && props.rightIcon
-              ? '10px 24px 10px 24px'
-              : props.text && props.leftIcon
-              ? '10px 24px 10px 24px'
-              : props.icon
-              ? '0px'
-              : '10px 24px 10px 24px',
+                ? '10px 24px 10px 24px'
+                : props.text && props.leftIcon
+                  ? '10px 24px 10px 24px'
+                  : props.icon
+                    ? '0px'
+                    : '10px 24px 10px 24px',
           minWidth: props.icon ? '36px' : '',
         }}
-        
+
         startIcon={
           props.leftIcon && (
             <IconComponent

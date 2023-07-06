@@ -1,31 +1,33 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { Avatar, Box, Typography } from '@mui/material';
+import {Avatar, Box, Typography} from '@mui/material';
 import CustomChip from '../../Atoms/chip/chip';
-import { IOptions } from '../table-header-cell/table-header-cell';
+import {IOptions} from '../table-header-cell/table-header-cell';
 import './table-cell.css';
-import { useTheme } from '@mui/system';
+import {useTheme} from '@mui/system';
 import styled from '@mui/system/styled';
-import SquareChip, {
-  ISquareChipProps,
-} from '../../Atoms/square-chip/SquareChip';
-import UserInfo, { UserInfoProps } from '../user-info/user-info';
+import SquareChip, {ISquareChipProps,} from '../../Atoms/square-chip/SquareChip';
+import UserInfo, {UserInfoProps} from '../user-info/user-info';
 import themes from 'libs/dsl/src/theme';
 
 export interface IAvatar {
   value: string;
   path: string;
 }
+
 export interface IStatus {
   color: string;
   value?: string;
 }
+
 export interface IText {
   value: string;
   variant?: any;
 }
+
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 /* eslint-disable-next-line */
 export interface ITableCellComponentV2Props {
   text?: IText;
@@ -44,7 +46,7 @@ export interface ITableCellComponentV2Props {
 export function TableCellComponentV2(props: ITableCellComponentV2Props) {
   const theme: any = useTheme();
   const themesChart = themes.default;
-  const StyledTableCellComponentV2 = styled(Box)(({ theme }) => {
+  const StyledTableCellComponentV2 = styled(Box)(({theme}) => {
     return {
       '&': {
         backgroundColor:
@@ -84,7 +86,7 @@ export function TableCellComponentV2(props: ITableCellComponentV2Props) {
             <Avatar
               alt={props?.primaryAvatar?.value}
               src={props?.primaryAvatar?.path}
-              sx={{ height: 24, width: 24, fontSize: 16 }}
+              sx={{height: 24, width: 24, fontSize: 16}}
             />
             <Typography variant={'body2'}>
               {props?.primaryAvatar?.value || ''}
@@ -105,25 +107,25 @@ export function TableCellComponentV2(props: ITableCellComponentV2Props) {
           </Typography>
         )}
         {props.sqchip &&
-          props.sqchip.length &&
-          props.sqchip.map((element, index) => {
-            return (
-              <SquareChip
-                key={index}
-                chipColor={element.chipColor}
-                textData={element.textData}
-                icon={element.icon}
-              />
-            );
-          })}
+        props.sqchip.length &&
+        props.sqchip.map((element, index) => {
+          return (
+            <SquareChip
+              key={index}
+              chipColor={element.chipColor}
+              textData={element.textData}
+              icon={element.icon}
+            />
+          );
+        })}
 
         {props.tags &&
-          props.tags.length &&
-          props.tags.map((element, index) => {
-            return (
-              <CustomChip key={index} label={element.label} color="primary" />
-            );
-          })}
+        props.tags.length &&
+        props.tags.map((element, index) => {
+          return (
+            <CustomChip key={index} label={element.label} color="primary"/>
+          );
+        })}
 
         {props && props.userInfo && (
           <UserInfo

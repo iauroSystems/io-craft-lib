@@ -8,29 +8,36 @@
   min-width: 200px;
   box-sizing: border-box;
 }
+
 .successAction {
   background: #d8f3be;
   color: #59903e;
 }
+
 .infoAction {
   background: #d7e4fe;
   color: #395fcb;
 }
+
 .errorAction {
   background: #fdccc7;
   color: #d23630;
 }
+
 .warningAction {
   background: #ffe7ba;
   color: #b25926;
 }
+
 .messageContainer {
   display: flex;
   align-items: center;
 }
+
 .iconContainer {
   margin-right: 8px;
 }
+
 .actionIconsContainer {
   font-size: 13px;
   display: flex;

@@ -1,10 +1,7 @@
-import { styled } from '@mui/system';
-import { useTheme } from '@mui/system';
+import {styled, useTheme} from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
-import Barchart, { BarChartProps } from '../../Charts/barchart/barchart';
-import CardHeader, {
-  CardHeaderProps,
-} from '../../Molecules/card-header/card-header';
+import Barchart, {BarChartProps} from '../../Charts/barchart/barchart';
+import CardHeader, {CardHeaderProps,} from '../../Molecules/card-header/card-header';
 import './barcard.css';
 import themes from 'libs/dsl/src/theme';
 
@@ -12,6 +9,7 @@ import themes from 'libs/dsl/src/theme';
 interface IColorProps {
   [key: string]: string | number | any;
 }
+
 export interface IBarChartCardProps {
   headerData: CardHeaderProps;
   chartData: BarChartProps;
@@ -24,7 +22,7 @@ export function BarChartCard(props: IBarChartCardProps) {
   const theme = useTheme();
   const themeChart = themes;
 
-  const StyledBarcard = styled('div')(({ theme }) => {
+  const StyledBarcard = styled('div')(({theme}) => {
     return {
       '&': {
         background:
@@ -43,7 +41,7 @@ export function BarChartCard(props: IBarChartCardProps) {
   };
   return (
     <StyledBarcard
-      style={{ height: '100%', width: '100%' }}
+      style={{height: '100%', width: '100%'}}
       key={generateRandomString()}
     >
       {props && props.headerData && (
@@ -67,7 +65,7 @@ export function BarChartCard(props: IBarChartCardProps) {
           height: '100%',
         }}
       >
-        <Barchart {...props.chartData} onChartClick={onChartClick} />
+        <Barchart {...props.chartData} onChartClick={onChartClick}/>
       </div>
     </StyledBarcard>
   );

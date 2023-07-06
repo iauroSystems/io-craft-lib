@@ -1,6 +1,6 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { Typography, useTheme } from '@mui/material';
-import { Box, styled } from '@mui/system';
+import {Typography} from '@mui/material';
+import {Box, styled} from '@mui/system';
 import themes from 'libs/dsl/src/theme';
 
 /* eslint-disable-next-line */
@@ -11,8 +11,8 @@ export interface MultilineText1Props {
   onClickEvent: (data: any) => void;
 }
 
-const StyledMultilineText1 = styled(Box)(({ theme }) => {
-  const defaultTheme=themes.default;
+const StyledMultilineText1 = styled(Box)(({theme}) => {
+  const defaultTheme = themes.default;
   return {
     '&': {
       position: 'relative',

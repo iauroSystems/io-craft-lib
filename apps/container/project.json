@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
@@ -56,14 +58,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/container/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/container/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/container"],
+      "outputs": [
+        "coverage/apps/container"
+      ],
       "options": {
         "jestConfig": "apps/container/jest.config.js",
         "passWithNoTests": true

@@ -1,7 +1,4 @@
-
-
-
-  const loadDynamicScript = (
+const loadDynamicScript = (
   url: string
 ): Promise<{ message: string; element: HTMLScriptElement }> => {
   return new Promise((resolve, reject) => {
@@ -20,7 +17,7 @@
 
     element.onerror = () => {
       // console.error(`Dynamic Script Error: ${url}`);
-      reject({ message: `Dynamic Script Error: ${url}`, element });
+      reject({message: `Dynamic Script Error: ${url}`, element});
     };
 
     document.head.appendChild(element);

@@ -1,6 +1,4 @@
-import styled from '@emotion/styled';
-import { width } from '@mui/system';
-import { useState, useEffect, useRef } from 'react';
+import {useEffect, useRef, useState} from 'react';
 import './heat-map.css';
 
 /* eslint-disable-next-line */
@@ -48,8 +46,8 @@ export const HeatMap = (props: IHeatMapProps) => {
     // Defne maxheight to restrict when columns are more than rows
     const maxHeight = wrapper
       ? ((wrapper.clientHeight - padding * 2) / rows) * columns +
-        padding * 2 +
-        100 * props.rowAxisLabel.length
+      padding * 2 +
+      100 * props.rowAxisLabel.length
       : padding * 2 + 100 * props.rowAxisLabel.length;
 
     if (canvas) {
@@ -163,9 +161,9 @@ export const HeatMap = (props: IHeatMapProps) => {
                     : (j + 1).toString()
                   : (j + 1).toString(),
                 padding +
-                  (cellSize + fontSize) / 2 +
-                  j * (cellSize + spacing) +
-                  50,
+                (cellSize + fontSize) / 2 +
+                j * (cellSize + spacing) +
+                50,
                 lineheight + k * 15
               );
             }
@@ -212,7 +210,7 @@ export const HeatMap = (props: IHeatMapProps) => {
     <div>
       <div className="heat-map2-component">
         <div id={`heat-map-wrapper-${instanceId}`}>
-          <canvas ref={canvasRef} />
+          <canvas ref={canvasRef}/>
         </div>
       </div>
     </div>

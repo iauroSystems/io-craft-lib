@@ -1,10 +1,10 @@
-import { SwipeableDrawer } from '@mui/material';
+import {SwipeableDrawer} from '@mui/material';
 
 import * as React from 'react';
-import { IconComponentProps } from '../../POC/icon-component/icon-component';
+import {IconComponentProps} from '../../POC/icon-component/icon-component';
 import HeaderIcon from './HeaderIcon';
 import Menulist2 from './Menulist2';
-import { useTheme } from '@mui/system';
+import {useTheme} from '@mui/system';
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
@@ -15,6 +15,7 @@ export interface IMenuData {
   link: string;
   children?: IMenuData[];
 }
+
 export interface IMenu2Props {
   anchor: Anchor;
   openDrawer: boolean;
@@ -29,23 +30,23 @@ export function Menu2(props: IMenu2Props) {
   });
 
   React.useEffect(() => {
-    setState({ [props.anchor]: props.openDrawer });
+    setState({[props.anchor]: props.openDrawer});
   }, [props]);
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event &&
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
-      ) {
-        return;
-      }
+      (event: React.KeyboardEvent | React.MouseEvent) => {
+        if (
+          event &&
+          event.type === 'keydown' &&
+          ((event as React.KeyboardEvent).key === 'Tab' ||
+            (event as React.KeyboardEvent).key === 'Shift')
+        ) {
+          return;
+        }
 
-      setState({ ...state, [anchor]: open });
-    };
+        setState({...state, [anchor]: open});
+      };
 
   return (
     <SwipeableDrawer
@@ -62,11 +63,11 @@ export function Menu2(props: IMenu2Props) {
       }}
     >
       <div>
-        <HeaderIcon compressedIcon={props.sidebarCompressed} />
+        <HeaderIcon compressedIcon={props.sidebarCompressed}/>
       </div>
       {/* <Menulist compressedIcon={props.sidebarCompressed} data={props.data} /> */}
-      <div style={{ maxHeight: 'calc(100% - 0px)', overflowY: 'auto' }}>
-        <Menulist2 compressedIcon={props.sidebarCompressed} data={props.data} />
+      <div style={{maxHeight: 'calc(100% - 0px)', overflowY: 'auto'}}>
+        <Menulist2 compressedIcon={props.sidebarCompressed} data={props.data}/>
       </div>
     </SwipeableDrawer>
   );

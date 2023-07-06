@@ -15,4 +15,4 @@ export default {
   },
 };
 
-export { default as Shadow } from './shadows';
+export {default as Shadow} from './shadows';

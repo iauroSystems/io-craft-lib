@@ -1,7 +1,7 @@
-import Footer, { FooterProps } from './footer';
-import { Story, Meta } from '@storybook/react';
+import Footer, {FooterProps} from './footer';
+import {Meta, Story} from '@storybook/react';
 import IauroLogo from '../../../static/assets/iauroLogo.png';
-import { withDesign } from 'storybook-addon-designs';
+import {withDesign} from 'storybook-addon-designs';
 
 export default {
   component: Footer,
@@ -13,11 +13,11 @@ const Template: Story<FooterProps> = (args) => <Footer {...args} />;
 export const FooterSection = Template.bind({});
 FooterSection.args = {
   footerActions: [
-    { label: 'About', link: '' },
-    { label: 'Terms', link: '' },
-    { label: 'Contact Us', link: '' },
-    { label: 'Terms', link: '' },
-    { label: 'Terms', link: '' },
+    {label: 'About', link: ''},
+    {label: 'Terms', link: ''},
+    {label: 'Contact Us', link: ''},
+    {label: 'Terms', link: ''},
+    {label: 'Terms', link: ''},
   ],
   copyRightText: 'iauro System Private Limited',
   versionText: 'Version 2.0',
