@@ -1,19 +1,18 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import React, { useEffect, useRef, useState } from 'react';
+import { useTheme } from '@mui/system';
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
   BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LinearScale,
   Title,
   Tooltip,
-  Legend,
 } from 'chart.js';
+import { useEffect, useRef, useState } from 'react';
 import { Bar, getElementsAtEvent } from 'react-chartjs-2';
-import { useTheme } from '@mui/system';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import themes from 'libs/dsl/src/theme';
-import { Paper } from '@mui/material';
 import WebFont from 'webfontloader';
 
 export interface IFontData {

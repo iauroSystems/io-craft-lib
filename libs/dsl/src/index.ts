@@ -34,8 +34,8 @@ export * from './lib/Molecules/messageWindow/messageWindow';
 
 export * from './lib/Molecules/card-header/card-header';
 export * from './lib/Molecules/circular-progress/custom-circular-progress';
-export * from './lib/Molecules/custom-card-header/custom-card-header';
 export * from './lib/Molecules/custom-card-footer/custom-card-footer';
+export * from './lib/Molecules/custom-card-header/custom-card-header';
 
 export * from './lib/Molecules/dialog/dialog';
 export * from './lib/Molecules/drawer/custom-drawer';
@@ -66,13 +66,19 @@ export * from './lib/Organisms/bubblechartcard/bubblechartcard';
 export * from './lib/Organisms/data-grid-new/data-grid-v1';
 export * from './lib/Organisms/datatable-card-v1/datatable-card-v1';
 export * from './lib/Organisms/doughnutchartcard/doughnutchartcard';
+export * from './lib/Organisms/generic-pagination/generic-pagination';
+export * from './lib/Organisms/generic-table/SearchBox';
+export * from './lib/Organisms/generic-table/generic-table';
+export * from './lib/Organisms/generic-table/generic-table-wrapper';
+export * from './lib/Organisms/generic-table/generic-table-wrapper-card';
 export * from './lib/Organisms/heatmapchartcard/heatmapchartcard';
 export * from './lib/Organisms/piechartcard/piechartcard';
 export * from './lib/Organisms/polarchartcard/polarchartcard';
 export * from './lib/Organisms/radarchartcard/radarchartcard';
-export * from './lib/Organisms/scatterchartcard/scatterchartcard';  
+export * from './lib/Organisms/scatterchartcard/scatterchartcard';
 export * from './lib/Organisms/stat-card/statChartCard';
-export *from './lib/Organisms/tabs/tabs'
+export * from './lib/Organisms/tabs/tabs';
 export * from './lib/Organisms/tree-view/tree-view';
 export * from './lib/POC/icon-component/icon-component';
+
 export * from './lib/dsl';
