@@ -1,5 +1,4 @@
 import { Meta, Story } from '@storybook/react';
-import React from 'react';
 import CustomDropdown, { CustomDropdownProps } from './custom-dropdown';
 
 export default {
@@ -21,9 +20,7 @@ Dropdown.args = {
       size: 25,
       color: '',
     },
-    onClick: () => {
-      console.log('Overall');
-    },
+    onClick: () => {},
     dropdownList: [
       { label: 'sample1', value: 'sample1' },
       { label: 'sample2', value: 'sample2' },

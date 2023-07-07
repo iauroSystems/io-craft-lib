@@ -48,7 +48,10 @@ export const GenericTableWrapper = (props: Props) => {
         <Box>
           <Typography
             sx={{
-              color: theme.palette.text?.primary,
+              color:
+                props?.chartProps?.text_color || theme.palette.text?.primary,
+              fontSize: '22px',
+              fontWeight: 700,
             }}
             variant="h5"
           >
@@ -89,7 +92,9 @@ export const GenericTableWrapper = (props: Props) => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 borderRadius: '4px',
-                background: theme?.palette?.background?.default,
+                background:
+                  props.chartProps?.icon_background ||
+                  theme?.palette?.background?.default,
                 marginLeft: '10px',
               }}
               onClick={() => {}}
@@ -98,6 +103,7 @@ export const GenericTableWrapper = (props: Props) => {
                 name="filter_alt_black_24dp"
                 label="Filter"
                 size={30}
+                color={props.chartProps?.icon_color}
               />
             </Box>
           )}
@@ -110,7 +116,9 @@ export const GenericTableWrapper = (props: Props) => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 borderRadius: '4px',
-                background: theme?.palette?.background?.default,
+                background:
+                  props.chartProps?.icon_background ||
+                  theme?.palette?.background?.default,
                 marginLeft: '10px',
               }}
             >
@@ -118,6 +126,7 @@ export const GenericTableWrapper = (props: Props) => {
                 name="file_download_black_24dp-1-1"
                 label="Download"
                 size={30}
+                color={props.chartProps?.icon_color}
               />
             </Box>
           )}
@@ -133,7 +142,7 @@ export const GenericTableWrapper = (props: Props) => {
           onClickRow={function (_rowId: string, _data: string): void {
             throw new Error('Function not implemented.');
           }}
-          tableData={{ headers: [], rows: [] }}
+          tableData={props.tableData}
           handleChangeRowsPerPage={() => {}}
           handleChangePage={() => {}}
           pageSize={1}

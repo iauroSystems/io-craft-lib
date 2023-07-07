@@ -93,7 +93,6 @@ export const HeaderComponent = (props: IHeaderComponentProps) => {
             alignItems: 'center',
           }}
           onClick={() => {
-            console.log('headerlogoClickEvent');
             props.headerLogoClickEvent();
           }}
         >
@@ -139,7 +138,6 @@ export const HeaderComponent = (props: IHeaderComponentProps) => {
             justifyContent: 'flex-start',
           }}
           onClick={() => {
-            console.log('notificationClickEvent');
             notificationClicked();
           }}
         >

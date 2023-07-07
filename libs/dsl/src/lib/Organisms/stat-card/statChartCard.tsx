@@ -1,10 +1,9 @@
-import { styled } from '@mui/system';
-import { useTheme } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
+import StatCard, { StatCardProps } from '../../Molecules/StatCard/StatCard';
 import CardHeader, {
   CardHeaderProps,
 } from '../../Molecules/card-header/card-header';
-import StatCard, { StatCardProps } from '../../Molecules/StatCard/StatCard';
 /* eslint-disable-next-line */
 export interface IStatChartCardProps {
   height?: number;
@@ -27,9 +26,7 @@ export function StatChartCard(props: IStatChartCardProps) {
   const menuClicked = (data: any) => {
     props && props.actionClicked(data);
   };
-  const onChartClick = (data: any) => {
-    console.log(data);
-  };
+  const onChartClick = (data: any) => {};
   return (
     <StyledStatChartCard
       style={{

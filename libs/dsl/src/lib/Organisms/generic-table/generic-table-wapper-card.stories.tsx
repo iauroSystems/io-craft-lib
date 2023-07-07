@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import themes from 'libs/dsl/src/theme';
 import GenericTableWrapperCard from './generic-table-wrapper-card';
+import { tableJson } from './response_1688625451488';
 
 export default {
   component: GenericTableWrapperCard,
@@ -15,9 +16,7 @@ export default {
   },
 } as Meta;
 
-const handleChangeRowsPerPage = (val: any) => {
-  console.log(val);
-};
+const handleChangeRowsPerPage = (val: any) => {};
 
 const handleChangePage = (propPage: any) => {};
 
@@ -51,7 +50,8 @@ Primary.args = {
   chartProps: {
     background_color:
       '#0F1013' || themes.default?.palette?.background?.bacopWhite,
-    text_color: '#ffffff',
+    text_color: '#101425',
+    icon_color: '#131ca2',
   },
 
   chartData: {
@@ -65,10 +65,7 @@ Primary.args = {
         '#0F1013' || themes.default?.palette?.background?.bacopWhite,
     },
 
-    tableData: {
-      rows: [],
-      headers: [],
-    },
+    tableData: tableJson,
     pageSize: 10,
     isDataloading: false,
     totalCount: 10,

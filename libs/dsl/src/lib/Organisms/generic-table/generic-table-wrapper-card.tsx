@@ -40,7 +40,6 @@ export const GenericTableWrapperCard = (
 
   const theme = useTheme();
   const menuClicked = (data: any) => {
-    // console.log(data);
     props && props.actionClicked(data);
   };
   return (

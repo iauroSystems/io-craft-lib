@@ -1,10 +1,8 @@
-import { Story, Meta } from '@storybook/react';
-import TreeView, { TreeViewProps } from './tree-view';
+import { Meta, Story } from '@storybook/react';
 import { withDesign } from 'storybook-addon-designs';
+import TreeView, { TreeViewProps } from './tree-view';
 
-const handleEvent = () => {
-  console.log('onClick');
-};
+const handleEvent = () => {};
 
 export default {
   component: TreeView,

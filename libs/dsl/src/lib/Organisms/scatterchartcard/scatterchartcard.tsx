@@ -1,6 +1,6 @@
-import { styled } from '@mui/system';
-import { useTheme } from '@mui/system';
+import { styled, useTheme } from '@mui/system';
 import generateRandomString from 'libs/dsl/src/static/randomString';
+import themes from 'libs/dsl/src/theme';
 import ScatterChart, {
   IScatterChartProps,
 } from '../../Charts/scatter-chart/scatter-chart';
@@ -8,7 +8,6 @@ import CardHeader, {
   CardHeaderProps,
 } from '../../Molecules/card-header/card-header';
 import './scatterchartcard.css';
-import themes from 'libs/dsl/src/theme';
 /* eslint-disable-next-line */
 interface IColorProps {
   [key: string]: string | number | any;
@@ -39,7 +38,6 @@ export function ScatterChartCard(props: IScatterChartCardProps) {
     props && props.actionClicked(data);
   };
   const onChartClick = (data: any) => {
-    console.log(data);
     props.onChartClick && props.onChartClick(data);
   };
   return (

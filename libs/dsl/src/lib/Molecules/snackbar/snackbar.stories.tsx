@@ -1,7 +1,7 @@
-import { Story, Meta } from '@storybook/react';
-import Snackbar, { SnackbarProps } from './snackbar';
 import { action } from '@storybook/addon-actions';
+import { Meta, Story } from '@storybook/react';
 import { withDesign } from 'storybook-addon-designs';
+import Snackbar, { SnackbarProps } from './snackbar';
 
 export default {
   title: 'Molecules/Snackbar',
@@ -28,9 +28,7 @@ BasicSnackbar.args = {
   open: true,
   type: 'success',
   message: 'This is success SnackBar',
-  onCloseFunc: () => {
-    console.log('closed.');
-  },
+  onCloseFunc: () => {},
   actions: [
     {
       name: 'close_black_24dp',

@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import themes from 'libs/dsl/src/theme';
 import GenericTableWrapper from './generic-table-wrapper';
+import { tableJson } from './response_1688625451488';
 
 export default {
   component: GenericTableWrapper,
@@ -15,9 +16,7 @@ export default {
   },
 } as Meta;
 
-const handleChangeRowsPerPage = (val: any) => {
-  console.log(val);
-};
+const handleChangeRowsPerPage = (val: any) => {};
 
 const handleChangePage = (propPage: any) => {};
 
@@ -33,13 +32,13 @@ Primary.args = {
   canFilter: true,
   canDownload: true,
   pageSizeOptions: [10, 20, 30, 40],
-  tableData: {
-    rows: [],
-    headers: [],
-  },
+  tableData: tableJson,
   chartProps: {
-    background_color: themes.default?.palette?.background?.bacopWhite,
-    text_color: '#000000',
+    background_color:
+      '#ffffff' || themes.default?.palette?.background?.bacopWhite,
+    text_color: 'red',
+    icon_color: '#131ca2',
+    icon_background: 'f2f4f8',
   },
 
   pageSize: 10,

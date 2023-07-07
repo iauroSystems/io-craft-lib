@@ -12,6 +12,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 // import { ITheme } from '../../../../../application/src/theme';
 import { useTheme } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 interface PaginationBarProps {
   totalCount: number;
@@ -39,6 +40,18 @@ export const PaginationBar: React.FC<PaginationBarProps> = ({
   chartProps,
 }) => {
   const theme: any = useTheme();
+  const useStyles = makeStyles({
+    root: {
+      background: 'blue',
+      padding: '0px !important',
+    },
+
+    customMenuItem: {
+      backgroundColor: 'red', // Replace with the desired color
+    },
+  });
+  const classes = useStyles();
+
   return (
     <Box
       sx={{
@@ -46,7 +59,8 @@ export const PaginationBar: React.FC<PaginationBarProps> = ({
         padding: '18px 10px 8px 10px',
         display: 'flex',
         justifyContent: 'flex-end',
-        background: theme?.palette?.light?.c50,
+        background: chartProps?.background_color || theme?.palette?.light?.c50,
+        color: chartProps?.text_color,
         width: '100%%',
       }}
     >
@@ -74,13 +88,23 @@ export const PaginationBar: React.FC<PaginationBarProps> = ({
       <Pagination
         shape="rounded"
         color="primary"
+        style={{ color: chartProps?.text_color }}
         count={Math.ceil(totalCount / pageSize)}
         page={currentPage}
         showFirstButton
+        sx={{
+          '& MuiMenu-list': {
+            backgroundColor: 'blue',
+          },
+        }}
         showLastButton
         onChange={(event, page) => onChangePage(page)}
         renderItem={(item) => (
           <PaginationItem
+            sx={{
+              color: chartProps?.text_color,
+              backgroundColor: chartProps?.background_color,
+            }}
             components={{
               first: KeyboardDoubleArrowLeftIcon,
               previous: KeyboardArrowLeftIcon,
@@ -95,30 +119,45 @@ export const PaginationBar: React.FC<PaginationBarProps> = ({
         variant="caption"
         sx={{
           padding: '8px 10px 8px 10px',
-          color: '#101425',
+          // color: '#101425',
           fontWeight: '400',
+          color: chartProps?.text_color,
         }}
       >
         Show &nbsp;
       </Typography>
-      <FormControl>
+      <FormControl
+        sx={{
+          '& MuiMenu-list': {
+            backgroundColor: 'blue',
+          },
+        }}
+      >
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={pageSize}
           onChange={(event) => onChangeRowsPerPage(Number(event.target.value))}
           label=""
+          style={{ backgroundColor: chartProps?.background_color || '#101425' }}
           sx={{
             border: '1px solid #101425',
             width: 'fit-content',
             height: '32px',
             borderRadius: '4px',
             padding: '8px 8px 8px 8px',
-            color: '#101425',
+            backgroundColor: chartProps?.background_color || '#101425',
+            color: chartProps?.text_color || '#101425',
           }}
         >
           {pageSizeOptions.map((option) => (
-            <MenuItem key={option} value={option} sx={{ color: '#101425' }}>
+            <MenuItem
+              key={option}
+              value={option}
+              sx={{
+                color: chartProps?.text_color,
+              }}
+            >
               {option}
             </MenuItem>
           ))}
@@ -128,7 +167,7 @@ export const PaginationBar: React.FC<PaginationBarProps> = ({
         variant="caption"
         sx={{
           padding: '10px 10px 8px 10px',
-          color: '#101425',
+          color: chartProps?.text_color,
           fontWeight: '400',
         }}
       >

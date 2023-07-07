@@ -1,8 +1,7 @@
-import { Story, Meta } from '@storybook/react';
-import Pagination, { PaginationProps } from './custom-pagination';
-import errorImg from '../../../static/assets/images/error.png';
 import { SelectChangeEvent } from '@mui/material';
+import { Meta, Story } from '@storybook/react';
 import { withDesign } from 'storybook-addon-designs';
+import Pagination, { PaginationProps } from './custom-pagination';
 
 export default {
   component: Pagination,
@@ -50,9 +49,7 @@ RoundedPagination.args = {
   shape: 'rounded',
   listPerPage: [5, 10, 20, 25],
   disabled: false,
-  onChange: (event: SelectChangeEvent, rowPerPage: string): void => {
-    console.log('rows per page has changed to ', rowPerPage);
-  },
+  onChange: (event: SelectChangeEvent, rowPerPage: string): void => {},
 };
 RoundedPagination.parameters = {
   design: {
@@ -65,9 +62,7 @@ export const CircularPagination = Template.bind({});
 CircularPagination.args = {
   shape: 'circular',
   disabled: false,
-  onChange: (event: SelectChangeEvent, rowPerPage: string): void => {
-    console.log('rows per page has changed to ', rowPerPage);
-  },
+  onChange: (event: SelectChangeEvent, rowPerPage: string): void => {},
 };
 CircularPagination.parameters = {
   design: {

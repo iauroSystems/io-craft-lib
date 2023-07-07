@@ -1,5 +1,7 @@
 import { Meta, Story } from '@storybook/react';
+import themes from 'libs/dsl/src/theme';
 import GenericTable from './generic-table';
+import { tableJson } from './response_1688625451488';
 
 export default {
   component: GenericTable,
@@ -26,9 +28,13 @@ const Template: Story<any> = (args) => <GenericTable {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  tableData: {
-    rows: [],
-    headers: [],
+  tableData: tableJson,
+  chartProps: {
+    background_color:
+      '#000000' || themes.default?.palette?.background?.bacopWhite,
+    text_color: '#ffffff',
+    icon_color: '#131ca2',
+    icon_background: 'f2f4f8',
   },
 
   handleChangeRowsPerPage: handleChangeRowsPerPage,

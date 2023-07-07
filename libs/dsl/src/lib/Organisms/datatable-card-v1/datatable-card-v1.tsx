@@ -42,7 +42,6 @@ export function DatatableCardV1(props: IDatatableCardV1Props) {
 
   const theme = useTheme();
   const menuClicked = (data: any) => {
-    // console.log(data);
     props && props.actionClicked(data);
   };
   return (

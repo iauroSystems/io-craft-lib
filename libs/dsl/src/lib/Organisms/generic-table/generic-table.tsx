@@ -19,7 +19,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 import TableSortLabel from '@mui/material/TableSortLabel';
 import { MuiAvatar } from '../../Molecules/custom-avatar/custom-avatar';
 import PaginationBar from '../generic-pagination/generic-pagination';
-import { tableJson } from './response_1688625451488';
 //ToDo
 const useStyles = makeStyles((theme: any) => ({
   root: {
@@ -45,12 +44,14 @@ const useStyles = makeStyles((theme: any) => ({
     maxWidth: '420px',
     textTransform: 'capitalize',
     overflow: 'hidden',
+    borderBottomColor: '#00000020',
     // display: 'flex',
     // justifyContent: 'between',
   },
   ul: {
     '& .MuiPaginationItem-root': {
       color: '#877878',
+      backgroundColor: 'grey !important',
       '&.Mui-selected': {
         background: '#131CA2 ',
         color: 'white',
@@ -70,14 +71,14 @@ const StickyTableCell = withStyles((theme: any) => ({
     position: 'sticky',
     zIndex: 1000,
     fontSize: 14,
-    borderRight: '1px solid #E2E7EF',
-    borderBottom: '1px solid #E2E7EF',
+    borderRight: '1px solid #E2E7EF20',
+    borderBottom: '1px solid #E2E7EF20',
   },
   body: {
     backgroundColor: 'green' || 'white',
     left: 0,
     position: 'sticky',
-    borderRight: '1px solid #E2E7EF',
+    borderRight: '1px solid #E2E7EF20',
     width: '280px',
     zIndex: 1000,
     cursor: 'pointer',
@@ -91,13 +92,23 @@ const StyledTableCell = withStyles((theme: any) => ({
     padding: '1px 0px 4px 10px',
     fontSize: 12,
   },
+  cell: {
+    minWidth: '200px',
+    maxWidth: '420px',
+    textTransform: 'capitalize',
+    overflow: 'hidden',
+    borderBottomColor: '#00000020',
+    // display: 'flex',
+    // justifyContent: 'between',
+  },
+
   body: {
     backgroundColor: theme?.palette?.background?.paper || 'white',
     // margin: 0,
     padding: '1px 0px 0px 10px',
     fontSize: 12,
     color: '#636A75',
-    borderTop: '1px solid #E2E7EF',
+    borderTop: '1px solid #E2E7EF20',
     cursor: 'pointer',
     textTransform: 'capitalize',
   },
@@ -110,9 +121,9 @@ const StyledTableRow = withStyles((theme: any) => ({
   },
 }))(TableRow);
 
-function descendingComparator(a: any, b: any, orderBy: any) {
-  const bData = b?.[orderBy];
-  const aData = a?.[orderBy];
+function descendingComparator(element1: any, element2: any, orderBy: any) {
+  const bData = element2?.[orderBy];
+  const aData = element1?.[orderBy];
   if (String(bData?.value) < String(aData?.value)) {
     return -1;
   }
@@ -128,22 +139,26 @@ function getComparator<Key extends keyof any>(
   order: Order,
   orderBy: Key
 ): (
-  a: { [key in Key]: number | string },
-  b: { [key in Key]: number | string }
+  element1: { [key in Key]: number | string },
+  element2: { [key in Key]: number | string }
 ) => number {
   return order === 'desc'
-    ? (a, b) => descendingComparator(a, b, orderBy)
-    : (a, b) => -descendingComparator(a, b, orderBy);
+    ? (element1, element2) => descendingComparator(element1, element2, orderBy)
+    : (element1, element2) =>
+        -descendingComparator(element1, element2, orderBy);
 }
 
-function stableSort<T>(array: any[], comparator: (a: T, b: T) => number) {
+function stableSort<T>(
+  array: any[],
+  comparator: (element1: T, element2: T) => number
+) {
   const stabilizedThis = array.map((el, index) => [el, index] as [T, number]);
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0]);
+  stabilizedThis.sort((element1, element2) => {
+    const order = comparator(element1[0], element2[0]);
     if (order !== 0) {
       return order;
     }
-    return a[1] - b[1];
+    return element1[1] - element2[1];
   });
 
   return stabilizedThis.map((el) => el[0]);
@@ -205,6 +220,13 @@ function EnhancedTableHead(props: any) {
                   IconComponent={UnfoldMoreIcon}
                   direction={orderBy === headCell.field ? order : 'asc'}
                   onClick={createSortHandler(headCell.field)}
+                  sx={{
+                    '& .MuiTableSortLabel-icon': {
+                      color:
+                        (props?.chartProps?.text_color || '#dadce0') +
+                        ' !important',
+                    },
+                  }}
                 ></TableSortLabel>
               </Stack>
             </StickyTableCell>
@@ -241,6 +263,13 @@ function EnhancedTableHead(props: any) {
                   active={true}
                   direction={orderBy === headCell.field ? order : 'asc'}
                   onClick={createSortHandler(headCell.field)}
+                  sx={{
+                    '& .MuiTableSortLabel-icon': {
+                      color:
+                        (props?.chartProps?.text_color || '#dadce0') +
+                        ' !important',
+                    },
+                  }}
                 ></TableSortLabel>
                 {/* ) : null} */}
               </Stack>
@@ -330,70 +359,68 @@ export const GenericTable = ({
   };
 
   useEffect(() => {
-    const sampleData = JSON.parse(JSON.stringify(tableJson));
-    if (sampleData && sampleData?.records?.length) {
-      const keyObj = {
-        year: 'text',
-        month: 'text',
-        source: 'avatar',
-        products: 'chip',
-        quantity_000_metric_tonnes_: 'text',
-        last_updated: 'text',
-      };
+    try {
+      const sampleData = JSON.parse(JSON.stringify(tableData));
+      if (sampleData && sampleData?.records?.length) {
+        const keyObj = {
+          year: 'text',
+          month: 'text',
+          source: 'avatar',
+          products: 'chip',
+          quantity_000_metric_tonnes_: 'text',
+          last_updated: 'text',
+        };
 
-      let totalCount = 0;
+        let totalCount = 0;
 
-      const rowData = {
-        rows: [],
-        headers: [
-          { name: 'year', field: 'year', sticky: true },
-          { name: 'month', field: 'month' },
-          {
-            name: 'source',
-            field: 'source',
-          },
-          {
-            name: 'products',
-            field: 'products',
-          },
-          {
-            name: 'quantity_000_metric_tonnes_',
-            field: 'quantity_000_metric_tonnes_',
-          },
-          {
-            name: 'last_updated',
-            field: 'last_updated',
-          },
-        ],
-      };
-      const uniqueCustomers = [];
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      totalCount = sampleData?.records?.length;
-      sampleData &&
-        sampleData?.records?.forEach((row, index) => {
-          const rowToAdd = {
-            id: index,
-            rowColor: '',
-          };
-          rowData?.headers?.forEach((column) => {
-            rowToAdd[column.field] = {
-              value: row?.[column.field],
-              type: keyObj[column.field],
+        const rowData = {
+          rows: [],
+          headers: [
+            { name: 'year', field: 'year', sticky: true },
+            { name: 'month', field: 'month' },
+            {
+              name: 'source',
+              field: 'source',
+            },
+            {
+              name: 'products',
+              field: 'products',
+            },
+            {
+              name: 'quantity_000_metric_tonnes_',
+              field: 'quantity_000_metric_tonnes_',
+            },
+            {
+              name: 'last_updated',
+              field: 'last_updated',
+            },
+          ],
+        };
+        const uniqueCustomers = [];
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        totalCount = sampleData?.records?.length;
+        sampleData &&
+          sampleData?.records?.forEach((row, index) => {
+            const rowToAdd = {
+              id: index,
+              rowColor: '',
             };
+            rowData?.headers?.forEach((column) => {
+              rowToAdd[column.field] = {
+                value: row?.[column.field],
+                type: keyObj[column.field],
+              };
+            });
+            if (!uniqueCustomers.includes(row.customer_id)) {
+              uniqueCustomers.push(row.customer_id);
+            }
+
+            rowData.rows.push(rowToAdd);
           });
-
-          console.log('row', row);
-
-          if (!uniqueCustomers.includes(row.customer_id)) {
-            uniqueCustomers.push(row.customer_id);
-          }
-
-          rowData.rows.push(rowToAdd);
-        });
-      console.log(sampleData);
-      setTableData(rowData);
-    }
-  }, [currentPage]);
+        setTableData(rowData);
+      }
+    } catch (error) {}
+  }, [currentPage, tableData]);
 
   const rowRepresenter = (
     fieldName: string,
@@ -611,7 +638,6 @@ export const GenericTable = ({
               >
                 {stableSort(_tableData.rows, getComparator(order, orderBy)).map(
                   (data: any) => {
-                    console.log('hello data', data);
                     return (
                       <StyledTableRow
                         key={data.id}
